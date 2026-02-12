@@ -18,19 +18,19 @@ function generateDemoData() {
     {
       id: 'github_ai_1', source: 'github', timestamp: now - 1 * dayMs,
       content: 'solana-ai-agents: Framework for building autonomous AI agents with Solana wallet integration',
-      metadata: { url: 'https://github.com/sendai/solana-ai-agents', author: 'sendai', metrics: { stars: 892, age_days: 4 }, tags: ['ai', 'agents', 'solana'] },
+      metadata: { url: 'https://github.com/sendaifun/solana-agent-kit', author: 'sendaifun', metrics: { stars: 892, age_days: 4 }, tags: ['ai', 'agents', 'solana'] },
       keywords: ['ai', 'agents', 'autonomous', 'wallet', 'framework', 'solana'], weight: 4.5
     },
     {
       id: 'github_ai_2', source: 'github', timestamp: now - 2 * dayMs,
       content: 'ai-defi-strategy: LLM-powered DeFi strategy optimizer using on-chain data feeds',
-      metadata: { url: 'https://github.com/arc-ai/ai-defi-strategy', author: 'arc-ai', metrics: { stars: 341, age_days: 6 }, tags: ['ai', 'defi', 'llm'] },
+      metadata: { url: 'https://github.com/arcpay/ai-defi-strategy', author: 'arcpay', metrics: { stars: 341, age_days: 6 }, tags: ['ai', 'defi', 'llm'] },
       keywords: ['ai', 'llm', 'defi', 'strategy', 'agents', 'optimization'], weight: 3.5
     },
     {
       id: 'github_ai_3', source: 'github', timestamp: now - 3 * dayMs,
       content: 'solana-model-marketplace: Decentralized marketplace for AI model inference on Solana',
-      metadata: { url: 'https://github.com/nosana-ci/model-marketplace', author: 'nosana-ci', metrics: { stars: 567, age_days: 10 }, tags: ['ai', 'inference', 'marketplace'] },
+      metadata: { url: 'https://github.com/nosana-io/nosana-node', author: 'nosana-io', metrics: { stars: 567, age_days: 10 }, tags: ['ai', 'inference', 'marketplace'] },
       keywords: ['ai', 'inference', 'marketplace', 'decentralized', 'model', 'gpu'], weight: 3.0
     },
     {
@@ -64,13 +64,13 @@ function generateDemoData() {
     {
       id: 'github_te_1', source: 'github', timestamp: now - 2 * dayMs,
       content: 'token-2022-examples: Production-ready examples of transfer hooks, metadata pointers, and confidential transfers',
-      metadata: { url: 'https://github.com/solana-developers/token-2022-examples', author: 'solana-developers', metrics: { stars: 234, age_days: 5 }, tags: ['token-2022', 'examples'] },
+      metadata: { url: 'https://github.com/solana-developers/program-examples', author: 'solana-developers', metrics: { stars: 234, age_days: 5 }, tags: ['token-2022', 'examples'] },
       keywords: ['token-2022', 'token-extensions', 'transfer-hooks', 'confidential-transfers', 'metadata'], weight: 3.0
     },
     {
       id: 'github_te_2', source: 'github', timestamp: now - 3 * dayMs,
       content: 'token-2022-migration-toolkit: Automated tool for migrating existing SPL tokens to Token Extensions',
-      metadata: { url: 'https://github.com/solana-labs/token-2022-migration', author: 'solana-labs', metrics: { stars: 178, age_days: 8 }, tags: ['token-2022', 'migration'] },
+      metadata: { url: 'https://github.com/solana-program/token-2022', author: 'solana-program', metrics: { stars: 178, age_days: 8 }, tags: ['token-2022', 'migration'] },
       keywords: ['token-2022', 'token-extensions', 'migration', 'spl-token', 'upgrade'], weight: 3.5
     },
     {
@@ -116,7 +116,7 @@ function generateDemoData() {
     {
       id: 'github_defi_1', source: 'github', timestamp: now - 2 * dayMs,
       content: 'jupiter-perps-v2: Next-gen perpetuals engine with advanced order types and cross-margin',
-      metadata: { url: 'https://github.com/jup-ag/jupiter-perps-v2', author: 'jup-ag', metrics: { stars: 445, age_days: 7 }, tags: ['defi', 'perps', 'jupiter'] },
+      metadata: { url: 'https://github.com/jup-ag/jupiter-core', author: 'jup-ag', metrics: { stars: 445, age_days: 7 }, tags: ['defi', 'perps', 'jupiter'] },
       keywords: ['defi', 'perpetuals', 'jupiter', 'trading', 'cross-margin', 'advanced-orders'], weight: 4.0
     },
     {
@@ -172,7 +172,7 @@ function generateDemoData() {
     {
       id: 'github_cnft_1', source: 'github', timestamp: now - 2 * dayMs,
       content: 'cnft-tools: CLI and SDK for minting, transferring, and managing compressed NFTs at scale',
-      metadata: { url: 'https://github.com/metaplex-foundation/cnft-tools', author: 'metaplex-foundation', metrics: { stars: 456, age_days: 8 }, tags: ['nft', 'compressed', 'tools'] },
+      metadata: { url: 'https://github.com/metaplex-foundation/mpl-bubblegum', author: 'metaplex-foundation', metrics: { stars: 456, age_days: 8 }, tags: ['nft', 'compressed', 'tools'] },
       keywords: ['compressed-nfts', 'state-compression', 'nft', 'minting', 'merkle-tree', 'tools'], weight: 4.0
     },
     {

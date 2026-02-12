@@ -194,13 +194,17 @@ export class NarrativeClusterer {
   }
 
   private formatTitle(theme: string, keywords: string[]): string {
-    // Create a readable title from theme and top keywords
-    const mainKeyword = keywords[0] || 'technology';
-    const formatted = mainKeyword.split('-').map(word => 
+    // Find the most descriptive keyword that isn't just the theme name
+    const themeWords = theme.toLowerCase().split(/[\s/]+/);
+    const distinctKeyword = keywords.find(kw =>
+      !themeWords.some(tw => kw.toLowerCase().includes(tw) || tw.includes(kw.toLowerCase()))
+    ) || keywords[1] || keywords[0] || 'growth';
+
+    const formatted = distinctKeyword.split('-').map(word =>
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
 
-    return `${theme}: ${formatted} Innovation`;
+    return `${theme}: ${formatted} Acceleration`;
   }
 
   private buildDescription(theme: string, keywords: string[], signals: Signal[], sources: string[]): string {

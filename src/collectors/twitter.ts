@@ -154,36 +154,10 @@ export class TwitterCollector {
   }
 
   private async collectHashtagActivity(): Promise<Signal[]> {
-    const signals: Signal[] = [];
-    
-    // Generate synthetic signals based on known Solana trends
-    // This is a fallback when APIs aren't available
-    const trendingTopics = [
-      { topic: 'Solana DeFi', keywords: ['defi', 'lending', 'dex', 'liquidity'] },
-      { topic: 'Solana NFTs', keywords: ['nft', 'collection', 'mint', 'marketplace'] },
-      { topic: 'Solana Gaming', keywords: ['gaming', 'web3-game', 'play-to-earn'] },
-      { topic: 'Solana Infrastructure', keywords: ['rpc', 'validator', 'infrastructure'] },
-      { topic: 'Solana Payments', keywords: ['payments', 'stablecoin', 'usdc'] },
-    ];
-
-    // Create placeholder signals (in production, these would come from actual scraping)
-    for (const trend of trendingTopics) {
-      signals.push({
-        id: `twitter_trend_${trend.topic}_${Date.now()}`,
-        source: 'twitter',
-        timestamp: Date.now(),
-        content: `Trending discussion: ${trend.topic}`,
-        metadata: {
-          metrics: {
-            estimated_mentions: Math.floor(Math.random() * 100) + 50
-          }
-        },
-        keywords: trend.keywords,
-        weight: 1.0
-      });
-    }
-
-    return signals;
+    // Hashtag scraping requires authenticated Twitter API access.
+    // When available, this method would scrape #Solana trending topics.
+    // Currently returns empty — real signals come from Nitter RSS and RSSHub above.
+    return [];
   }
 
   private cleanTweetContent(content: string): string {
