@@ -2,8 +2,8 @@
 
 > Detect emerging narratives and opportunities in the Solana ecosystem through multi-source signal analysis
 
-**Live Demo:** [Deployed on Vercel](#deployment)  
-**Repository:** [GitHub](https://github.com/yourusername/solana-narrative-detector)
+**Live Demo:** [Deployed on Vercel](#deployment)
+**Repository:** [GitHub](https://github.com/abhineetbiju-hackathon-bounties/solana-narrative-detector)
 
 ## 🎯 Overview
 
@@ -98,7 +98,7 @@ Each idea includes:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/solana-narrative-detector.git
+git clone https://github.com/abhineetbiju-hackathon-bounties/solana-narrative-detector.git
 cd solana-narrative-detector
 
 # Install dependencies
