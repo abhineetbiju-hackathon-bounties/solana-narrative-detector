@@ -1,0 +1,70 @@
+name: Refresh Narratives
+
+on:
+  schedule:
+    # Run on the 1st and 15th of every month at midnight UTC (fortnightly)
+    - cron: '0 0 1,15 * *'
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'scripts/**'
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Collect data
+        run: npm run collect
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          HELIUS_API_KEY: ${{ secrets.HELIUS_KEY }}
+          SOLANA_RPC: ${{ secrets.SOLANA_RPC }}
+
+      - name: Analyze data
+        run: npm run analyze
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'chore: update narratives [automated]'
+          file_pattern: 'data/**/*.json'
+          commit_user_name: 'Narrative Bot'
+          commit_user_email: 'bot@solana-narratives.dev'
+          commit_author: 'Narrative Bot <bot@solana-narratives.dev>'
+
+      - name: Deploy to Vercel
+        if: github.ref == 'refs/heads/main'
+        run: |
+          npm install -g vercel
+          vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Notify on failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🚨 Narrative Refresh Failed',
+              body: `The automated narrative refresh workflow failed. Check the [workflow run](${context.payload.repository.html_url}/actions/runs/${context.runId}) for details.`,
+              labels: ['automation', 'bug']
+            })

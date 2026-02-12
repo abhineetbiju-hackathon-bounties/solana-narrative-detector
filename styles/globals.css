@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-solana-purple to-solana-green bg-clip-text text-transparent;
+}
+
+.card {
+  @apply bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-solana-purple/50 transition-colors;
+}
+
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+}
+
+.badge-high {
+  @apply bg-green-900/50 text-green-300 border border-green-700;
+}
+
+.badge-medium {
+  @apply bg-yellow-900/50 text-yellow-300 border border-yellow-700;
+}
+
+.badge-low {
+  @apply bg-gray-700 text-gray-300 border border-gray-600;
+}
