@@ -7,8 +7,30 @@ export interface ProcessedSignal extends Signal {
 }
 
 export class SignalDetector {
+  private static STOP_KEYWORDS = new Set([
+    'https', 'http', 'www', 'com', 'org', 'dev', 'html', 'json', 'api',
+    'github', 'git', 'readme', 'license', 'master', 'main',
+    'rust', 'typescript', 'javascript', 'python', 'java', 'cpp',
+    'solana', 'program', 'programs', 'repo', 'repository',
+    'code', 'build', 'built', 'source', 'open', 'new', 'use', 'using',
+    'project', 'lib', 'library', 'example', 'examples', 'test', 'tests',
+    'the', 'and', 'for', 'with', 'this', 'that', 'from', 'are', 'was',
+    'into', 'about', 'based', 'also', 'just', 'only', 'more', 'some',
+    'implementation', 'tool', 'tools', 'app', 'application',
+  ]);
+
+  private cleanKeywords(signals: Signal[]): Signal[] {
+    return signals.map(signal => ({
+      ...signal,
+      keywords: signal.keywords.filter(kw => !SignalDetector.STOP_KEYWORDS.has(kw.toLowerCase()))
+    }));
+  }
+
   processSignals(signals: Signal[]): ProcessedSignal[] {
     if (signals.length === 0) return [];
+
+    // Clean noisy keywords before processing
+    signals = this.cleanKeywords(signals);
 
     // Calculate cross-source presence
     const keywordSourceMap = this.buildKeywordSourceMap(signals);

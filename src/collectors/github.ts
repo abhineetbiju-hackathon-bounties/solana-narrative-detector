@@ -161,17 +161,27 @@ export class GitHubCollector {
         .toLowerCase()
         .match(/\b[a-z]{3,}\b/g) || [];
       
-      const relevantWords = words.filter(word => 
-        !['the', 'and', 'for', 'with', 'this', 'that'].includes(word)
-      );
+      const stopWords = [
+        'the', 'and', 'for', 'with', 'this', 'that', 'from', 'are', 'was',
+        'were', 'been', 'being', 'have', 'has', 'had', 'does', 'did', 'will',
+        'would', 'could', 'should', 'may', 'might', 'can', 'shall', 'not',
+        'but', 'yet', 'nor', 'also', 'just', 'only', 'very', 'more', 'most',
+        'other', 'some', 'any', 'all', 'each', 'every', 'both', 'few',
+        'into', 'over', 'after', 'before', 'between', 'under', 'above',
+        'such', 'than', 'too', 'about', 'out', 'using', 'based', 'built',
+        // URL/tech artifacts
+        'https', 'http', 'www', 'com', 'org', 'dev', 'html', 'json', 'api',
+        // Generic programming terms
+        'rust', 'typescript', 'javascript', 'python', 'code', 'build',
+        'project', 'repo', 'repository', 'lib', 'library', 'implementation',
+        'example', 'examples', 'test', 'tests', 'new', 'use', 'open', 'source',
+      ];
+      const relevantWords = words.filter(word => !stopWords.includes(word));
       
       relevantWords.forEach(word => keywords.add(word));
     }
     
-    // Add language
-    if (repo.language) {
-      keywords.add(repo.language.toLowerCase());
-    }
+    // Skip language — programming language names pollute narrative clustering
     
     // Extract from repo name
     const nameParts = repo.full_name.toLowerCase().split(/[-_/]/);

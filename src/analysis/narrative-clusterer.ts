@@ -194,17 +194,30 @@ export class NarrativeClusterer {
   }
 
   private formatTitle(theme: string, keywords: string[]): string {
-    // Find the most descriptive keyword that isn't just the theme name
+    // Filter out generic/noisy keywords
+    const genericWords = new Set([
+      'solana', 'https', 'http', 'com', 'org', 'www', 'github', 'git',
+      'rust', 'typescript', 'javascript', 'python', 'program', 'programs',
+      'build', 'built', 'code', 'source', 'open', 'new', 'use', 'using',
+      'api', 'sdk', 'lib', 'library', 'tool', 'tools', 'test', 'tests',
+      'repo', 'project', 'example', 'examples', 'explorer', 'html', 'json',
+    ]);
+
     const themeWords = theme.toLowerCase().split(/[\s/]+/);
     const distinctKeyword = keywords.find(kw =>
+      !genericWords.has(kw.toLowerCase()) &&
       !themeWords.some(tw => kw.toLowerCase().includes(tw) || tw.includes(kw.toLowerCase()))
-    ) || keywords[1] || keywords[0] || 'growth';
+    ) || keywords.find(kw => !genericWords.has(kw.toLowerCase())) || keywords[0] || 'growth';
 
     const formatted = distinctKeyword.split('-').map(word =>
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
 
-    return `${theme}: ${formatted} Acceleration`;
+    // Vary the suffix based on narrative metrics
+    const suffixes = ['Growth', 'Momentum', 'Surge', 'Wave', 'Expansion', 'Rise'];
+    const suffixIndex = Math.abs(formatted.charCodeAt(0)) % suffixes.length;
+
+    return `${theme}: ${formatted} ${suffixes[suffixIndex]}`;
   }
 
   private buildDescription(theme: string, keywords: string[], signals: Signal[], sources: string[]): string {

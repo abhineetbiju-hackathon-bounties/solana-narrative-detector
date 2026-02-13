@@ -1,160 +1,952 @@
 {
   "narratives": [
     {
-      "id": "narrative_1771003300441_iv21cm",
-      "title": "DeFi: Rust Acceleration",
-      "description": "Detected 3 signals across github indicating emerging activity in defi. Key themes include: rust, solana, programs, defi, percolator. This represents new financial primitives and protocols being built on Solana.",
+      "id": "narrative_1771004437179_1303yj",
+      "title": "DePIN: Physical Infrastructure Surge",
+      "description": "Detected 4 signals across 4 different sources (onchain, twitter, github, report) indicating emerging activity in depin. Key themes include: depin, physical-infrastructure, render, network, helium. Physical infrastructure networks being tokenized on Solana.",
       "signals": [
         {
-          "id": "github_psyto/matcher-sdk_1771003225993",
-          "source": "github",
-          "timestamp": 1770803993000,
-          "content": "psyto/matcher-sdk: Shared Rust library for Percolator custom matching programs on Solana",
+          "id": "onchain_depin_1",
+          "source": "onchain",
+          "timestamp": 1770918036583,
+          "content": "Render Network: GPU compute usage up 280% — 15,000+ active node operators on Solana",
           "metadata": {
-            "url": "https://github.com/psyto/matcher-sdk",
-            "author": "psyto",
+            "url": "https://solscan.io/token/rndrizKT3MK1iimdxRdWabcF7Zg7AR5T4nud4EkHBof",
             "metrics": {
-              "stars": 1,
-              "age_days": 2
+              "active_nodes": 15000,
+              "growth_pct": 280
+            }
+          },
+          "keywords": [
+            "depin",
+            "render",
+            "gpu",
+            "compute",
+            "physical-infrastructure",
+            "network"
+          ],
+          "weight": 3.5,
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.866877046919334,
+          "crossSourceScore": 2.8333333333333335
+        },
+        {
+          "id": "twitter_depin_1",
+          "source": "twitter",
+          "timestamp": 1770831636583,
+          "content": "@aeyakovenko: DePIN on Solana is quietly becoming massive. Helium, Render, Hivemapper — real hardware, real revenue.",
+          "metadata": {
+            "url": "https://twitter.com/aeyakovenko/status/depin1",
+            "author": "aeyakovenko"
+          },
+          "keywords": [
+            "depin",
+            "helium",
+            "render",
+            "hivemapper",
+            "physical-infrastructure",
+            "revenue"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.7514765537750719,
+          "crossSourceScore": 2.8333333333333335
+        },
+        {
+          "id": "github_depin_1",
+          "source": "github",
+          "timestamp": 1770745236583,
+          "content": "helium-iot-sdk: Helium IoT network SDK for building connected devices on Solana",
+          "metadata": {
+            "url": "https://github.com/helium/helium-iot-sdk",
+            "author": "helium",
+            "metrics": {
+              "stars": 312,
+              "age_days": 12
             },
             "tags": [
-              "defi",
-              "percolator",
-              "perpetuals",
-              "rust",
-              "sdk",
-              "solana",
-              "solana-program"
+              "depin",
+              "iot",
+              "helium"
             ]
           },
           "keywords": [
-            "defi",
-            "percolator",
-            "perpetuals",
-            "rust",
-            "sdk",
-            "solana",
-            "solana-program",
-            "shared",
-            "library",
-            "custom",
-            "matching",
-            "programs",
-            "psyto",
-            "matcher"
+            "depin",
+            "iot",
+            "helium",
+            "physical-infrastructure",
+            "devices",
+            "network"
           ],
-          "weight": 3.5,
-          "normalizedWeight": 0.375,
-          "recencyScore": 0.719252616392858,
-          "crossSourceScore": 1.1428571428571428
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.6514384166480388,
+          "crossSourceScore": 2.6666666666666665
         },
         {
-          "id": "github_psyto/percolator-matchers_1771003225993",
-          "source": "github",
-          "timestamp": 1770618847000,
-          "content": "psyto/percolator-matchers: Custom matching programs for the Percolator perpetual futures engine on Solana. Each matcher plugs into Percolator's CPI interface to provide specialized pricing, compliance, or execution logic.",
+          "id": "report_depin_1",
+          "source": "report",
+          "timestamp": 1770399636583,
+          "content": "Messari Research: DePIN on Solana — Physical infrastructure networks generating $50M+ annual protocol revenue",
           "metadata": {
-            "url": "https://github.com/psyto/percolator-matchers",
-            "author": "psyto",
+            "url": "https://messari.io/report/depin-solana-2026",
+            "author": "Messari Research",
             "metrics": {
-              "stars": 1,
+              "report_age_days": 7
+            }
+          },
+          "keywords": [
+            "depin",
+            "physical-infrastructure",
+            "revenue",
+            "helium",
+            "render",
+            "network"
+          ],
+          "weight": 2,
+          "normalizedWeight": 0,
+          "recencyScore": 0.3678790792531887,
+          "crossSourceScore": 3.1666666666666665
+        }
+      ],
+      "keywords": [
+        "depin",
+        "render",
+        "gpu",
+        "compute",
+        "physical-infrastructure",
+        "network",
+        "helium",
+        "hivemapper",
+        "revenue",
+        "iot",
+        "devices"
+      ],
+      "score": 106.45053710464343,
+      "metrics": {
+        "crossSourceCount": 4,
+        "velocity": 3,
+        "recency": 0.7225268552321714,
+        "keyVoiceMentions": 1
+      },
+      "timestamp": 1771004437179,
+      "ideas": [
+        {
+          "title": "Developer SDK for Depin",
+          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with depin-related protocols. Include code examples, CLI tools, and testing utilities.",
+          "reasoning": "With 4 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
+          "targetAudience": "Solana developers building dApps",
+          "difficulty": "Medium",
+          "impact": "High"
+        },
+        {
+          "title": "DePIN Analytics Dashboard",
+          "description": "Real-time dashboard aggregating all depin activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
+          "reasoning": "Cross-source signals (4 sources) indicate fragmented information. Users need a single place to monitor this space.",
+          "targetAudience": "Traders, researchers, and power users",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "\"DePIN on Solana\" Interactive Course",
+          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
+          "reasoning": "Emerging narrative with 1 key voice mentions. Early educational content can capture attention as ecosystem grows.",
+          "targetAudience": "Developers new to this Solana vertical",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Smart Alert & Automation Platform",
+          "description": "Custom alerts and automated actions for depin, render, gpu events. Set conditions, get notified, auto-execute strategies.",
+          "reasoning": "High velocity (3.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
+          "targetAudience": "Active traders and strategists",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Depin Integration Layer",
+          "description": "Middleware that connects existing Solana apps to emerging depin protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
+          "reasoning": "Multiple protocols detected (4 signals) but no standard integration. First-mover advantage for abstraction layer.",
+          "targetAudience": "Existing Solana protocols and dApps",
+          "difficulty": "Hard",
+          "impact": "High"
+        }
+      ]
+    },
+    {
+      "id": "narrative_1771004437179_3ttwwg",
+      "title": "Token Extensions: Adoption Rise",
+      "description": "Detected 5 signals across 4 different sources (onchain, github, twitter, report) indicating emerging activity in token extensions. Key themes include: token-2022, token-extensions, adoption, transfer-hooks, confidential-transfers. Adoption of Token-2022 program and its advanced features.",
+      "signals": [
+        {
+          "id": "onchain_te_1",
+          "source": "onchain",
+          "timestamp": 1770831636583,
+          "content": "Token-2022 program usage spiked 340% this week — 1,847 new token mints using Token Extensions",
+          "metadata": {
+            "url": "https://solscan.io/account/TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+            "metrics": {
+              "weekly_mints": 1847,
+              "growth_pct": 340
+            }
+          },
+          "keywords": [
+            "token-2022",
+            "token-extensions",
+            "minting",
+            "growth",
+            "adoption"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.8,
+          "recencyScore": 0.7514765537750719,
+          "crossSourceScore": 2.8
+        },
+        {
+          "id": "github_te_1",
+          "source": "github",
+          "timestamp": 1770831636583,
+          "content": "token-2022-examples: Production-ready examples of transfer hooks, metadata pointers, and confidential transfers",
+          "metadata": {
+            "url": "https://github.com/solana-developers/program-examples",
+            "author": "solana-developers",
+            "metrics": {
+              "stars": 234,
+              "age_days": 5
+            },
+            "tags": [
+              "token-2022",
+              "examples"
+            ]
+          },
+          "keywords": [
+            "token-2022",
+            "token-extensions",
+            "transfer-hooks",
+            "confidential-transfers",
+            "metadata"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.7514765537750719,
+          "crossSourceScore": 2.6
+        },
+        {
+          "id": "twitter_te_1",
+          "source": "twitter",
+          "timestamp": 1770918036583,
+          "content": "@armaniferrante: Token-2022 adoption is accelerating. Transfer hooks enable programmable compliance — this changes everything for RWA on Solana.",
+          "metadata": {
+            "url": "https://twitter.com/armaniferrante/status/te1",
+            "author": "armaniferrante"
+          },
+          "keywords": [
+            "token-2022",
+            "token-extensions",
+            "transfer-hooks",
+            "rwa",
+            "compliance",
+            "programmable"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.2,
+          "recencyScore": 0.866877046919334,
+          "crossSourceScore": 2.3333333333333335
+        },
+        {
+          "id": "report_te_1",
+          "source": "report",
+          "timestamp": 1770572436583,
+          "content": "Messari Research: Token Extensions on Solana — Programmable tokens and the path to institutional adoption",
+          "metadata": {
+            "url": "https://messari.io/report/token-extensions-solana",
+            "author": "Messari Research",
+            "metrics": {
+              "report_age_days": 5
+            }
+          },
+          "keywords": [
+            "token-2022",
+            "token-extensions",
+            "programmable",
+            "institutional",
+            "adoption"
+          ],
+          "weight": 2,
+          "normalizedWeight": 0,
+          "recencyScore": 0.4895411779479185,
+          "crossSourceScore": 2.8
+        },
+        {
+          "id": "twitter_te_2",
+          "source": "twitter",
+          "timestamp": 1770745236583,
+          "content": "@rajgokal: Confidential transfers in Token-2022 are a game changer for institutional DeFi. Privacy without compromising compliance.",
+          "metadata": {
+            "url": "https://twitter.com/rajgokal/status/te2",
+            "author": "rajgokal"
+          },
+          "keywords": [
+            "token-2022",
+            "confidential-transfers",
+            "privacy",
+            "institutional",
+            "defi",
+            "compliance"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.2,
+          "recencyScore": 0.6514384166480388,
+          "crossSourceScore": 2.3333333333333335
+        }
+      ],
+      "keywords": [
+        "token-2022",
+        "token-extensions",
+        "minting",
+        "growth",
+        "adoption",
+        "transfer-hooks",
+        "confidential-transfers",
+        "metadata",
+        "rwa",
+        "compliance",
+        "programmable",
+        "institutional",
+        "privacy",
+        "defi"
+      ],
+      "score": 97.92102107841886,
+      "metrics": {
+        "crossSourceCount": 4,
+        "velocity": 2,
+        "recency": 0.7710510539209429,
+        "keyVoiceMentions": 2
+      },
+      "timestamp": 1771004437179,
+      "ideas": [
+        {
+          "title": "Developer SDK for Token 2022",
+          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with token-2022-related protocols. Include code examples, CLI tools, and testing utilities.",
+          "reasoning": "With 5 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
+          "targetAudience": "Solana developers building dApps",
+          "difficulty": "Medium",
+          "impact": "High"
+        },
+        {
+          "title": "Token Extensions Analytics Dashboard",
+          "description": "Real-time dashboard aggregating all token extensions activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
+          "reasoning": "Cross-source signals (4 sources) indicate fragmented information. Users need a single place to monitor this space.",
+          "targetAudience": "Traders, researchers, and power users",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Simplified DeFi Aggregator",
+          "description": "User-friendly mobile app that aggregates best rates across  protocols. One-tap optimal routing.",
+          "reasoning": "High velocity (2.0x) shows rapid innovation, but complexity is increasing. Users need simplification.",
+          "targetAudience": "Crypto newcomers and mobile-first users",
+          "difficulty": "Medium",
+          "impact": "High"
+        },
+        {
+          "title": "\"Token Extensions on Solana\" Interactive Course",
+          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
+          "reasoning": "Emerging narrative with 2 key voice mentions. Early educational content can capture attention as ecosystem grows.",
+          "targetAudience": "Developers new to this Solana vertical",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Smart Alert & Automation Platform",
+          "description": "Custom alerts and automated actions for token-2022, token-extensions, minting events. Set conditions, get notified, auto-execute strategies.",
+          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
+          "targetAudience": "Active traders and strategists",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        }
+      ]
+    },
+    {
+      "id": "narrative_1771004437179_vx7r8",
+      "title": "AI: Agents Rise",
+      "description": "Detected 4 signals across 4 different sources (github, onchain, twitter, report) indicating emerging activity in ai. Key themes include: ai, agents, autonomous, wallet, framework. AI model hosting, inference, or data marketplaces on Solana.",
+      "signals": [
+        {
+          "id": "github_ai_1",
+          "source": "github",
+          "timestamp": 1770918036583,
+          "content": "solana-ai-agents: Framework for building autonomous AI agents with Solana wallet integration",
+          "metadata": {
+            "url": "https://github.com/sendaifun/solana-agent-kit",
+            "author": "sendaifun",
+            "metrics": {
+              "stars": 892,
               "age_days": 4
             },
             "tags": [
-              "anchor",
-              "defi",
-              "matching-engine",
-              "percolator",
-              "perpetuals",
-              "rust",
-              "solana",
-              "solana-program",
-              "typescript"
+              "ai",
+              "agents",
+              "solana"
             ]
           },
           "keywords": [
-            "anchor",
-            "defi",
-            "matching-engine",
-            "percolator",
-            "perpetuals",
-            "rust",
-            "solana",
-            "solana-program",
-            "typescript",
-            "custom",
-            "matching",
-            "programs",
-            "perpetual",
-            "futures",
-            "engine"
+            "ai",
+            "agents",
+            "autonomous",
+            "wallet",
+            "framework"
           ],
-          "weight": 3.5,
-          "normalizedWeight": 0.375,
-          "recencyScore": 0.5295803998496524,
-          "crossSourceScore": 1.1333333333333333
+          "weight": 4.5,
+          "normalizedWeight": 1,
+          "recencyScore": 0.866877046919334,
+          "crossSourceScore": 2.6
         },
         {
-          "id": "github_psyto/stratum_1771003225993",
-          "source": "github",
-          "timestamp": 1770458109000,
-          "content": "psyto/stratum: State primitives for Solana programs built with Anchor.",
+          "id": "onchain_ai_1",
+          "source": "onchain",
+          "timestamp": 1770918036583,
+          "content": "Surge in AI-related program deployments: 47 new programs with AI/ML metadata in past 7 days",
           "metadata": {
-            "url": "https://github.com/psyto/stratum",
-            "author": "psyto",
+            "url": "https://solscan.io",
             "metrics": {
-              "stars": 1,
-              "age_days": 6
+              "new_programs": 47,
+              "weekly_growth": 3.2
+            }
+          },
+          "keywords": [
+            "ai",
+            "agents",
+            "deployment",
+            "growth"
+          ],
+          "weight": 3.5,
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.866877046919334,
+          "crossSourceScore": 2.75
+        },
+        {
+          "id": "twitter_ai_1",
+          "source": "twitter",
+          "timestamp": 1770918036583,
+          "content": "@aeyakovenko: AI agents are the next frontier for crypto. Solana's speed makes it the natural home for autonomous agent transactions.",
+          "metadata": {
+            "url": "https://twitter.com/aeyakovenko/status/ai1",
+            "author": "aeyakovenko"
+          },
+          "keywords": [
+            "ai",
+            "agents",
+            "autonomous",
+            "transactions",
+            "speed"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.866877046919334,
+          "crossSourceScore": 2.6
+        },
+        {
+          "id": "report_ai_1",
+          "source": "report",
+          "timestamp": 1770658836583,
+          "content": "Helius Blog: AI Agents on Solana — How sub-second finality enables real-time autonomous trading",
+          "metadata": {
+            "url": "https://helius.dev/blog/ai-agents-solana",
+            "author": "Helius Blog",
+            "metrics": {
+              "report_age_days": 4
+            }
+          },
+          "keywords": [
+            "ai",
+            "agents",
+            "autonomous",
+            "trading",
+            "finality"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.2,
+          "recencyScore": 0.5647175664404356,
+          "crossSourceScore": 3
+        }
+      ],
+      "keywords": [
+        "ai",
+        "agents",
+        "autonomous",
+        "wallet",
+        "framework",
+        "deployment",
+        "growth",
+        "transactions",
+        "speed",
+        "trading",
+        "finality"
+      ],
+      "score": 93.78912883399036,
+      "metrics": {
+        "crossSourceCount": 4,
+        "velocity": 2,
+        "recency": 0.8394564416995177,
+        "keyVoiceMentions": 1
+      },
+      "timestamp": 1771004437179,
+      "ideas": [
+        {
+          "title": "Developer SDK for Ai",
+          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with ai-related protocols. Include code examples, CLI tools, and testing utilities.",
+          "reasoning": "With 4 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
+          "targetAudience": "Solana developers building dApps",
+          "difficulty": "Medium",
+          "impact": "High"
+        },
+        {
+          "title": "AI Analytics Dashboard",
+          "description": "Real-time dashboard aggregating all ai activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
+          "reasoning": "Cross-source signals (4 sources) indicate fragmented information. Users need a single place to monitor this space.",
+          "targetAudience": "Traders, researchers, and power users",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "\"AI on Solana\" Interactive Course",
+          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
+          "reasoning": "Emerging narrative with 1 key voice mentions. Early educational content can capture attention as ecosystem grows.",
+          "targetAudience": "Developers new to this Solana vertical",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Smart Alert & Automation Platform",
+          "description": "Custom alerts and automated actions for ai, agents, autonomous events. Set conditions, get notified, auto-execute strategies.",
+          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
+          "targetAudience": "Active traders and strategists",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Ai Integration Layer",
+          "description": "Middleware that connects existing Solana apps to emerging ai protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
+          "reasoning": "Multiple protocols detected (4 signals) but no standard integration. First-mover advantage for abstraction layer.",
+          "targetAudience": "Existing Solana protocols and dApps",
+          "difficulty": "Hard",
+          "impact": "High"
+        }
+      ]
+    },
+    {
+      "id": "narrative_1771004437179_kpulkg",
+      "title": "NFTs: State Compression Rise",
+      "description": "Detected 4 signals across 4 different sources (github, onchain, twitter, report) indicating emerging activity in nfts. Key themes include: compressed-nfts, state-compression, nft, scaling, minting. Activity in digital collectibles, compressed NFTs, or new marketplace features.",
+      "signals": [
+        {
+          "id": "github_cnft_1",
+          "source": "github",
+          "timestamp": 1770831636583,
+          "content": "cnft-tools: CLI and SDK for minting, transferring, and managing compressed NFTs at scale",
+          "metadata": {
+            "url": "https://github.com/metaplex-foundation/mpl-bubblegum",
+            "author": "metaplex-foundation",
+            "metrics": {
+              "stars": 456,
+              "age_days": 8
             },
             "tags": [
-              "rust",
-              "solana",
-              "typescript"
+              "nft",
+              "compressed",
+              "tools"
             ]
           },
           "keywords": [
-            "rust",
-            "solana",
-            "typescript",
-            "state",
-            "primitives",
-            "programs",
-            "built",
-            "anchor",
-            "psyto",
-            "stratum"
+            "compressed-nfts",
+            "state-compression",
+            "nft",
+            "minting",
+            "merkle-tree"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.8,
+          "recencyScore": 0.7514765537750719,
+          "crossSourceScore": 3.2
+        },
+        {
+          "id": "onchain_cnft_1",
+          "source": "onchain",
+          "timestamp": 1770918036583,
+          "content": "State compression: 50M+ compressed NFTs minted in February, 3x increase from January",
+          "metadata": {
+            "url": "https://solscan.io",
+            "metrics": {
+              "monthly_mints": 50000000,
+              "growth_pct": 200
+            }
+          },
+          "keywords": [
+            "compressed-nfts",
+            "state-compression",
+            "nft",
+            "minting",
+            "growth",
+            "scaling"
           ],
           "weight": 3.5,
-          "normalizedWeight": 0.375,
-          "recencyScore": 0.4059843012349263,
-          "crossSourceScore": 1.1
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.866877046919334,
+          "crossSourceScore": 3.1666666666666665
+        },
+        {
+          "id": "twitter_cnft_1",
+          "source": "twitter",
+          "timestamp": 1770831636583,
+          "content": "@mertimus: Compressed NFTs are the future. 50M+ minted this month alone. 1000x cheaper than Ethereum.",
+          "metadata": {
+            "url": "https://twitter.com/mertimus/status/cnft1",
+            "author": "mertimus"
+          },
+          "keywords": [
+            "compressed-nfts",
+            "state-compression",
+            "nft",
+            "scaling",
+            "cost-reduction"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.7514765537750719,
+          "crossSourceScore": 3.4
+        },
+        {
+          "id": "report_cnft_1",
+          "source": "report",
+          "timestamp": 1770572436583,
+          "content": "Helius Blog: State Compression Deep Dive — How compressed NFTs achieve 1000x cost reduction using concurrent Merkle trees",
+          "metadata": {
+            "url": "https://helius.dev/blog/state-compression",
+            "author": "Helius Blog",
+            "metrics": {
+              "report_age_days": 5
+            }
+          },
+          "keywords": [
+            "compressed-nfts",
+            "state-compression",
+            "cost-reduction",
+            "merkle-tree",
+            "scaling",
+            "nft"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.2,
+          "recencyScore": 0.4895411779479185,
+          "crossSourceScore": 3.1666666666666665
+        }
+      ],
+      "keywords": [
+        "compressed-nfts",
+        "state-compression",
+        "nft",
+        "minting",
+        "merkle-tree",
+        "growth",
+        "scaling",
+        "cost-reduction"
+      ],
+      "score": 92.57600491686544,
+      "metrics": {
+        "crossSourceCount": 4,
+        "velocity": 2,
+        "recency": 0.7788002458432722,
+        "keyVoiceMentions": 1
+      },
+      "timestamp": 1771004437179,
+      "ideas": [
+        {
+          "title": "Developer SDK for Compressed Nfts",
+          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with compressed-nfts-related protocols. Include code examples, CLI tools, and testing utilities.",
+          "reasoning": "With 4 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
+          "targetAudience": "Solana developers building dApps",
+          "difficulty": "Medium",
+          "impact": "High"
+        },
+        {
+          "title": "NFTs Analytics Dashboard",
+          "description": "Real-time dashboard aggregating all nfts activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
+          "reasoning": "Cross-source signals (4 sources) indicate fragmented information. Users need a single place to monitor this space.",
+          "targetAudience": "Traders, researchers, and power users",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "NFT Discovery & Trading Bot",
+          "description": "Telegram/Discord bot for real-time NFT mint alerts, floor price tracking, and instant buying. Focus on the emerging collections in this narrative.",
+          "reasoning": "4 signals suggest active NFT ecosystem growth. Traders need faster ways to discover and act on opportunities.",
+          "targetAudience": "NFT traders and collectors",
+          "difficulty": "Easy",
+          "impact": "Medium"
+        },
+        {
+          "title": "\"NFTs on Solana\" Interactive Course",
+          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
+          "reasoning": "Emerging narrative with 1 key voice mentions. Early educational content can capture attention as ecosystem grows.",
+          "targetAudience": "Developers new to this Solana vertical",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Smart Alert & Automation Platform",
+          "description": "Custom alerts and automated actions for compressed-nfts, state-compression, nft events. Set conditions, get notified, auto-execute strategies.",
+          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
+          "targetAudience": "Active traders and strategists",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        }
+      ]
+    },
+    {
+      "id": "narrative_1771004437179_33vfxc",
+      "title": "DeFi: Tvl Growth",
+      "description": "Detected 3 signals across 3 different sources (twitter, onchain, report) indicating emerging activity in defi. Key themes include: defi, tvl, liquidity, composability, lending. This represents new financial primitives and protocols being built on Solana.",
+      "signals": [
+        {
+          "id": "twitter_defi_1",
+          "source": "twitter",
+          "timestamp": 1770918036583,
+          "content": "@mertimus: Solana DeFi TVL hit $12B. That's a 5x from a year ago. The composability flywheel is real.",
+          "metadata": {
+            "url": "https://twitter.com/mertimus/status/defi1",
+            "author": "mertimus"
+          },
+          "keywords": [
+            "defi",
+            "tvl",
+            "liquidity",
+            "composability",
+            "growth"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.866877046919334,
+          "crossSourceScore": 2.8
+        },
+        {
+          "id": "onchain_defi_2",
+          "source": "onchain",
+          "timestamp": 1770831636583,
+          "content": "Kamino lending TVL crossed $2B — highest ever for a Solana lending protocol",
+          "metadata": {
+            "url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "metrics": {
+              "tvl": 2000000000
+            }
+          },
+          "keywords": [
+            "defi",
+            "lending",
+            "tvl",
+            "kamino",
+            "liquidity",
+            "yield"
+          ],
+          "weight": 3.5,
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.7514765537750719,
+          "crossSourceScore": 2.3333333333333335
+        },
+        {
+          "id": "report_defi_1",
+          "source": "report",
+          "timestamp": 1770486036583,
+          "content": "Helius Blog: Solana DeFi Deep Dive — Why composability and speed are driving record TVL",
+          "metadata": {
+            "url": "https://helius.dev/blog/solana-defi-deep-dive",
+            "author": "Helius Blog",
+            "metrics": {
+              "report_age_days": 6
+            }
+          },
+          "keywords": [
+            "defi",
+            "tvl",
+            "composability",
+            "liquidity",
+            "jupiter",
+            "lending"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.2,
+          "recencyScore": 0.4243724281807215,
+          "crossSourceScore": 3
         }
       ],
       "keywords": [
         "defi",
-        "percolator",
-        "perpetuals",
-        "rust",
-        "sdk",
-        "solana",
-        "solana-program",
-        "shared",
-        "library",
-        "custom",
-        "matching",
-        "programs",
-        "psyto",
-        "matcher",
-        "anchor"
+        "tvl",
+        "liquidity",
+        "composability",
+        "growth",
+        "lending",
+        "kamino",
+        "yield",
+        "jupiter"
       ],
-      "score": 54.43814182949065,
+      "score": 81.3163541930902,
       "metrics": {
-        "crossSourceCount": 1,
+        "crossSourceCount": 3,
         "velocity": 2,
-        "recency": 0.6469070914745323,
+        "recency": 0.7408177096545104,
+        "keyVoiceMentions": 1
+      },
+      "timestamp": 1771004437179,
+      "ideas": [
+        {
+          "title": "DeFi Analytics Dashboard",
+          "description": "Real-time dashboard aggregating all defi activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
+          "reasoning": "Cross-source signals (3 sources) indicate fragmented information. Users need a single place to monitor this space.",
+          "targetAudience": "Traders, researchers, and power users",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Simplified DeFi Aggregator",
+          "description": "User-friendly mobile app that aggregates best rates across lending protocols. One-tap optimal routing.",
+          "reasoning": "High velocity (2.0x) shows rapid innovation, but complexity is increasing. Users need simplification.",
+          "targetAudience": "Crypto newcomers and mobile-first users",
+          "difficulty": "Medium",
+          "impact": "High"
+        },
+        {
+          "title": "\"DeFi on Solana\" Interactive Course",
+          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
+          "reasoning": "Emerging narrative with 1 key voice mentions. Early educational content can capture attention as ecosystem grows.",
+          "targetAudience": "Developers new to this Solana vertical",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Smart Alert & Automation Platform",
+          "description": "Custom alerts and automated actions for defi, tvl, liquidity events. Set conditions, get notified, auto-execute strategies.",
+          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
+          "targetAudience": "Active traders and strategists",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Defi Integration Layer",
+          "description": "Middleware that connects existing Solana apps to emerging defi protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
+          "reasoning": "Multiple protocols detected (3 signals) but no standard integration. First-mover advantage for abstraction layer.",
+          "targetAudience": "Existing Solana protocols and dApps",
+          "difficulty": "Hard",
+          "impact": "High"
+        }
+      ]
+    },
+    {
+      "id": "narrative_1771004437179_9ha3d",
+      "title": "DeFi: Jupiter Surge",
+      "description": "Detected 3 signals across 3 different sources (onchain, github, twitter) indicating emerging activity in defi. Key themes include: defi, jupiter, dex, trading, aggregator. This represents new financial primitives and protocols being built on Solana.",
+      "signals": [
+        {
+          "id": "onchain_defi_1",
+          "source": "onchain",
+          "timestamp": 1770918036583,
+          "content": "Jupiter Aggregator hit record volume: $4.2B in 7-day trading volume, up 67% week-over-week",
+          "metadata": {
+            "url": "https://solscan.io/account/JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+            "metrics": {
+              "volume_7d": 4200000000,
+              "growth_pct": 67
+            }
+          },
+          "keywords": [
+            "defi",
+            "dex",
+            "jupiter",
+            "aggregator",
+            "trading",
+            "volume"
+          ],
+          "weight": 4.5,
+          "normalizedWeight": 1,
+          "recencyScore": 0.866877046919334,
+          "crossSourceScore": 2.5
+        },
+        {
+          "id": "github_defi_1",
+          "source": "github",
+          "timestamp": 1770831636583,
+          "content": "jupiter-perps-v2: Next-gen perpetuals engine with advanced order types and cross-margin",
+          "metadata": {
+            "url": "https://github.com/jup-ag/jupiter-core",
+            "author": "jup-ag",
+            "metrics": {
+              "stars": 445,
+              "age_days": 7
+            },
+            "tags": [
+              "defi",
+              "perps",
+              "jupiter"
+            ]
+          },
+          "keywords": [
+            "defi",
+            "perpetuals",
+            "jupiter",
+            "trading",
+            "cross-margin",
+            "advanced-orders"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.8,
+          "recencyScore": 0.7514765537750719,
+          "crossSourceScore": 2.3333333333333335
+        },
+        {
+          "id": "twitter_defi_2",
+          "source": "twitter",
+          "timestamp": 1770745236583,
+          "content": "@Jupiter_HQ: Limit orders and DCA now processing $500M/week. DeFi on Solana is going mainstream.",
+          "metadata": {
+            "url": "https://twitter.com/Jupiter_HQ/status/defi2",
+            "author": "Jupiter_HQ"
+          },
+          "keywords": [
+            "defi",
+            "dex",
+            "jupiter",
+            "limit-orders",
+            "dca",
+            "mainstream"
+          ],
+          "weight": 2,
+          "normalizedWeight": 0,
+          "recencyScore": 0.6514384166480388,
+          "crossSourceScore": 2.1666666666666665
+        }
+      ],
+      "keywords": [
+        "defi",
+        "dex",
+        "jupiter",
+        "aggregator",
+        "trading",
+        "volume",
+        "perpetuals",
+        "cross-margin",
+        "advanced-orders",
+        "limit-orders",
+        "dca",
+        "mainstream"
+      ],
+      "score": 77.87460376611148,
+      "metrics": {
+        "crossSourceCount": 3,
+        "velocity": 2,
+        "recency": 0.8187301883055738,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771003300441,
+      "timestamp": 1771004437179,
       "ideas": [
         {
           "title": "Developer SDK for Defi",
@@ -167,14 +959,14 @@
         {
           "title": "DeFi Analytics Dashboard",
           "description": "Real-time dashboard aggregating all defi activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
-          "reasoning": "Cross-source signals (1 sources) indicate fragmented information. Users need a single place to monitor this space.",
+          "reasoning": "Cross-source signals (3 sources) indicate fragmented information. Users need a single place to monitor this space.",
           "targetAudience": "Traders, researchers, and power users",
           "difficulty": "Medium",
           "impact": "Medium"
         },
         {
           "title": "Simplified DeFi Aggregator",
-          "description": "User-friendly mobile app that aggregates best rates across  protocols. One-tap optimal routing.",
+          "description": "User-friendly mobile app that aggregates best rates across dex protocols. One-tap optimal routing.",
           "reasoning": "High velocity (2.0x) shows rapid innovation, but complexity is increasing. Users need simplification.",
           "targetAudience": "Crypto newcomers and mobile-first users",
           "difficulty": "Medium",
@@ -190,973 +982,22 @@
         },
         {
           "title": "Smart Alert & Automation Platform",
-          "description": "Custom alerts and automated actions for defi, percolator, perpetuals events. Set conditions, get notified, auto-execute strategies.",
+          "description": "Custom alerts and automated actions for defi, dex, jupiter events. Set conditions, get notified, auto-execute strategies.",
           "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
           "targetAudience": "Active traders and strategists",
           "difficulty": "Medium",
           "impact": "Medium"
-        }
-      ]
-    },
-    {
-      "id": "narrative_1771003300441_l5atf",
-      "title": "DeFi: Bitcoin Acceleration",
-      "description": "Detected 4 signals across github indicating emerging activity in defi. Key themes include: bitcoin, bitcoin-wallet, crypto-wallet, defi, ethereum. This represents new financial primitives and protocols being built on Solana.",
-      "signals": [
-        {
-          "id": "github_trending_gemwalletcom/gem-ios_1771003231327",
-          "source": "github",
-          "timestamp": 1771002183000,
-          "content": "Trending: gemwalletcom/gem-ios - Gem - Open Source iOS Crypto Wallet",
-          "metadata": {
-            "url": "https://github.com/gemwalletcom/gem-ios",
-            "author": "gemwalletcom",
-            "metrics": {
-              "stars": 293
-            },
-            "tags": [
-              "bitcoin",
-              "bitcoin-wallet",
-              "crypto-wallet",
-              "cryptocurrency",
-              "cryptowallet",
-              "defi",
-              "ethereum",
-              "ethereum-wallet",
-              "solana",
-              "sui",
-              "ton",
-              "ton-wallet",
-              "wallet"
-            ]
-          },
-          "keywords": [
-            "bitcoin",
-            "bitcoin-wallet",
-            "crypto-wallet",
-            "cryptocurrency",
-            "cryptowallet",
-            "defi",
-            "ethereum",
-            "ethereum-wallet",
-            "solana",
-            "sui",
-            "ton",
-            "ton-wallet",
-            "wallet",
-            "gem",
-            "open"
-          ],
-          "weight": 3.75,
-          "normalizedWeight": 0.4375,
-          "recencyScore": 0.9981541709194802,
-          "crossSourceScore": 1.1333333333333333
-        },
-        {
-          "id": "github_horizontalsystems/unstoppable-wallet-android_1771003229486",
-          "source": "github",
-          "timestamp": 1532925242000,
-          "content": "horizontalsystems/unstoppable-wallet-android: A powerful non-custodial multi-wallet for Bitcoin, Ethereum, Binance Smart Chain, Avalanche, Solana and other blockchains. Non-custodial crypto and NFT storage, onchain decentralized exchange, institutional grade analytics for cryptcurrency and NFT markets, extensive privacy controls and human oriented design. Implemented on Kotlin.",
-          "metadata": {
-            "url": "https://github.com/horizontalsystems/unstoppable-wallet-android",
-            "author": "horizontalsystems",
-            "metrics": {
-              "stars": 1153,
-              "age_days": 2755
-            },
-            "tags": [
-              "avalanche",
-              "bitcoin",
-              "bitcoin-core",
-              "bitcoin-wallet",
-              "crypto-exchange",
-              "crypto-sdk",
-              "crypto-toolkit",
-              "crypto-wallet",
-              "cryptocurrency-portfolio",
-              "cryptocurrency-wallet",
-              "defi",
-              "defi-sdk",
-              "ethereum",
-              "ethereum-sdk",
-              "ethereum-wallet",
-              "evm-chains",
-              "hd-wallets",
-              "multi-wallet",
-              "nft",
-              "solana"
-            ]
-          },
-          "keywords": [
-            "avalanche",
-            "bitcoin",
-            "bitcoin-core",
-            "bitcoin-wallet",
-            "crypto-exchange",
-            "crypto-sdk",
-            "crypto-toolkit",
-            "crypto-wallet",
-            "cryptocurrency-portfolio",
-            "cryptocurrency-wallet",
-            "defi",
-            "defi-sdk",
-            "ethereum",
-            "ethereum-sdk",
-            "ethereum-wallet"
-          ],
-          "weight": 6,
-          "normalizedWeight": 1,
-          "recencyScore": 1.0990735399224326e-171,
-          "crossSourceScore": 1.0666666666666667
-        },
-        {
-          "id": "github_horizontalsystems/unstoppable-wallet-ios_1771003229486",
-          "source": "github",
-          "timestamp": 1532690852000,
-          "content": "horizontalsystems/unstoppable-wallet-ios: Multi-wallet for Bitcoin, Ethereum, Binance Smart Chain and other emerging blockchains. Non-custodial storage, decentralized exchange, and extensive analytics for thousands of tokens and NFTs. Implemented on Swift.",
-          "metadata": {
-            "url": "https://github.com/horizontalsystems/unstoppable-wallet-ios",
-            "author": "horizontalsystems",
-            "metrics": {
-              "stars": 854,
-              "age_days": 2758
-            },
-            "tags": [
-              "avalanche",
-              "bitcoin",
-              "bitcoin-core",
-              "bitcoin-wallet",
-              "crypto-exchange",
-              "crypto-sdk",
-              "crypto-toolkit",
-              "crypto-wallet",
-              "cryptocurrency-portfolio",
-              "cryptocurrency-wallet",
-              "defi",
-              "defi-sdk",
-              "ethereum",
-              "ethereum-sdk",
-              "ethereum-wallet",
-              "evm-chains",
-              "hd-wallets",
-              "multi-wallet",
-              "nft",
-              "solana"
-            ]
-          },
-          "keywords": [
-            "avalanche",
-            "bitcoin",
-            "bitcoin-core",
-            "bitcoin-wallet",
-            "crypto-exchange",
-            "crypto-sdk",
-            "crypto-toolkit",
-            "crypto-wallet",
-            "cryptocurrency-portfolio",
-            "cryptocurrency-wallet",
-            "defi",
-            "defi-sdk",
-            "ethereum",
-            "ethereum-sdk",
-            "ethereum-wallet"
-          ],
-          "weight": 4,
-          "normalizedWeight": 0.5,
-          "recencyScore": 7.459609584354123e-172,
-          "crossSourceScore": 1.0666666666666667
-        },
-        {
-          "id": "github_gemwalletcom/gem-android_1771003229486",
-          "source": "github",
-          "timestamp": 1717217168000,
-          "content": "gemwalletcom/gem-android: Gem - Open Source Android Crypto Wallet",
-          "metadata": {
-            "url": "https://github.com/gemwalletcom/gem-android",
-            "author": "gemwalletcom",
-            "metrics": {
-              "stars": 308,
-              "age_days": 622
-            },
-            "tags": [
-              "bitcoin",
-              "bitcoin-wallet",
-              "crypto-wallet",
-              "cryptocurrency",
-              "defi",
-              "ethereum",
-              "ethereum-wallet",
-              "solana",
-              "sui",
-              "ton",
-              "ton-wallet",
-              "wallet"
-            ]
-          },
-          "keywords": [
-            "bitcoin",
-            "bitcoin-wallet",
-            "crypto-wallet",
-            "cryptocurrency",
-            "defi",
-            "ethereum",
-            "ethereum-wallet",
-            "solana",
-            "sui",
-            "ton",
-            "ton-wallet",
-            "wallet",
-            "gem",
-            "open",
-            "source"
-          ],
-          "weight": 2.5,
-          "normalizedWeight": 0.125,
-          "recencyScore": 2.3838609576928353e-39,
-          "crossSourceScore": 1.1333333333333333
-        }
-      ],
-      "keywords": [
-        "bitcoin",
-        "bitcoin-wallet",
-        "crypto-wallet",
-        "cryptocurrency",
-        "cryptowallet",
-        "defi",
-        "ethereum",
-        "ethereum-wallet",
-        "solana",
-        "sui",
-        "ton",
-        "ton-wallet",
-        "wallet",
-        "gem",
-        "open"
-      ],
-      "score": 42,
-      "metrics": {
-        "crossSourceCount": 1,
-        "velocity": 2,
-        "recency": 2.375684247675565e-67,
-        "keyVoiceMentions": 0
-      },
-      "timestamp": 1771003300441,
-      "ideas": [
-        {
-          "title": "Developer SDK for Bitcoin",
-          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with bitcoin-related protocols. Include code examples, CLI tools, and testing utilities.",
-          "reasoning": "With 4 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
-          "targetAudience": "Solana developers building dApps",
-          "difficulty": "Medium",
-          "impact": "High"
-        },
-        {
-          "title": "DeFi Analytics Dashboard",
-          "description": "Real-time dashboard aggregating all defi activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
-          "reasoning": "Cross-source signals (1 sources) indicate fragmented information. Users need a single place to monitor this space.",
-          "targetAudience": "Traders, researchers, and power users",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Simplified DeFi Aggregator",
-          "description": "User-friendly mobile app that aggregates best rates across  protocols. One-tap optimal routing.",
-          "reasoning": "High velocity (2.0x) shows rapid innovation, but complexity is increasing. Users need simplification.",
-          "targetAudience": "Crypto newcomers and mobile-first users",
-          "difficulty": "Medium",
-          "impact": "High"
-        },
-        {
-          "title": "\"DeFi on Solana\" Interactive Course",
-          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
-          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
-          "targetAudience": "Developers new to this Solana vertical",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Smart Alert & Automation Platform",
-          "description": "Custom alerts and automated actions for bitcoin, bitcoin-wallet, crypto-wallet events. Set conditions, get notified, auto-execute strategies.",
-          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
-          "targetAudience": "Active traders and strategists",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        }
-      ]
-    },
-    {
-      "id": "narrative_1771003300441_vh16db",
-      "title": "Developer Tools: Program Acceleration",
-      "description": "Detected 4 signals across github indicating emerging activity in developer tools. Key themes include: program, solana, rust, anchor, framework. New frameworks, SDKs, or tools making Solana development easier.",
-      "signals": [
-        {
-          "id": "github_Raad05/anchor-escrow_1771003225994",
-          "source": "github",
-          "timestamp": 1770931045000,
-          "content": "Raad05/anchor-escrow: An escrow program with Solana Anchor framework",
-          "metadata": {
-            "url": "https://github.com/Raad05/anchor-escrow",
-            "author": "Raad05",
-            "metrics": {
-              "stars": 0,
-              "age_days": 0
-            },
-            "tags": []
-          },
-          "keywords": [
-            "escrow",
-            "program",
-            "solana",
-            "anchor",
-            "framework",
-            "rust",
-            "raad05"
-          ],
-          "weight": 3.5,
-          "normalizedWeight": 0.375,
-          "recencyScore": 0.8873907289113644,
-          "crossSourceScore": 1.1428571428571428
-        },
-        {
-          "id": "github_solana-foundation/anchor_1771003229486",
-          "source": "github",
-          "timestamp": 1609459390000,
-          "content": "solana-foundation/anchor: ⚓ Solana Program Framework",
-          "metadata": {
-            "url": "https://github.com/solana-foundation/anchor",
-            "author": "solana-foundation",
-            "metrics": {
-              "stars": 4947,
-              "age_days": 1869
-            },
-            "tags": [
-              "blockchain",
-              "coral",
-              "rust",
-              "smart-contracts",
-              "solana"
-            ]
-          },
-          "keywords": [
-            "blockchain",
-            "coral",
-            "rust",
-            "smart-contracts",
-            "solana",
-            "program",
-            "framework",
-            "foundation",
-            "anchor"
-          ],
-          "weight": 6,
-          "normalizedWeight": 1,
-          "recencyScore": 9.96849325947604e-117,
-          "crossSourceScore": 1.1111111111111112
-        },
-        {
-          "id": "github_Christone007/anchor-vault-program_1771003225994",
-          "source": "github",
-          "timestamp": 1770504730000,
-          "content": "Christone007/anchor-vault-program: A Solana vault program built with anchor",
-          "metadata": {
-            "url": "https://github.com/Christone007/anchor-vault-program",
-            "author": "Christone007",
-            "metrics": {
-              "stars": 0,
-              "age_days": 5
-            },
-            "tags": []
-          },
-          "keywords": [
-            "solana",
-            "vault",
-            "program",
-            "built",
-            "anchor",
-            "rust",
-            "christone007"
-          ],
-          "weight": 3,
-          "normalizedWeight": 0.25,
-          "recencyScore": 0.438517394282982,
-          "crossSourceScore": 1.1428571428571428
-        },
-        {
-          "id": "github_jogeshwar01/bags-indexer_1771003225993",
-          "source": "github",
-          "timestamp": 1769884609000,
-          "content": "jogeshwar01/bags-indexer: 💰 A Solana indexer for the Bags Fee Share V2 program built with the Carbon Framework ",
-          "metadata": {
-            "url": "https://github.com/jogeshwar01/bags-indexer",
-            "author": "jogeshwar01",
-            "metrics": {
-              "stars": 1,
-              "age_days": 12
-            },
-            "tags": []
-          },
-          "keywords": [
-            "solana",
-            "indexer",
-            "bags",
-            "fee",
-            "share",
-            "program",
-            "built",
-            "carbon",
-            "framework",
-            "rust",
-            "jogeshwar01"
-          ],
-          "weight": 2.5,
-          "normalizedWeight": 0.125,
-          "recencyScore": 0.15728620970195123,
-          "crossSourceScore": 1.0909090909090908
-        }
-      ],
-      "keywords": [
-        "escrow",
-        "program",
-        "solana",
-        "anchor",
-        "framework",
-        "rust",
-        "raad05",
-        "blockchain",
-        "coral",
-        "smart-contracts",
-        "foundation",
-        "vault",
-        "built",
-        "christone007",
-        "indexer"
-      ],
-      "score": 42,
-      "metrics": {
-        "crossSourceCount": 1,
-        "velocity": 2,
-        "recency": 3.0721951702078805e-21,
-        "keyVoiceMentions": 0
-      },
-      "timestamp": 1771003300441,
-      "ideas": [
-        {
-          "title": "Developer SDK for Escrow",
-          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with escrow-related protocols. Include code examples, CLI tools, and testing utilities.",
-          "reasoning": "With 4 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
-          "targetAudience": "Solana developers building dApps",
-          "difficulty": "Medium",
-          "impact": "High"
-        },
-        {
-          "title": "Developer Tools Analytics Dashboard",
-          "description": "Real-time dashboard aggregating all developer tools activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
-          "reasoning": "Cross-source signals (1 sources) indicate fragmented information. Users need a single place to monitor this space.",
-          "targetAudience": "Traders, researchers, and power users",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "\"Developer Tools on Solana\" Interactive Course",
-          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
-          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
-          "targetAudience": "Developers new to this Solana vertical",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Smart Alert & Automation Platform",
-          "description": "Custom alerts and automated actions for escrow, program, solana events. Set conditions, get notified, auto-execute strategies.",
-          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
-          "targetAudience": "Active traders and strategists",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Escrow Integration Layer",
-          "description": "Middleware that connects existing Solana apps to emerging escrow protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
-          "reasoning": "Multiple protocols detected (4 signals) but no standard integration. First-mover advantage for abstraction layer.",
-          "targetAudience": "Existing Solana protocols and dApps",
-          "difficulty": "Hard",
-          "impact": "High"
-        }
-      ]
-    },
-    {
-      "id": "narrative_1771003300441_6kii39",
-      "title": "Emerging Technology: Solana Acceleration",
-      "description": "Detected 3 signals across github indicating emerging activity in emerging technology. Key themes include: solana, typescript, foundation, javascript, explorer. This represents an emerging trend in the Solana ecosystem.",
-      "signals": [
-        {
-          "id": "github_trending_solana-foundation/explorer_1771003231327",
-          "source": "github",
-          "timestamp": 1770995359000,
-          "content": "Trending: solana-foundation/explorer - Explorer for Solana clusters",
-          "metadata": {
-            "url": "https://github.com/solana-foundation/explorer",
-            "author": "solana-foundation",
-            "metrics": {
-              "stars": 621
-            },
-            "tags": []
-          },
-          "keywords": [
-            "explorer",
-            "solana",
-            "clusters",
-            "typescript",
-            "foundation"
-          ],
-          "weight": 6,
-          "normalizedWeight": 1,
-          "recencyScore": 0.9869552267903534,
-          "crossSourceScore": 1.2
-        },
-        {
-          "id": "github_trending_solana-foundation/solana-com_1771003231327",
-          "source": "github",
-          "timestamp": 1771000701000,
-          "content": "Trending: solana-foundation/solana-com - The solana.com website.",
-          "metadata": {
-            "url": "https://github.com/solana-foundation/solana-com",
-            "author": "solana-foundation",
-            "metrics": {
-              "stars": 427
-            },
-            "tags": [
-              "javascript",
-              "react",
-              "typescript"
-            ]
-          },
-          "keywords": [
-            "javascript",
-            "react",
-            "typescript",
-            "solana",
-            "com",
-            "website",
-            "mdx",
-            "foundation"
-          ],
-          "weight": 3.75,
-          "normalizedWeight": 0.4375,
-          "recencyScore": 0.9957112913423274,
-          "crossSourceScore": 1.125
-        },
-        {
-          "id": "github_solana-foundation/solana-web3.js_1771003229486",
-          "source": "github",
-          "timestamp": 1534969839000,
-          "content": "solana-foundation/solana-web3.js: Solana JavaScript SDK",
-          "metadata": {
-            "url": "https://github.com/solana-foundation/solana-web3.js",
-            "author": "solana-foundation",
-            "metrics": {
-              "stars": 2699,
-              "age_days": 2731
-            },
-            "tags": [
-              "blockchain",
-              "javascript",
-              "js",
-              "node",
-              "nodejs",
-              "sdk",
-              "solana"
-            ]
-          },
-          "keywords": [
-            "blockchain",
-            "javascript",
-            "js",
-            "node",
-            "nodejs",
-            "sdk",
-            "solana",
-            "typescript",
-            "foundation",
-            "web3.js"
-          ],
-          "weight": 6,
-          "normalizedWeight": 1,
-          "recencyScore": 3.230055204612882e-170,
-          "crossSourceScore": 1.1
-        }
-      ],
-      "keywords": [
-        "explorer",
-        "solana",
-        "clusters",
-        "typescript",
-        "foundation",
-        "javascript",
-        "react",
-        "com",
-        "website",
-        "mdx",
-        "blockchain",
-        "js",
-        "node",
-        "nodejs",
-        "sdk"
-      ],
-      "score": 41.5,
-      "metrics": {
-        "crossSourceCount": 1,
-        "velocity": 2,
-        "recency": 2.820868450898623e-40,
-        "keyVoiceMentions": 0
-      },
-      "timestamp": 1771003300441,
-      "ideas": [
-        {
-          "title": "Developer SDK for Explorer",
-          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with explorer-related protocols. Include code examples, CLI tools, and testing utilities.",
-          "reasoning": "With 3 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
-          "targetAudience": "Solana developers building dApps",
-          "difficulty": "Medium",
-          "impact": "High"
-        },
-        {
-          "title": "Emerging Technology Analytics Dashboard",
-          "description": "Real-time dashboard aggregating all emerging technology activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
-          "reasoning": "Cross-source signals (1 sources) indicate fragmented information. Users need a single place to monitor this space.",
-          "targetAudience": "Traders, researchers, and power users",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "\"Emerging Technology on Solana\" Interactive Course",
-          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
-          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
-          "targetAudience": "Developers new to this Solana vertical",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Smart Alert & Automation Platform",
-          "description": "Custom alerts and automated actions for explorer, solana, clusters events. Set conditions, get notified, auto-execute strategies.",
-          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
-          "targetAudience": "Active traders and strategists",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Explorer Integration Layer",
-          "description": "Middleware that connects existing Solana apps to emerging explorer protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
-          "reasoning": "Multiple protocols detected (3 signals) but no standard integration. First-mover advantage for abstraction layer.",
-          "targetAudience": "Existing Solana protocols and dApps",
-          "difficulty": "Hard",
-          "impact": "High"
-        }
-      ]
-    },
-    {
-      "id": "narrative_1771003300441_9nl56b",
-      "title": "Emerging Technology: Solana Acceleration",
-      "description": "Detected 4 signals across report indicating emerging activity in emerging technology. Key themes include: solana, sol, matrixdock-brings, expanding-institutional, grade-tokenized-gold-access. This represents an emerging trend in the Solana ecosystem.",
-      "signals": [
-        {
-          "id": "report_Solana Foundation Blog_1770681600000",
-          "source": "report",
-          "timestamp": 1770681600000,
-          "content": "Solana Foundation Blog: Matrixdock Brings XAUm to Solana, Expanding Institutional-Grade Tokenized Gold Access - ",
-          "metadata": {
-            "url": "https://solana.com/news/matrixdock-xaum-launch",
-            "author": "Solana Foundation Blog",
-            "metrics": {
-              "report_age_days": 3
-            }
-          },
-          "keywords": [
-            "solana",
-            "sol",
-            "matrixdock-brings",
-            "expanding-institutional",
-            "grade-tokenized-gold-access"
-          ],
-          "weight": 2.5,
-          "normalizedWeight": 0.125,
-          "recencyScore": 0.587480621111954,
-          "crossSourceScore": 1.4
-        },
-        {
-          "id": "report_Solana Foundation Blog_1770076800000",
-          "source": "report",
-          "timestamp": 1770076800000,
-          "content": "Solana Foundation Blog: Solana Network Upgrades - ",
-          "metadata": {
-            "url": "https://solana.com/news/solana-network-upgrades",
-            "author": "Solana Foundation Blog",
-            "metrics": {
-              "report_age_days": 10
-            }
-          },
-          "keywords": [
-            "solana",
-            "sol",
-            "solana-network-upgrades"
-          ],
-          "weight": 2.5,
-          "normalizedWeight": 0.125,
-          "recencyScore": 0.21612204259371745,
-          "crossSourceScore": 1.6666666666666667
-        },
-        {
-          "id": "report_Solana Foundation Blog_1769558400000",
-          "source": "report",
-          "timestamp": 1769558400000,
-          "content": "Solana Foundation Blog: WisdomTree Expands Tokenization Ecosystem to Solana - ",
-          "metadata": {
-            "url": "https://solana.com/news/wisdomtree-tokenization-solana",
-            "author": "Solana Foundation Blog",
-            "metrics": {
-              "report_age_days": 16
-            }
-          },
-          "keywords": [
-            "solana",
-            "sol",
-            "expands-tokenization-ecosystem"
-          ],
-          "weight": 2.5,
-          "normalizedWeight": 0.125,
-          "recencyScore": 0.09171632622901085,
-          "crossSourceScore": 1.6666666666666667
-        },
-        {
-          "id": "report_Solana Foundation Blog_1769436000000",
-          "source": "report",
-          "timestamp": 1769436000000,
-          "content": "Solana Foundation Blog: The Solana Foundation Delegation Program - ",
-          "metadata": {
-            "url": "https://solana.com/news/solana-foundation-delegation-program-case-study",
-            "author": "Solana Foundation Blog",
-            "metrics": {
-              "report_age_days": 18
-            }
-          },
-          "keywords": [
-            "solana",
-            "sol",
-            "the-solana-foundation-delegation-program"
-          ],
-          "weight": 2.5,
-          "normalizedWeight": 0.125,
-          "recencyScore": 0.07491240147700395,
-          "crossSourceScore": 1.6666666666666667
-        }
-      ],
-      "keywords": [
-        "solana",
-        "sol",
-        "matrixdock-brings",
-        "expanding-institutional",
-        "grade-tokenized-gold-access",
-        "solana-network-upgrades",
-        "expands-tokenization-ecosystem",
-        "the-solana-foundation-delegation-program"
-      ],
-      "score": 32.82976758087,
-      "metrics": {
-        "crossSourceCount": 1,
-        "velocity": 1,
-        "recency": 0.2914883790435001,
-        "keyVoiceMentions": 0
-      },
-      "timestamp": 1771003300441,
-      "ideas": [
-        {
-          "title": "Emerging Technology Analytics Dashboard",
-          "description": "Real-time dashboard aggregating all emerging technology activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
-          "reasoning": "Cross-source signals (1 sources) indicate fragmented information. Users need a single place to monitor this space.",
-          "targetAudience": "Traders, researchers, and power users",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "\"Emerging Technology on Solana\" Interactive Course",
-          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
-          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
-          "targetAudience": "Developers new to this Solana vertical",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Solana Integration Layer",
-          "description": "Middleware that connects existing Solana apps to emerging solana protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
-          "reasoning": "Multiple protocols detected (4 signals) but no standard integration. First-mover advantage for abstraction layer.",
-          "targetAudience": "Existing Solana protocols and dApps",
-          "difficulty": "Hard",
-          "impact": "High"
-        }
-      ]
-    },
-    {
-      "id": "narrative_1771003300442_ytuv7r",
-      "title": "NFTs: Https Acceleration",
-      "description": "Detected 3 signals across github indicating emerging activity in nfts. Key themes include: https, github, com, solana, program. Activity in digital collectibles, compressed NFTs, or new marketplace features.",
-      "signals": [
-        {
-          "id": "github_James09777/Solana-on-Chain-Program-Examples_1771003225994",
-          "source": "github",
-          "timestamp": 1769965694000,
-          "content": "James09777/Solana-on-Chain-Program-Examples: https://github.com/solana-developers/program-examples",
-          "metadata": {
-            "url": "https://github.com/James09777/Solana-on-Chain-Program-Examples",
-            "author": "James09777",
-            "metrics": {
-              "stars": 0,
-              "age_days": 12
-            },
-            "tags": []
-          },
-          "keywords": [
-            "https",
-            "github",
-            "com",
-            "solana",
-            "developers",
-            "program",
-            "examples",
-            "james09777",
-            "chain"
-          ],
-          "weight": 2,
-          "normalizedWeight": 0,
-          "recencyScore": 0.17985235264451882,
-          "crossSourceScore": 1.1111111111111112
-        },
-        {
-          "id": "github_James09777/Solana-Program-Library-SPL-_1771003225993",
-          "source": "github",
-          "timestamp": 1769965653000,
-          "content": "James09777/Solana-Program-Library-SPL-: https://github.com/solana-labs/solana-program-library",
-          "metadata": {
-            "url": "https://github.com/James09777/Solana-Program-Library-SPL-",
-            "author": "James09777",
-            "metrics": {
-              "stars": 0,
-              "age_days": 12
-            },
-            "tags": []
-          },
-          "keywords": [
-            "https",
-            "github",
-            "com",
-            "solana",
-            "labs",
-            "program",
-            "library",
-            "james09777",
-            "spl"
-          ],
-          "weight": 2,
-          "normalizedWeight": 0,
-          "recencyScore": 0.17984016068598632,
-          "crossSourceScore": 1.1111111111111112
-        },
-        {
-          "id": "github_James09777/Solana-Program-Framework-Anchor_1771003225993",
-          "source": "github",
-          "timestamp": 1769965530000,
-          "content": "James09777/Solana-Program-Framework-Anchor: https://github.com/solana-foundation/anchor",
-          "metadata": {
-            "url": "https://github.com/James09777/Solana-Program-Framework-Anchor",
-            "author": "James09777",
-            "metrics": {
-              "stars": 0,
-              "age_days": 12
-            },
-            "tags": []
-          },
-          "keywords": [
-            "https",
-            "github",
-            "com",
-            "solana",
-            "foundation",
-            "anchor",
-            "james09777",
-            "program",
-            "framework"
-          ],
-          "weight": 2,
-          "normalizedWeight": 0,
-          "recencyScore": 0.17980358976902744,
-          "crossSourceScore": 1.1111111111111112
-        }
-      ],
-      "keywords": [
-        "https",
-        "github",
-        "com",
-        "solana",
-        "developers",
-        "program",
-        "examples",
-        "james09777",
-        "chain",
-        "labs",
-        "library",
-        "spl",
-        "foundation",
-        "anchor",
-        "framework"
-      ],
-      "score": 17.517788313926975,
-      "metrics": {
-        "crossSourceCount": 1,
-        "velocity": 0,
-        "recency": 0.30088941569634875,
-        "keyVoiceMentions": 0
-      },
-      "timestamp": 1771003300442,
-      "ideas": [
-        {
-          "title": "Developer SDK for Https",
-          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with https-related protocols. Include code examples, CLI tools, and testing utilities.",
-          "reasoning": "With 3 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
-          "targetAudience": "Solana developers building dApps",
-          "difficulty": "Medium",
-          "impact": "High"
-        },
-        {
-          "title": "NFTs Analytics Dashboard",
-          "description": "Real-time dashboard aggregating all nfts activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
-          "reasoning": "Cross-source signals (1 sources) indicate fragmented information. Users need a single place to monitor this space.",
-          "targetAudience": "Traders, researchers, and power users",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "\"NFTs on Solana\" Interactive Course",
-          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
-          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
-          "targetAudience": "Developers new to this Solana vertical",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Https Integration Layer",
-          "description": "Middleware that connects existing Solana apps to emerging https protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
-          "reasoning": "Multiple protocols detected (3 signals) but no standard integration. First-mover advantage for abstraction layer.",
-          "targetAudience": "Existing Solana protocols and dApps",
-          "difficulty": "Hard",
-          "impact": "High"
         }
       ]
     }
   ],
-  "analyzedAt": 1771003300446,
+  "analyzedAt": 1771004437180,
   "dataWindow": {
-    "start": 1331908353000,
-    "end": 1771003233520
+    "start": 1770399636583,
+    "end": 1770918036583
   },
   "stats": {
-    "totalSignals": 117,
+    "totalSignals": 27,
     "sourcesUsed": [
       "github",
       "onchain",
