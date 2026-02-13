@@ -16,20 +16,37 @@ async function main() {
     fs.mkdirSync(processedDir, { recursive: true });
   }
 
-  // Find latest collection file
+  // Load and merge ALL collection files for comprehensive analysis
   const files = fs.readdirSync(dataDir).filter(f => f.startsWith('collection_'));
   if (files.length === 0) {
     console.error('❌ No collection data found. Run collect-data.ts first.');
     process.exit(1);
   }
 
-  const latestFile = files.sort().reverse()[0];
-  const collectionPath = path.join(dataDir, latestFile);
-  
-  console.log(`📂 Loading data from: ${latestFile}`);
-  const collectionData: Record<string, CollectorResult> = JSON.parse(
-    fs.readFileSync(collectionPath, 'utf-8')
-  );
+  console.log(`📂 Loading ${files.length} collection file(s)...`);
+  const collectionData: Record<string, CollectorResult> = {};
+
+  for (const file of files) {
+    const filePath = path.join(dataDir, file);
+    const fileData: Record<string, CollectorResult> = JSON.parse(
+      fs.readFileSync(filePath, 'utf-8')
+    );
+    console.log(`   ${file}`);
+
+    // Merge signals from each source, deduplicating by signal id
+    for (const [source, result] of Object.entries(fileData)) {
+      if (!collectionData[source]) {
+        collectionData[source] = { signals: [], collectedAt: result.collectedAt, source: result.source };
+      }
+      const existingIds = new Set(collectionData[source].signals.map(s => s.id));
+      for (const signal of result.signals) {
+        if (!existingIds.has(signal.id)) {
+          collectionData[source].signals.push(signal);
+          existingIds.add(signal.id);
+        }
+      }
+    }
+  }
 
   // Aggregate all signals
   const allSignals: Signal[] = [];
