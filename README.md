@@ -15,7 +15,7 @@ This tool automatically detects emerging narratives in the Solana ecosystem by c
 - **Market reports**: Helius, Messari, Electric Capital, Solana Foundation blogs
 - **Discord/Forums**: Solana StackExchange, Solana Forum, Reddit r/solana & r/solanadev
 
-The tool refreshes fortnightly and generates 3-5 actionable product ideas for each detected narrative.
+The tool refreshes every 2 days and generates 3-5 actionable product ideas for each detected narrative.
 
 ## 🧠 Methodology
 
