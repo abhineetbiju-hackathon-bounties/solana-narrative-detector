@@ -76,7 +76,8 @@ const ECOSYSTEM_TERMS = new Set([
 
 export class NarrativeClusterer {
   private minClusterSize = 3;
-  private similarityThreshold = 0.15; // Lowered from 0.25 for better cross-source matching
+  private similarityThreshold = 0.25;
+  private maxNarratives = 10;
 
   clusterSignals(signals: ProcessedSignal[]): Narrative[] {
     if (signals.length < this.minClusterSize) return [];
@@ -99,7 +100,32 @@ export class NarrativeClusterer {
     // Deduplicate narratives with similar titles
     narratives = this.deduplicateNarratives(narratives);
 
+    // Prioritize multi-source narratives and cap output
+    narratives = this.rankAndCap(narratives);
+
     return narratives;
+  }
+
+  private isNoisyKeyword(kw: string): boolean {
+    // Filter out usernames, short words, numbers-only, and generic terms
+    if (kw.length <= 2) return true;
+    if (/^\d+$/.test(kw)) return true;
+    if (/^[a-z]+\d{3,}$/i.test(kw)) return true; // username patterns like "james09777"
+    if (/^\d+[a-z]+$/i.test(kw)) return true; // "123abc" patterns
+
+    const noisy = new Set([
+      'behind', 'worth', 'money', 'benefits', 'getting', 'looking',
+      'thinking', 'question', 'discussion', 'help', 'need', 'want',
+      'anyone', 'someone', 'best', 'good', 'great', 'like', 'really',
+      'currently', 'right', 'people', 'make', 'start', 'started',
+      'coming', 'going', 'taking', 'working', 'trying', 'actually',
+      'still', 'much', 'many', 'should', 'would', 'could', 'will',
+      'phone', 'post', 'update', 'week', 'month', 'year', 'today',
+      'yesterday', 'introducing-orb', 'new-block-explorer', 'jump',
+      'shares', 'firm', 'company', 'price', 'prices', 'market',
+      'says', 'report', 'blog', 'article', 'read', 'check',
+    ]);
+    return noisy.has(kw);
   }
 
   private normalizeKeywords(keywords: string[]): string[] {
@@ -107,6 +133,8 @@ export class NarrativeClusterer {
 
     for (const kw of keywords) {
       const lower = kw.toLowerCase().trim();
+
+      if (this.isNoisyKeyword(lower)) continue;
 
       // Apply alias normalization
       const alias = KEYWORD_ALIASES[lower];
@@ -217,19 +245,38 @@ export class NarrativeClusterer {
 
   private deduplicateNarratives(narratives: Narrative[]): Narrative[] {
     const result: Narrative[] = [];
-    const seenTitles = new Set<string>();
+    const seenThemes = new Set<string>();
 
     for (const narrative of narratives) {
-      // Normalize title for comparison
+      // Normalize title for comparison - deduplicate by theme prefix too
       const normalizedTitle = narrative.title.toLowerCase().replace(/[^a-z]+/g, ' ').trim();
+      const themePrefix = narrative.title.split(':')[0].toLowerCase().trim();
 
-      if (!seenTitles.has(normalizedTitle)) {
-        seenTitles.add(normalizedTitle);
+      // Allow max 2 narratives per theme category
+      const themeCount = result.filter(n =>
+        n.title.split(':')[0].toLowerCase().trim() === themePrefix
+      ).length;
+
+      if (!seenThemes.has(normalizedTitle) && themeCount < 2) {
+        seenThemes.add(normalizedTitle);
         result.push(narrative);
       }
     }
 
     return result;
+  }
+
+  private rankAndCap(narratives: Narrative[]): Narrative[] {
+    // Boost narratives with multiple sources, penalize single-source
+    return narratives
+      .map(n => ({
+        ...n,
+        score: n.metrics.crossSourceCount >= 2
+          ? n.score * 1.0
+          : n.score * 0.4  // Heavy penalty for single-source narratives
+      }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, this.maxNarratives);
   }
 
   private clusterToNarrative(cluster: KeywordCluster): Narrative {
@@ -331,7 +378,7 @@ export class NarrativeClusterer {
   }
 
   private formatTitle(theme: string, keywords: string[]): string {
-    // Filter out generic/noisy keywords
+    // Filter out generic/noisy keywords and anything that looks like a username
     const genericWords = new Set([
       'solana', 'https', 'http', 'com', 'org', 'www', 'github', 'git',
       'rust', 'typescript', 'javascript', 'python', 'program', 'programs',
@@ -339,14 +386,24 @@ export class NarrativeClusterer {
       'api', 'sdk', 'lib', 'library', 'tool', 'tools', 'test', 'tests',
       'repo', 'project', 'example', 'examples', 'explorer', 'html', 'json',
       'defi', 'dex', 'nft', 'sol', 'active', 'high-volume', 'onchain-activity',
-      'growth', 'trending', 'high-tvl', 'network',
+      'growth', 'trending', 'high-tvl', 'network', 'stake', 'staking',
+      'lending', 'liquid-staking', 'ai', 'ai-agents', 'oracle', 'payments',
+      'derivatives', 'cross-chain', 'yield', 'compressed-nft', 'token-extensions',
+      'mev', 'rwa', 'gaming', 'mobile', 'depin', 'prediction-market',
     ]);
 
     const themeWords = theme.toLowerCase().split(/[\s/&]+/);
-    const distinctKeyword = keywords.find(kw =>
-      !genericWords.has(kw.toLowerCase()) &&
-      !themeWords.some(tw => kw.toLowerCase().includes(tw) || tw.includes(kw.toLowerCase()))
-    ) || keywords.find(kw => !genericWords.has(kw.toLowerCase())) || keywords[0] || 'growth';
+
+    // Find a meaningful ecosystem term as the distinct keyword
+    const distinctKeyword = keywords.find(kw => {
+      const lower = kw.toLowerCase();
+      if (genericWords.has(lower)) return false;
+      if (themeWords.some(tw => lower.includes(tw) || tw.includes(lower))) return false;
+      if (this.isNoisyKeyword(lower)) return false;
+      // Must be a recognizable ecosystem term or protocol name
+      return ECOSYSTEM_TERMS.has(lower) || lower.includes('-') && lower.length > 5;
+    }) || keywords.find(kw => ECOSYSTEM_TERMS.has(kw.toLowerCase()))
+      || keywords[0] || 'Ecosystem';
 
     const formatted = distinctKeyword.split('-').map(word =>
       word.charAt(0).toUpperCase() + word.slice(1)
@@ -422,7 +479,7 @@ export class NarrativeClusterer {
     signalCount: number;
   }): number {
     return (
-      metrics.crossSourceCount * 15 +
+      metrics.crossSourceCount * 20 +
       metrics.velocity * 15 +
       metrics.recency * 20 +
       metrics.keyVoiceMentions * 5 +

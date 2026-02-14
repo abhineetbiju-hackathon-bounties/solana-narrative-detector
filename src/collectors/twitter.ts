@@ -520,7 +520,11 @@ export class TwitterCollector {
       'validator', 'staking', 'liquid-staking', 'mev', 'blinks',
     ];
     solanaTerms.forEach(term => {
-      if (content.toLowerCase().includes(term)) {
+      const lower = content.toLowerCase();
+      if (term.length <= 3) {
+        const regex = new RegExp(`\\b${term}\\b`, 'i');
+        if (regex.test(lower)) keywords.add(term);
+      } else if (lower.includes(term)) {
         keywords.add(term);
       }
     });

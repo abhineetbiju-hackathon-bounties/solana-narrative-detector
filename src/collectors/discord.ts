@@ -401,7 +401,12 @@ export class DiscordCollector {
     ];
 
     solanaTerms.forEach(term => {
-      if (text.includes(term.replace(/-/g, ' ')) || text.includes(term)) {
+      const searchTerm = term.replace(/-/g, ' ');
+      // Use word boundary matching for short terms to avoid false positives
+      if (term.length <= 3) {
+        const regex = new RegExp(`\\b${term}\\b`, 'i');
+        if (regex.test(text)) keywords.add(term);
+      } else if (text.includes(searchTerm) || text.includes(term)) {
         keywords.add(term);
       }
     });
