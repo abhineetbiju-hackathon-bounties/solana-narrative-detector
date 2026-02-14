@@ -23,6 +23,7 @@ function makeSignal(overrides: Partial<ProcessedSignal> = {}): ProcessedSignal {
         timestamp: Date.now(),
         content: 'Test signal content',
         keywords: ['solana', 'defi'],
+        metadata: {},
         weight: 1,
         normalizedWeight: 0.5,
         recencyScore: 0.8,
