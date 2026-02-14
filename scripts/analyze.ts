@@ -17,7 +17,7 @@ async function main() {
   }
 
   // Load and merge ALL collection files for comprehensive analysis
-  const files = fs.readdirSync(dataDir).filter(f => f.startsWith('collection_'));
+  const files = fs.readdirSync(dataDir).filter(f => f.startsWith('collection_') && !f.includes('_demo_'));
   if (files.length === 0) {
     console.error('❌ No collection data found. Run collect-data.ts first.');
     process.exit(1);
@@ -88,7 +88,7 @@ async function main() {
   // Step 3: Generate product ideas
   console.log('\n💡 Generating product ideas...');
   const ideaGenerator = new IdeaGenerator();
-  
+
   for (const narrative of narratives) {
     narrative.ideas = ideaGenerator.generateIdeas(narrative);
     console.log(`  "${narrative.title}": ${narrative.ideas.length} ideas generated`);
@@ -119,7 +119,7 @@ async function main() {
   console.log(`\n\n═══════════════════════════════════════════`);
   console.log(`📈 NARRATIVE DETECTION SUMMARY`);
   console.log(`═══════════════════════════════════════════\n`);
-  
+
   narratives.forEach((narrative, i) => {
     console.log(`${i + 1}. ${narrative.title}`);
     console.log(`   Score: ${narrative.score.toFixed(2)} | Signals: ${narrative.signals.length} | Sources: ${narrative.metrics.crossSourceCount}`);

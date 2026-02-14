@@ -7,23 +7,120 @@ interface KeywordCluster {
   centroid: string[];
 }
 
+// Canonical keyword mappings to normalize across sources
+const KEYWORD_ALIASES: Record<string, string> = {
+  'dexes': 'dex',
+  'amm': 'dex',
+  'swap': 'dex',
+  'trading': 'dex',
+  'perps': 'derivatives',
+  'perpetuals': 'derivatives',
+  'perp': 'derivatives',
+  'lending': 'lending',
+  'borrowing': 'lending',
+  'liquid-staking': 'liquid-staking',
+  'lst': 'liquid-staking',
+  'staking': 'staking',
+  'validator': 'staking',
+  'nft': 'nft',
+  'nfts': 'nft',
+  'compressed-nfts': 'compressed-nft',
+  'state-compression': 'compressed-nft',
+  'zk-compression': 'compressed-nft',
+  'token-extensions': 'token-extensions',
+  'token-2022': 'token-extensions',
+  'ai': 'ai',
+  'artificial-intelligence': 'ai',
+  'agents': 'ai-agents',
+  'ai-agents': 'ai-agents',
+  'depin': 'depin',
+  'iot': 'depin',
+  'bridge': 'cross-chain',
+  'cross-chain': 'cross-chain',
+  'interoperability': 'cross-chain',
+  'rwa': 'rwa',
+  'real-world-assets': 'rwa',
+  'tokenization': 'rwa',
+  'oracle': 'oracle',
+  'oracles': 'oracle',
+  'payments': 'payments',
+  'stablecoin': 'payments',
+  'usdc': 'payments',
+  'mobile': 'mobile',
+  'saga': 'mobile',
+  'gaming': 'gaming',
+  'game': 'gaming',
+  'prediction': 'prediction-market',
+  'betting': 'prediction-market',
+  'yield': 'yield',
+  'farming': 'yield',
+  'apy': 'yield',
+  'cdp': 'stablecoin',
+  'mev': 'mev',
+  'high-tvl': 'high-tvl',
+  'growth': 'growth',
+  'trending': 'trending',
+};
+
+// Known Solana ecosystem terms that are important for matching
+const ECOSYSTEM_TERMS = new Set([
+  'jupiter', 'jito', 'marinade', 'drift', 'kamino', 'tensor', 'raydium',
+  'orca', 'meteora', 'phoenix', 'marginfi', 'sanctum', 'pyth', 'wormhole',
+  'helius', 'metaplex', 'helium', 'render', 'nosana', 'hivemapper',
+  'phantom', 'backpack', 'magic-eden', 'solana', 'anchor', 'firedancer',
+  'bonk', 'jup', 'sol', 'defi', 'nft', 'dex', 'lending', 'staking',
+  'liquid-staking', 'derivatives', 'oracle', 'payments', 'depin', 'ai',
+  'ai-agents', 'mev', 'rwa', 'gaming', 'mobile', 'compressed-nft',
+  'token-extensions', 'cross-chain', 'yield', 'prediction-market',
+]);
+
 export class NarrativeClusterer {
   private minClusterSize = 3;
-  private similarityThreshold = 0.25;
+  private similarityThreshold = 0.15; // Lowered from 0.25 for better cross-source matching
 
   clusterSignals(signals: ProcessedSignal[]): Narrative[] {
     if (signals.length < this.minClusterSize) return [];
 
+    // Normalize keywords across all signals first
+    const normalizedSignals = signals.map(s => ({
+      ...s,
+      keywords: this.normalizeKeywords(s.keywords),
+    }));
+
     // Build keyword clusters using similarity
-    const clusters = this.buildClusters(signals);
-    
+    const clusters = this.buildClusters(normalizedSignals);
+
     // Convert clusters to narratives
-    const narratives = clusters
+    let narratives = clusters
       .filter(cluster => cluster.signals.length >= this.minClusterSize)
       .map(cluster => this.clusterToNarrative(cluster))
       .sort((a, b) => b.score - a.score);
 
+    // Deduplicate narratives with similar titles
+    narratives = this.deduplicateNarratives(narratives);
+
     return narratives;
+  }
+
+  private normalizeKeywords(keywords: string[]): string[] {
+    const normalized = new Set<string>();
+
+    for (const kw of keywords) {
+      const lower = kw.toLowerCase().trim();
+
+      // Apply alias normalization
+      const alias = KEYWORD_ALIASES[lower];
+      if (alias) {
+        normalized.add(alias);
+      }
+
+      // Always keep the original keyword too (if it's useful)
+      if (ECOSYSTEM_TERMS.has(lower) || lower.length > 3) {
+        normalized.add(lower);
+      }
+    }
+
+    return Array.from(normalized);
   }
 
   private buildClusters(signals: ProcessedSignal[]): KeywordCluster[] {
@@ -80,17 +177,35 @@ export class NarrativeClusterer {
 
     if (signalKeywords.size === 0 || cluster.keywords.size === 0) return 0;
 
-    // Jaccard similarity
-    const union = new Set([...Array.from(signalKeywords), ...Array.from(cluster.keywords)]);
-    return intersection.size / union.size;
+    // Use weighted similarity: ecosystem terms count more
+    let weightedIntersection = 0;
+    let weightedUnion = 0;
+
+    const allKeywords = new Set([...Array.from(signalKeywords), ...Array.from(cluster.keywords)]);
+
+    for (const kw of allKeywords) {
+      const weight = ECOSYSTEM_TERMS.has(kw) ? 2.0 : 1.0;
+      const inSignal = signalKeywords.has(kw);
+      const inCluster = cluster.keywords.has(kw);
+
+      if (inSignal && inCluster) {
+        weightedIntersection += weight;
+      }
+      weightedUnion += weight;
+    }
+
+    if (weightedUnion === 0) return 0;
+    return weightedIntersection / weightedUnion;
   }
 
   private updateCentroid(cluster: KeywordCluster): string[] {
     const keywordFreq = new Map<string, number>();
-    
+
     cluster.signals.forEach(signal => {
       signal.keywords.forEach(kw => {
-        keywordFreq.set(kw, (keywordFreq.get(kw) || 0) + 1);
+        // Give extra weight to ecosystem terms in centroid
+        const weight = ECOSYSTEM_TERMS.has(kw) ? 2 : 1;
+        keywordFreq.set(kw, (keywordFreq.get(kw) || 0) + weight);
       });
     });
 
@@ -100,21 +215,38 @@ export class NarrativeClusterer {
       .map(([kw]) => kw);
   }
 
+  private deduplicateNarratives(narratives: Narrative[]): Narrative[] {
+    const result: Narrative[] = [];
+    const seenTitles = new Set<string>();
+
+    for (const narrative of narratives) {
+      // Normalize title for comparison
+      const normalizedTitle = narrative.title.toLowerCase().replace(/[^a-z]+/g, ' ').trim();
+
+      if (!seenTitles.has(normalizedTitle)) {
+        seenTitles.add(normalizedTitle);
+        result.push(narrative);
+      }
+    }
+
+    return result;
+  }
+
   private clusterToNarrative(cluster: KeywordCluster): Narrative {
     const signals = cluster.signals;
     const keywords = Array.from(cluster.keywords);
-    
+
     // Generate narrative title and description
     const { title, description } = this.generateNarrativeText(cluster);
-    
+
     // Calculate metrics
     const sources = new Set(signals.map(s => s.source));
     const crossSourceCount = sources.size;
-    
+
     const velocity = this.calculateClusterVelocity(signals);
     const recency = this.calculateClusterRecency(signals);
     const keyVoiceMentions = signals.filter(s => s.source === 'twitter' && s.weight >= 2.5).length;
-    
+
     // Calculate overall score
     const score = this.calculateNarrativeScore({
       crossSourceCount,
@@ -145,45 +277,50 @@ export class NarrativeClusterer {
   private generateNarrativeText(cluster: KeywordCluster): { title: string; description: string } {
     const topKeywords = cluster.centroid.slice(0, 5);
     const signals = cluster.signals;
-    
+
     // Identify the main theme
     const theme = this.identifyTheme(topKeywords);
-    
+
     // Count sources
     const sources = new Set(signals.map(s => s.source));
     const sourceList = Array.from(sources);
-    
+
     // Build title
     const title = this.formatTitle(theme, topKeywords);
-    
+
     // Build description
     const description = this.buildDescription(theme, topKeywords, signals, sourceList);
-    
+
     return { title, description };
   }
 
   private identifyTheme(keywords: string[]): string {
     const themes = {
-      'DeFi': ['defi', 'dex', 'amm', 'lending', 'liquidity', 'yield', 'swap'],
-      'NFTs': ['nft', 'collection', 'mint', 'marketplace', 'compressed', 'metadata'],
+      'DeFi': ['defi', 'dex', 'amm', 'lending', 'liquidity', 'yield', 'swap', 'derivatives', 'perps', 'trading'],
+      'Liquid Staking': ['liquid-staking', 'lst', 'marinade', 'jito', 'sanctum'],
+      'NFTs': ['nft', 'collection', 'mint', 'marketplace', 'compressed-nft', 'metadata', 'compressed', 'tensor', 'magic-eden'],
       'Gaming': ['gaming', 'game', 'play-to-earn', 'web3-game', 'metaverse'],
-      'Infrastructure': ['validator', 'rpc', 'infrastructure', 'node', 'firedancer'],
+      'Infrastructure': ['validator', 'rpc', 'infrastructure', 'node', 'firedancer', 'network', 'tps'],
       'Payments': ['payments', 'stablecoin', 'usdc', 'transfer', 'merchant'],
       'Mobile': ['mobile', 'saga', 'dapp-store', 'smartphone'],
-      'DePIN': ['depin', 'iot', 'physical', 'network', 'sensors'],
-      'AI': ['ai', 'artificial-intelligence', 'ml', 'model', 'inference'],
-      'Developer Tools': ['sdk', 'api', 'framework', 'tools', 'library', 'anchor'],
-      'Token Extensions': ['token-extensions', 'token-2022', 'transfer-hook', 'metadata-pointer']
+      'DePIN': ['depin', 'iot', 'physical', 'helium', 'hivemapper', 'nosana', 'render'],
+      'AI & Agents': ['ai', 'ai-agents', 'artificial-intelligence', 'ml', 'model', 'inference', 'agents'],
+      'Developer Tools': ['sdk', 'api', 'framework', 'tools', 'library', 'anchor', 'program'],
+      'Token Extensions': ['token-extensions', 'token-2022', 'transfer-hook', 'metadata-pointer'],
+      'MEV': ['mev', 'jito', 'searcher', 'bundle'],
+      'Cross-Chain': ['cross-chain', 'bridge', 'wormhole', 'interoperability'],
+      'RWA': ['rwa', 'real-world-assets', 'tokenization'],
+      'Oracles': ['oracle', 'pyth', 'price-feed', 'data-feed'],
     };
 
     let bestTheme = 'Emerging Technology';
     let bestScore = 0;
 
     for (const [theme, terms] of Object.entries(themes)) {
-      const score = keywords.filter(kw => 
+      const score = keywords.filter(kw =>
         terms.some(term => kw.includes(term) || term.includes(kw))
       ).length;
-      
+
       if (score > bestScore) {
         bestScore = score;
         bestTheme = theme;
@@ -201,9 +338,11 @@ export class NarrativeClusterer {
       'build', 'built', 'code', 'source', 'open', 'new', 'use', 'using',
       'api', 'sdk', 'lib', 'library', 'tool', 'tools', 'test', 'tests',
       'repo', 'project', 'example', 'examples', 'explorer', 'html', 'json',
+      'defi', 'dex', 'nft', 'sol', 'active', 'high-volume', 'onchain-activity',
+      'growth', 'trending', 'high-tvl', 'network',
     ]);
 
-    const themeWords = theme.toLowerCase().split(/[\s/]+/);
+    const themeWords = theme.toLowerCase().split(/[\s/&]+/);
     const distinctKeyword = keywords.find(kw =>
       !genericWords.has(kw.toLowerCase()) &&
       !themeWords.some(tw => kw.toLowerCase().includes(tw) || tw.includes(kw.toLowerCase()))
@@ -222,29 +361,34 @@ export class NarrativeClusterer {
 
   private buildDescription(theme: string, keywords: string[], signals: Signal[], sources: string[]): string {
     const signalCount = signals.length;
-    const sourceText = sources.length > 1 
-      ? `${sources.length} different sources (${sources.join(', ')})` 
+    const sourceText = sources.length > 1
+      ? `${sources.length} different sources (${sources.join(', ')})`
       : sources[0];
-    
+
     const keywordList = keywords.slice(0, 5).join(', ');
-    
+
     return `Detected ${signalCount} signals across ${sourceText} indicating emerging activity in ${theme.toLowerCase()}. ` +
-           `Key themes include: ${keywordList}. ` +
-           this.getThemeContext(theme);
+      `Key themes include: ${keywordList}. ` +
+      this.getThemeContext(theme);
   }
 
   private getThemeContext(theme: string): string {
     const contexts: Record<string, string> = {
       'DeFi': 'This represents new financial primitives and protocols being built on Solana.',
+      'Liquid Staking': 'Growing adoption of liquid staking tokens and validator economics on Solana.',
       'NFTs': 'Activity in digital collectibles, compressed NFTs, or new marketplace features.',
       'Gaming': 'New web3 games or gaming infrastructure launching on Solana.',
       'Infrastructure': 'Improvements to Solana\'s core infrastructure and validator ecosystem.',
       'Payments': 'Development in payment rails, stablecoin integration, or merchant adoption.',
       'Mobile': 'Mobile-first dApps and Saga phone ecosystem growth.',
       'DePIN': 'Physical infrastructure networks being tokenized on Solana.',
-      'AI': 'AI model hosting, inference, or data marketplaces on Solana.',
+      'AI & Agents': 'AI model hosting, inference, autonomous agents, or data marketplaces on Solana.',
       'Developer Tools': 'New frameworks, SDKs, or tools making Solana development easier.',
-      'Token Extensions': 'Adoption of Token-2022 program and its advanced features.'
+      'Token Extensions': 'Adoption of Token-2022 program and its advanced features.',
+      'MEV': 'Maximal extractable value infrastructure and Jito ecosystem developments.',
+      'Cross-Chain': 'Bridges and interoperability solutions connecting Solana to other chains.',
+      'RWA': 'Real-world asset tokenization and on-chain representation.',
+      'Oracles': 'Price feed and data oracle infrastructure developments.',
     };
 
     return contexts[theme] || 'This represents an emerging trend in the Solana ecosystem.';
@@ -253,10 +397,10 @@ export class NarrativeClusterer {
   private calculateClusterVelocity(signals: Signal[]): number {
     const now = Date.now();
     const weekMs = 7 * 24 * 60 * 60 * 1000;
-    
+
     const recentCount = signals.filter(s => now - s.timestamp < weekMs).length;
-    const olderCount = signals.filter(s => 
-      s.timestamp < now - weekMs && 
+    const olderCount = signals.filter(s =>
+      s.timestamp < now - weekMs &&
       s.timestamp > now - 2 * weekMs
     ).length;
 
@@ -278,11 +422,11 @@ export class NarrativeClusterer {
     signalCount: number;
   }): number {
     return (
-      metrics.crossSourceCount * 10 +
+      metrics.crossSourceCount * 15 +
       metrics.velocity * 15 +
       metrics.recency * 20 +
       metrics.keyVoiceMentions * 5 +
-      Math.min(metrics.signalCount / 2, 10)
+      Math.min(metrics.signalCount / 2, 15)
     );
   }
 }

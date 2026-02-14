@@ -195,6 +195,40 @@ function generateDemoData() {
     },
   ];
 
+  // === DISCORD / FORUM signals (cross-source enrichment) ===
+  const discordSignals: Signal[] = [
+    {
+      id: 'discord_ai_1', source: 'discord', timestamp: now - 1 * dayMs,
+      content: 'Solana StackExchange: How to build an AI agent that executes Solana transactions autonomously?',
+      metadata: { url: 'https://solana.stackexchange.com/questions/ai-agent-transactions', author: 'Solana StackExchange' },
+      keywords: ['ai', 'agents', 'autonomous', 'transactions', 'program'], weight: 2.0
+    },
+    {
+      id: 'discord_te_1', source: 'discord', timestamp: now - 2 * dayMs,
+      content: 'Solana Forum: Best practices for Token-2022 transfer hooks — compliance use cases discussion',
+      metadata: { url: 'https://forum.solana.com/t/token-2022-hooks', author: 'Solana Forum' },
+      keywords: ['token-2022', 'token-extensions', 'transfer-hooks', 'compliance'], weight: 2.0
+    },
+    {
+      id: 'discord_defi_1', source: 'discord', timestamp: now - 1 * dayMs,
+      content: 'Solana Dev Reddit: Jupiter v7 integration guide — new features and migration tips',
+      metadata: { url: 'https://reddit.com/r/solanadev/comments/jupiter-v7', author: 'Solana Dev Reddit' },
+      keywords: ['defi', 'jupiter', 'dex', 'aggregator', 'integration'], weight: 1.5
+    },
+    {
+      id: 'discord_depin_1', source: 'discord', timestamp: now - 3 * dayMs,
+      content: 'Solana StackExchange: Setting up a Helium IoT hotspot with Solana rewards — step by step',
+      metadata: { url: 'https://solana.stackexchange.com/questions/helium-iot-setup', author: 'Solana StackExchange' },
+      keywords: ['depin', 'helium', 'iot', 'physical-infrastructure', 'rewards'], weight: 2.0
+    },
+    {
+      id: 'discord_cnft_1', source: 'discord', timestamp: now - 2 * dayMs,
+      content: 'Solana Forum: Compressed NFT minting costs comparison — Bubblegum vs direct Merkle tree',
+      metadata: { url: 'https://forum.solana.com/t/cnft-minting-costs', author: 'Solana Forum' },
+      keywords: ['compressed-nfts', 'state-compression', 'nft', 'minting', 'merkle-tree', 'cost-reduction'], weight: 2.0
+    },
+  ];
+
   const results: Record<string, CollectorResult> = {
     github: {
       signals: [
@@ -239,6 +273,11 @@ function generateDemoData() {
       ],
       collectedAt: now,
       source: 'report'
+    },
+    discord: {
+      signals: discordSignals,
+      collectedAt: now,
+      source: 'discord'
     }
   };
 
@@ -252,6 +291,7 @@ function generateDemoData() {
   console.log(`  Onchain signals: ${results.onchain.signals.length}`);
   console.log(`  Twitter signals: ${results.twitter.signals.length}`);
   console.log(`  Report signals: ${results.reports.signals.length}`);
+  console.log(`  Discord/Forum signals: ${results.discord.signals.length}`);
   console.log(`  Total: ${totalSignals}`);
   console.log(`\nNext: Run "npm run analyze" to generate narratives`);
 }

@@ -12,8 +12,8 @@ This tool automatically detects emerging narratives in the Solana ecosystem by c
 - **Onchain activity**: Program deployments, transaction spikes, token launches
 - **GitHub**: New repos, trending projects, commit activity
 - **Twitter/X**: Key voice commentary (Mert, Toly, Raj, etc.)
-- **Market reports**: Helius, Messari, Solana Foundation blogs
-- **Discord/Forums**: Public community discussions
+- **Market reports**: Helius, Messari, Electric Capital, Solana Foundation blogs
+- **Discord/Forums**: Solana StackExchange, Solana Forum, Reddit r/solana & r/solanadev
 
 The tool refreshes fortnightly and generates 3-5 actionable product ideas for each detected narrative.
 
@@ -28,11 +28,13 @@ The tool refreshes fortnightly and generates 3-5 actionable product ideas for ea
 | GitHub | GitHub REST API | 6 hours |
 | Solana Onchain | Public RPC + Jupiter API | 6 hours |
 | Twitter/X | Nitter RSS + RSSHub fallbacks | 12 hours |
-| Market Reports | RSS feeds + Web scraping | Daily |
+| Market Reports | RSS feeds + Web scraping (Helius, Messari, Electric Capital) | Daily |
+| Discord/Forums | Solana StackExchange, Forum, Reddit RSS | 12 hours |
 
 **Key Voices Tracked:**
 - Mert (@mertimus) - 3.0x weight
 - Anatoly Yakovenko (@aeyakovenko) - 3.0x weight
+- Akshay (@akshaybd) - 3.0x weight
 - Raj Gokal (@rajgokal) - 2.5x weight
 - Armani Ferrante (@armaniferrante) - 2.5x weight
 - Solana Foundation, Jupiter, other protocols - 2.0x weight
@@ -164,34 +166,54 @@ Open [http://localhost:3000](http://localhost:3000) to view the dashboard.
 
 ## 📊 Current Detected Narratives
 
-Based on the latest analysis run:
+Based on the latest analysis run (148 signals, 5 sources):
 
-1. **DeFi: Advanced Trading Infrastructure**
-   - Score: 87.3 | 23 signals | 4 sources
-   - Jupiter aggregator improvements, MEV protection, advanced order types
-   - **Top Idea**: Multi-DEX aggregation SDK with built-in MEV protection
+1. **DePIN: Physical Infrastructure Surge**
+   - Score: 131.2 | 5 signals | 5 sources (onchain, twitter, github, discord, report)
+   - Render Network GPU compute up 280%, Helium IoT expansion, real hardware revenue
+   - **Top Idea**: Developer SDK for DePIN protocol integration
 
-2. **Token Extensions: Token-2022 Adoption**
-   - Score: 76.1 | 18 signals | 3 sources
-   - Transfer hooks, metadata pointer, confidential transfers
-   - **Top Idea**: Token-2022 migration toolkit for existing SPL tokens
+2. **NFTs: State Compression Rise**
+   - Score: 102.4 | 5 signals | 5 sources (github, twitter, onchain, discord, report)
+   - 50M+ compressed NFTs minted, 1000x cost reduction, Merkle tree scaling
+   - **Top Idea**: Developer SDK for compressed NFTs with minting and management tools
 
-3. **Compressed NFTs: State Compression Growth**
-   - Score: 71.8 | 16 signals | 3 sources
-   - Massive scalability improvements, new use cases emerging
-   - **Top Idea**: cNFT minting platform with built-in royalty enforcement
+3. **Token Extensions: Transfer Hooks Growth**
+   - Score: 102.4 | 5 signals | 5 sources (onchain, discord, github, twitter, report)
+   - Token-2022 mints up 340%, transfer hooks for RWA compliance, confidential transfers
+   - **Top Idea**: Developer SDK for Token-2022 with transfer hooks and compliance tooling
 
-4. **Mobile: Saga Ecosystem Expansion**
-   - Score: 65.4 | 14 signals | 2 sources
-   - dApp Store growth, mobile-first applications
-   - **Top Idea**: Saga-optimized PWA framework for Solana dApps
+4. **AI: Agents Rise**
+   - Score: 92.9 | 4 signals | 4 sources (discord, twitter, github, report)
+   - AI agent frameworks with Solana wallet integration, autonomous trading
+   - **Top Idea**: Developer SDK for AI agent-to-Solana integration
 
-5. **DePIN: Physical Infrastructure Networks**
-   - Score: 58.2 | 12 signals | 3 sources
-   - IoT, sensors, real-world data on Solana
-   - **Top Idea**: DePIN data marketplace with verified oracle feeds
+5. **DeFi: TVL Growth**
+   - Score: 80.3 | 3 signals | 3 sources (twitter, report, onchain)
+   - Solana DeFi TVL hit $12B (5x YoY), Kamino lending crossed $2B
+   - **Top Idea**: Simplified DeFi aggregator with one-tap optimal routing
 
-*Narratives refreshed: February 12, 2026*
+6. **DeFi: Jupiter Surge**
+   - Score: 78.2 | 3 signals | 3 sources (onchain, discord, github)
+   - Jupiter $4.2B 7-day volume (+67% WoW), perps v2, limit orders + DCA at $500M/week
+   - **Top Idea**: Developer SDK for DeFi protocol integration
+
+7. **DeFi: Bitcoin Growth**
+   - Score: 42.0 | 4 signals | 1 source (github)
+   - Multi-chain wallet development, cross-chain DeFi infrastructure
+   - **Top Idea**: Developer SDK for cross-chain Bitcoin-Solana integration
+
+8. **Developer Tools: Anchor Rise**
+   - Score: 26.5 | 3 signals | 1 source (github)
+   - Anchor framework adoption, escrow program patterns
+   - **Top Idea**: Developer SDK for Anchor escrow and program patterns
+
+9. **DePIN: Sol Rise**
+   - Score: 15.6 | 3 signals | 1 source (report)
+   - Solana network upgrades, WisdomTree tokenization expansion, delegation program
+   - **Top Idea**: DePIN Analytics Dashboard for Solana Foundation ecosystem
+
+*Narratives refreshed: February 14, 2026*
 
 ## 🏗️ Architecture
 
@@ -202,7 +224,8 @@ solana-narrative-detector/
 │   │   ├── github.ts        # GitHub API collector
 │   │   ├── solana-onchain.ts # Onchain data collector
 │   │   ├── twitter.ts       # Twitter/X collector
-│   │   └── reports.ts       # Market reports collector
+│   │   ├── reports.ts       # Market reports collector (Helius, Messari, Electric Capital)
+│   │   └── discord.ts       # Discord/forums collector (StackExchange, Reddit, Forum)
 │   ├── analysis/            # Analysis logic
 │   │   ├── signal-detector.ts    # Signal processing & ranking
 │   │   ├── narrative-clusterer.ts # Clustering algorithm
@@ -369,8 +392,8 @@ Returns the latest detected narratives.
   },
   "stats": {
     "totalSignals": 127,
-    "sourcesUsed": ["github", "onchain", "twitter", "report"],
-    "narrativesDetected": 8
+    "sourcesUsed": ["github", "onchain", "twitter", "report", "discord"],
+    "narrativesDetected": 9
   }
 }
 ```
@@ -385,7 +408,6 @@ Returns the latest detected narratives.
 
 ## 🛠️ Future Improvements
 
-- [ ] Add Discord scraper for Solana server channels
 - [ ] Implement LLM-powered narrative summarization
 - [ ] Add email/Telegram notifications for new narratives
 - [ ] Track narrative evolution over time
@@ -412,5 +434,5 @@ Questions? Open an issue or submit a PR!
 
 ---
 
-**Last Updated:** February 12, 2026  
-**Next Refresh:** February 15, 2026
+**Last Updated:** February 14, 2026
+**Next Refresh:** March 1, 2026

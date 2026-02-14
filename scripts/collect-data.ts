@@ -4,6 +4,7 @@ import { GitHubCollector } from '../src/collectors/github';
 import { SolanaOnchainCollector } from '../src/collectors/solana-onchain';
 import { TwitterCollector } from '../src/collectors/twitter';
 import { ReportsCollector } from '../src/collectors/reports';
+import { DiscordCollector } from '../src/collectors/discord';
 import { CollectorResult } from '../src/types';
 
 async function main() {
@@ -51,7 +52,7 @@ async function main() {
   // Collect from Twitter/X
   console.log('\n🐦 Collecting from Twitter/X...');
   try {
-    const twitterCollector = new TwitterCollector();
+    const twitterCollector = new TwitterCollector(process.env.TWITTER_BEARER_TOKEN);
     results.twitter = await twitterCollector.collectTwitterSignals();
     console.log(`✅ Twitter: ${results.twitter.signals.length} signals collected`);
     if (results.twitter.errors) {
@@ -76,10 +77,24 @@ async function main() {
     results.reports = { signals: [], collectedAt: Date.now(), source: 'report', errors: [error.message] };
   }
 
+  // Collect from Discord/Forums
+  console.log('\n💬 Collecting from Discord/forums...');
+  try {
+    const discordCollector = new DiscordCollector();
+    results.discord = await discordCollector.collectDiscordSignals();
+    console.log(`✅ Discord/Forums: ${results.discord.signals.length} signals collected`);
+    if (results.discord.errors) {
+      console.log(`⚠️  Errors: ${results.discord.errors.join(', ')}`);
+    }
+  } catch (error: any) {
+    console.error(`❌ Discord collection failed: ${error.message}`);
+    results.discord = { signals: [], collectedAt: Date.now(), source: 'discord', errors: [error.message] };
+  }
+
   // Save results
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
   const outputFile = path.join(dataDir, `collection_${timestamp}.json`);
-  
+
   fs.writeFileSync(outputFile, JSON.stringify(results, null, 2));
   console.log(`\n💾 Results saved to: ${outputFile}`);
 
