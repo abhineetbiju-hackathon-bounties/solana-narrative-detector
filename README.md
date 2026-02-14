@@ -65,7 +65,7 @@ Signals are clustered into narratives using:
 
 **Narrative Scoring:**
 ```
-Narrative Score = (10 × Sources) + (15 × Velocity) + (20 × Recency) + (5 × Key Voice Mentions) + min(Signals/2, 10)
+Narrative Score = (20 × Sources) + (15 × Velocity) + (20 × Recency) + (5 × Key Voice Mentions) + min(Signals/2, 10)
 ```
 
 ### 4. Product Idea Generation
@@ -171,7 +171,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the dashboard.
 
 ## 📊 Current Detected Narratives
 
-Based on the latest analysis run (235 real signals, 5 sources):
+Based on the latest analysis run (228 real signals, 5 sources):
 
 1. **DeFi Surge**
    - Score: 91.6 | 4 signals | 2 sources (onchain, github)
@@ -370,10 +370,13 @@ railway up
 ## 🧪 Testing
 
 ```bash
+# Run unit tests
+npm test
+
 # Run collection (dry-run mode)
 npm run collect
 
-# Run analysis on sample data
+# Run analysis on collected data
 npm run analyze
 
 # Check output
