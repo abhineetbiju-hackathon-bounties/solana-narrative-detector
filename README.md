@@ -171,52 +171,57 @@ Open [http://localhost:3000](http://localhost:3000) to view the dashboard.
 
 ## 📊 Current Detected Narratives
 
-Based on the latest analysis run (228 real signals, 5 sources):
+Based on the latest analysis run (529 real signals, 5 sources):
 
 1. **DeFi Surge**
-   - Score: 91.6 | 4 signals | 2 sources (onchain, github)
+   - Score: 96.1 | 12 signals | 2 sources (onchain, github)
    - Derivatives and DEX activity accelerating, perps growth across protocols
    - **Top Idea**: Developer SDK for Derivatives integration
 
-2. **DeFi: Raydium Expansion**
-   - Score: 89.1 | 3 signals | 2 sources (onchain, github)
+2. **AI & Agents Rise**
+   - Score: 93.8 | 8 signals | 2 sources (discord, github)
+   - AI agents and autonomous compute emerging across Solana dApps
+   - **Top Idea**: Developer SDK for AI Agent frameworks
+
+3. **Infrastructure Momentum**
+   - Score: 93.5 | 8 signals | 2 sources (onchain, github)
+   - Validator ecosystem, staking, and network infrastructure improvements
+   - **Top Idea**: Developer SDK for Network infrastructure
+
+4. **DeFi: Raydium Expansion**
+   - Score: 93.4 | 11 signals | 2 sources (onchain, github)
    - Raydium DEX activity surge with significant onchain volume growth
    - **Top Idea**: Developer SDK for Onchain Activity monitoring
 
-3. **Liquid Staking Expansion**
-   - Score: 29.4 | 7 signals | 1 source (onchain)
+5. **DeFi: Jupiter Surge**
+   - Score: 92.3 | 5 signals | 2 sources (onchain, discord)
+   - Jupiter aggregator and DEX trading momentum
+   - **Top Idea**: DeFi Analytics Dashboard
+
+6. **Developer Tools: Anchor Rise**
+   - Score: 83.8 | 5 signals | 2 sources (discord, github)
+   - Anchor framework adoption accelerating, new escrow and program patterns
+   - **Top Idea**: Developer SDK for Anchor program development
+
+7. **Liquid Staking Expansion**
+   - Score: 33.6 | 28 signals | 1 source (onchain)
    - Liquid staking protocols growing with high TVL across Marinade, Jito, Sanctum
    - **Top Idea**: Liquid Staking Analytics Dashboard
 
-4. **RWA: Real World Assets Expansion**
-   - Score: 29.0 | 5 signals | 1 source (onchain)
+8. **RWA: Real World Assets Expansion**
+   - Score: 32.0 | 20 signals | 1 source (onchain)
    - Real-world asset tokenization gaining traction, BlackRock BUIDL on Solana
    - **Top Idea**: RWA Analytics Dashboard
 
-5. **Cross-Chain Momentum**
-   - Score: 29.0 | 5 signals | 1 source (onchain)
+9. **Cross-Chain Momentum**
+   - Score: 32.0 | 20 signals | 1 source (onchain)
    - Bridge and interoperability protocols seeing increased activity (Portal, Wormhole)
    - **Top Idea**: Cross-Chain Integration Layer
 
-6. **DeFi: Basis Trading Growth**
-   - Score: 28.8 | 4 signals | 1 source (onchain)
-   - Basis trading strategies and new AMM protocols emerging (DeFiTuna)
-   - **Top Idea**: DeFi Analytics Dashboard
-
-7. **Payments Surge**
-   - Score: 25.8 | 3 signals | 1 source (github)
-   - Payment infrastructure and stablecoin integration development
-   - **Top Idea**: Payments Analytics Dashboard
-
-8. **Infrastructure: Firedancer Expansion**
-   - Score: 20.6 | 3 signals | 1 source (github)
-   - Firedancer validator client development, MEV infrastructure improvements
-   - **Top Idea**: Developer SDK for Staking infrastructure
-
-9. **Developer Tools: Anchor Rise**
-   - Score: 15.0 | 5 signals | 1 source (github)
-   - Anchor framework adoption accelerating, new escrow and program patterns
-   - **Top Idea**: Developer SDK for Anchor program development
+10. **Oracles: Pyth Network Surge**
+    - Score: 28.8 | 4 signals | 1 source (onchain)
+    - Pyth oracle network activity and data feed demand increasing
+    - **Top Idea**: Oracles Analytics Dashboard
 
 *Narratives refreshed: February 15, 2026*
 
@@ -238,19 +243,22 @@ solana-narrative-detector/
 │   └── types/               # TypeScript type definitions
 │       └── index.ts
 ├── pages/                   # Next.js pages
-│   ├── index.tsx           # Main dashboard
-│   ├── _app.tsx            # App wrapper
+│   ├── index.js            # Redirect to dashboard
 │   └── api/                # API routes
-│       └── narratives.ts   # Narratives API endpoint
+│       ├── narratives.ts   # Narratives API endpoint
+│       └── cron/
+│           └── refresh.ts  # Vercel cron endpoint
 ├── scripts/                # Utility scripts
 │   ├── collect-data.ts    # Data collection script
-│   └── analyze.ts         # Analysis script
+│   ├── analyze.ts         # Analysis script
+│   └── generate-demo-data.ts # Demo data generator
 ├── data/                   # Data storage
 │   ├── raw/               # Raw collected signals
 │   └── processed/         # Processed narratives
 ├── styles/                # CSS styles
 │   └── globals.css
 └── public/                # Static assets
+    └── dashboard.html     # Static dashboard UI
 ```
 
 ## 🔄 Data Refresh
@@ -274,7 +282,7 @@ making external API calls. On the **Pro** plan (60s timeout), the cron runs auto
 {
   "crons": [{
     "path": "/api/cron/refresh",
-    "schedule": "0 0 * * *"
+    "schedule": "0 0 */2 * *"
   }]
 }
 ```
@@ -447,5 +455,4 @@ Questions? Open an issue or submit a PR!
 
 ---
 
-**Last Updated:** February 14, 2026
-**Next Refresh:** March 1, 2026
+**Last Updated:** February 15, 2026
