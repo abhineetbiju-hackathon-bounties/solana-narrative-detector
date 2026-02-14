@@ -11,6 +11,7 @@
     "analyze": "npx ts-node scripts/analyze.ts",
     "demo": "npx ts-node scripts/generate-demo-data.ts && npx ts-node scripts/analyze.ts",
     "quick-start": "./scripts/quick-start.sh",
+    "test": "jest --verbose",
     "refresh": "npm run collect && npm run analyze"
   },
   "keywords": [
@@ -34,11 +35,14 @@
     "rss-parser": "^3.13.0"
   },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^20.19.33",
     "@types/react": "18.3.28",
     "autoprefixer": "^10.4.17",
+    "jest": "^30.2.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
+    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "5.9.3"
   }
