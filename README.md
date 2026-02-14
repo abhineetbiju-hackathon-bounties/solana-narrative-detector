@@ -128,6 +128,8 @@ TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
 SOLANA_RPC=https://your-rpc-endpoint.com
 ```
 
+> **Note on Twitter/X API:** The Twitter API v2 Basic tier costs $100/month, which is prohibitive for a hackathon project. The Twitter collector is designed with **6 fallback strategies** (Nitter RSS, RSSHub, Syndication API, ecosystem blog aggregators, and newsletter feeds) that collect social signals without requiring a paid API key. If you do have a bearer token, the collector will use it for higher-quality data.
+
 ### Running Data Collection
 
 ```bash
