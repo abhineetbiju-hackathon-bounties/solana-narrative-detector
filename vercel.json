@@ -6,6 +6,11 @@
   "regions": [
     "iad1"
   ],
+  "env": {
+    "GITHUB_TOKEN": "@github_token",
+    "HELIUS_API_KEY": "@helius_api_key",
+    "SOLANA_RPC": "@solana_rpc"
+  },
   "crons": [
     {
       "path": "/api/cron/refresh",
