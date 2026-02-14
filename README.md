@@ -15,7 +15,7 @@ This tool automatically detects emerging narratives in the Solana ecosystem by c
 - **Market reports**: Helius, Messari, Electric Capital, Solana Foundation blogs
 - **Discord/Forums**: Solana StackExchange, Solana Forum, Reddit r/solana & r/solanadev
 
-The tool refreshes every 2 days and generates 3-5 actionable product ideas for each detected narrative.
+The tool can be refreshed on demand (`npm run refresh`) and generates 3-5 actionable product ideas for each detected narrative.
 
 ## 🧠 Methodology
 
@@ -253,55 +253,60 @@ solana-narrative-detector/
 └── public/                # Static assets
 ```
 
-## 🔄 Automated Refresh
+## 🔄 Data Refresh
 
-To set up fortnightly automatic refreshes:
+### Manual Refresh (Recommended)
 
-### Option 1: GitHub Actions (Recommended)
+```bash
+npm run refresh          # collect + analyze in one step
+git add data/ && git commit -m "data: refresh" && git push
+```
 
-Create `.github/workflows/refresh.yml`:
+Vercel auto-redeploys when new data is pushed.
+
+### Vercel Cron (Pro Plan)
+
+A cron endpoint exists at `/api/cron/refresh` that runs all collectors in parallel.
+The Vercel **Hobby** plan has a 10-second function timeout which is too short for 5 collectors
+making external API calls. On the **Pro** plan (60s timeout), the cron runs automatically via `vercel.json`:
+
+```json
+{
+  "crons": [{
+    "path": "/api/cron/refresh",
+    "schedule": "0 0 * * *"
+  }]
+}
+```
+
+Requires `CRON_SECRET` set in Vercel environment variables.
+
+### GitHub Actions (Alternative)
+
+For free automated refreshes, create `.github/workflows/refresh.yml`:
 
 ```yaml
 name: Refresh Narratives
-
 on:
   schedule:
-    - cron: '0 0 1,15 * *'  # 1st and 15th of each month
-  workflow_dispatch:  # Manual trigger
-
+    - cron: '0 0 * * *'     # daily
+  workflow_dispatch:          # manual trigger
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+        with: { node-version: '18' }
       - run: npm install
-      - run: npm run collect
+      - run: npm run refresh
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           HELIUS_API_KEY: ${{ secrets.HELIUS_KEY }}
-      - run: npm run analyze
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'chore: update narratives'
+          commit_message: 'chore: refresh narratives'
 ```
-
-### Option 2: Vercel Cron Jobs
-
-Add to `vercel.json`:
-
-```json
-{
-  "crons": [{
-    "path": "/api/refresh",
-    "schedule": "0 0 1,15 * *"
-  }]
-}
-```
-
-Create `pages/api/refresh.ts` to run collection + analysis on schedule.
 
 ## 📈 Sample Output
 
