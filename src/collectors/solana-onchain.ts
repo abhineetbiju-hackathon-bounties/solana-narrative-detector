@@ -204,19 +204,14 @@ export class SolanaOnchainCollector {
 
     // Expanded list of known Solana programs
     const knownPrograms = [
+      // Top programs by category — DeFiLlama already covers TVL data for all protocols
       { name: 'Jupiter Aggregator', address: 'JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4', category: 'dex' },
-      { name: 'Marinade Finance', address: 'MarBmsSgKXdrN1egZf5sqe1TMai9K1rChYNDJgjq7aD', category: 'liquid-staking' },
+      { name: 'Raydium', address: '675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8', category: 'dex' },
       { name: 'Kamino', address: 'KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD', category: 'lending' },
       { name: 'Drift Protocol', address: 'dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH', category: 'perps' },
-      { name: 'Magic Eden', address: 'M2mx93ekt1fmXSVkTrUL9xVFHkmME8HTUi5Cyc5aF7K', category: 'nft' },
-      { name: 'Raydium', address: '675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8', category: 'dex' },
-      { name: 'Orca', address: 'whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc', category: 'dex' },
-      { name: 'Meteora', address: 'LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo', category: 'dex' },
-      { name: 'Phoenix', address: 'PhoeNiXZ8ByJGLkxNfZRnkUfjvmuYqLR89jjFHGqdXY', category: 'orderbook' },
       { name: 'Jito', address: 'Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P3FBscJC', category: 'liquid-staking' },
-      { name: 'Marginfi', address: 'MFv2hWf31Z9kbCa1snEPYctwafyhdvnV7FZnsebVacA', category: 'lending' },
       { name: 'Tensor', address: 'TSWAPaqyCSx2KABk68Shruf4rp7CxcNi8hAsbdwmHbN', category: 'nft' },
-      { name: 'Sanctum', address: 'stkitrT1Uoy18Dk1fTrgPw8W6MVzoCfYoAFT4MLsmhq', category: 'liquid-staking' },
+      { name: 'Marginfi', address: 'MFv2hWf31Z9kbCa1snEPYctwafyhdvnV7FZnsebVacA', category: 'lending' },
       { name: 'Pyth Network', address: 'FsJ3A3u2vn5cTVofAjvy6y5kwABJAqYWpe4975bi2epH', category: 'oracle' },
     ];
 
@@ -254,7 +249,7 @@ export class SolanaOnchainCollector {
       } catch (err) {
         continue;
       }
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 5000));
     }
 
     return signals;

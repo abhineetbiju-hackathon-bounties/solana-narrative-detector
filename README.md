@@ -26,17 +26,18 @@ The tool refreshes fortnightly and generates 3-5 actionable product ideas for ea
 | Source | Method | Refresh Rate |
 |--------|--------|--------------|
 | GitHub | GitHub REST API | 6 hours |
-| Solana Onchain | Public RPC + Jupiter API | 6 hours |
-| Twitter/X | Nitter RSS + RSSHub fallbacks | 12 hours |
-| Market Reports | RSS feeds + Web scraping (Helius, Messari, Electric Capital) | Daily |
-| Discord/Forums | Solana StackExchange, Forum, Reddit RSS | 12 hours |
+| Solana Onchain | DeFiLlama API + Public RPC + Jupiter API | 6 hours |
+| Twitter/X | Twitter API v2, Nitter RSS, RSSHub, Syndication, Ecosystem blogs/newsletters | 12 hours |
+| Market Reports | RSS feeds + Web scraping (Helius, Messari, Electric Capital, Phantom, Jito, CoinDesk, The Block, DeFiLlama) | Daily |
+| Discord/Forums | StackExchange API, Solana Forum (Discourse API), Reddit RSS + JSON API | 12 hours |
 
 **Key Voices Tracked:**
-- Mert (@mertimus) - 3.0x weight
+- Mert / Helius (@maboroshi0001) - 3.0x weight
 - Anatoly Yakovenko (@aeyakovenko) - 3.0x weight
 - Akshay (@akshaybd) - 3.0x weight
 - Raj Gokal (@rajgokal) - 2.5x weight
 - Armani Ferrante (@armaniferrante) - 2.5x weight
+- Helius (@heaboroshi) - 2.5x weight
 - Solana Foundation, Jupiter, other protocols - 2.0x weight
 
 ### 2. Signal Detection & Ranking
@@ -120,6 +121,9 @@ GITHUB_TOKEN=your_github_token_here
 # Optional: Helius API key for enhanced onchain data
 HELIUS_API_KEY=your_helius_key_here
 
+# Optional: Twitter API v2 bearer token for real-time social signals
+TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
+
 # Optional: Custom Solana RPC (defaults to public RPC)
 SOLANA_RPC=https://your-rpc-endpoint.com
 ```
@@ -132,9 +136,10 @@ npm run collect
 
 # This will:
 # - Query GitHub for new Solana repos
-# - Check onchain activity via RPC
-# - Scrape Twitter/X via RSS feeds
-# - Fetch latest market reports
+# - Check onchain activity via DeFiLlama + RPC + Jupiter
+# - Collect Twitter/X signals via API, RSS, newsletters
+# - Fetch latest market reports from 9 sources
+# - Scrape Discord/forums (StackExchange, Reddit, Solana Forum)
 # - Save raw data to data/raw/
 ```
 
