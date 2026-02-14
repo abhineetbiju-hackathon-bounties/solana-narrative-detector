@@ -2,7 +2,7 @@
 
 > Detect emerging narratives and opportunities in the Solana ecosystem through multi-source signal analysis
 
-**Live Demo:** [Deployed on Vercel](#deployment)
+**Live Demo:** [solana-narrative-detector-theta.vercel.app](https://solana-narrative-detector-theta.vercel.app/dashboard.html)
 **Repository:** [GitHub](https://github.com/abhineetbiju-hackathon-bounties/solana-narrative-detector)
 
 ## 🎯 Overview
