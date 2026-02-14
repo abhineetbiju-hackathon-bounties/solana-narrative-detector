@@ -1,10 +1,64 @@
 {
   "narratives": [
     {
-      "id": "narrative_1771089041228_pfsh5w",
+      "id": "narrative_1771093195560_aq6jke",
       "title": "DeFi Surge",
-      "description": "Detected 4 signals across 2 different sources (onchain, github) indicating emerging activity in defi. Key themes include: defi, derivatives, dex, perps, perpetuals. This represents new financial primitives and protocols being built on Solana.",
+      "description": "Detected 8 signals across 2 different sources (onchain, github) indicating emerging activity in defi. Key themes include: defi, derivatives, dex, perps, perpetuals. This represents new financial primitives and protocols being built on Solana.",
       "signals": [
+        {
+          "id": "onchain_defillama_jupiter-perpetual-exchange_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Jupiter Perpetual Exchange TVL: $894.3M (Derivatives). +5.1% 7d change",
+          "metadata": {
+            "url": "https://jup.ag/?ref=f6y1ryr2snn3",
+            "metrics": {
+              "tvl": 894282557,
+              "change_7d": 5.145103777020282,
+              "change_1d": 0.9054169822609168
+            }
+          },
+          "keywords": [
+            "derivatives",
+            "perps",
+            "perpetuals",
+            "dex",
+            "trading",
+            "defi",
+            "jupiter-perpetual-exchange"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.3,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 2.1666666666666665
+        },
+        {
+          "id": "onchain_defillama_drift-trade_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Drift Trade TVL: $338.5M (Derivatives). -0.8% 7d change",
+          "metadata": {
+            "url": "https://app.drift.trade/ref/defillama",
+            "metrics": {
+              "tvl": 338543566,
+              "change_7d": -0.7805185274931574,
+              "change_1d": 1.4681260941940621
+            }
+          },
+          "keywords": [
+            "derivatives",
+            "perps",
+            "perpetuals",
+            "dex",
+            "trading",
+            "defi",
+            "drift-trade"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.3,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 2.1666666666666665
+        },
         {
           "id": "onchain_defillama_jupiter-perpetual-exchange_1771088876217",
           "source": "onchain",
@@ -29,7 +83,7 @@
           ],
           "weight": 2.5,
           "normalizedWeight": 0.3,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 2.1666666666666665
         },
         {
@@ -56,7 +110,7 @@
           ],
           "weight": 2.5,
           "normalizedWeight": 0.3,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837317512454,
           "crossSourceScore": 2.1666666666666665
         },
         {
@@ -87,8 +141,65 @@
           ],
           "weight": 3.75,
           "normalizedWeight": 0.55,
-          "recencyScore": 0.8897167138175229,
+          "recencyScore": 0.8836262488285745,
           "crossSourceScore": 2
+        },
+        {
+          "id": "github_trending_Bonasa-Tech/manifest_1771092983052",
+          "source": "github",
+          "timestamp": 1771018369000,
+          "content": "Trending: Bonasa-Tech/manifest - The Unlimited Orderbook DEX on Solana",
+          "metadata": {
+            "url": "https://github.com/Bonasa-Tech/manifest",
+            "author": "Bonasa-Tech",
+            "metrics": {
+              "stars": 119
+            },
+            "tags": [
+              "defi",
+              "orderbook",
+              "solana"
+            ]
+          },
+          "keywords": [
+            "defi",
+            "orderbook",
+            "unlimited",
+            "dex",
+            "bonasa",
+            "tech",
+            "manifest"
+          ],
+          "weight": 3.75,
+          "normalizedWeight": 0.55,
+          "recencyScore": 0.8836262488285745,
+          "crossSourceScore": 2
+        },
+        {
+          "id": "onchain_category_derivatives_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Solana Derivatives sector: 21 protocols, $1.33B total TVL. Top: Jupiter Perpetual Exchange, Drift Trade, Pacifica, Wasabi, GMTrade",
+          "metadata": {
+            "url": "https://defillama.com/chain/Solana",
+            "metrics": {
+              "total_tvl": 1329671046,
+              "protocol_count": 21
+            }
+          },
+          "keywords": [
+            "derivatives",
+            "defi",
+            "jupiter-perpetual-exchange",
+            "drift-trade",
+            "pacifica",
+            "wasabi",
+            "gmtrade"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1.5
         },
         {
           "id": "onchain_category_derivatives_1771088876217",
@@ -113,7 +224,7 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837317512454,
           "crossSourceScore": 1.5
         }
       ],
@@ -134,19 +245,19 @@
         "pacifica",
         "wasabi"
       ],
-      "score": 91.59236392757283,
+      "score": 93.53321490522228,
       "metrics": {
         "crossSourceCount": 2,
         "velocity": 2,
-        "recency": 0.9796181963786419,
+        "recency": 0.976660745261114,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771089041228,
+      "timestamp": 1771093195560,
       "ideas": [
         {
           "title": "Developer SDK for Derivatives",
           "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with derivatives-related protocols. Include code examples, CLI tools, and testing utilities.",
-          "reasoning": "With 4 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
+          "reasoning": "With 8 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
           "targetAudience": "Solana developers building dApps",
           "difficulty": "Medium",
           "impact": "High"
@@ -186,10 +297,370 @@
       ]
     },
     {
-      "id": "narrative_1771089041227_4adh53",
-      "title": "DeFi: Raydium Expansion",
-      "description": "Detected 3 signals across 2 different sources (onchain, github) indicating emerging activity in defi. Key themes include: dex, raydium, onchain-activity, high-volume, jupiter-aggregator. This represents new financial primitives and protocols being built on Solana.",
+      "id": "narrative_1771093195560_a7v9su",
+      "title": "Infrastructure Momentum",
+      "description": "Detected 4 signals across 2 different sources (onchain, github) indicating emerging activity in infrastructure. Key themes include: staking, validator, network, epoch, blockchain. Improvements to Solana's core infrastructure and validator ecosystem.",
       "signals": [
+        {
+          "id": "onchain_epoch_926_1771093067649",
+          "source": "onchain",
+          "timestamp": 1771093067649,
+          "content": "Solana Epoch 926: 52.7% complete, slot 400259637",
+          "metadata": {
+            "url": "https://solscan.io",
+            "metrics": {
+              "epoch": 926,
+              "slot": 400259637,
+              "epoch_progress": 53
+            }
+          },
+          "keywords": [
+            "network",
+            "epoch",
+            "staking",
+            "validator"
+          ],
+          "weight": 1,
+          "normalizedWeight": 0,
+          "recencyScore": 0.9997885904718375,
+          "crossSourceScore": 2.6666666666666665
+        },
+        {
+          "id": "onchain_epoch_926_1771088939892",
+          "source": "onchain",
+          "timestamp": 1771088939892,
+          "content": "Solana Epoch 926: 50.3% complete, slot 400249108",
+          "metadata": {
+            "url": "https://solscan.io",
+            "metrics": {
+              "epoch": 926,
+              "slot": 400249108,
+              "epoch_progress": 50
+            }
+          },
+          "keywords": [
+            "network",
+            "epoch",
+            "staking",
+            "validator"
+          ],
+          "weight": 1,
+          "normalizedWeight": 0,
+          "recencyScore": 0.992988270772115,
+          "crossSourceScore": 2.6666666666666665
+        },
+        {
+          "id": "github_trending_anza-xyz/solana-sdk_1771088868515",
+          "source": "github",
+          "timestamp": 1771053872000,
+          "content": "Trending: anza-xyz/solana-sdk - Rust SDK for the Solana blockchain, used by on-chain program developers and the Agave validator",
+          "metadata": {
+            "url": "https://github.com/anza-xyz/solana-sdk",
+            "author": "anza-xyz",
+            "metrics": {
+              "stars": 208
+            },
+            "tags": []
+          },
+          "keywords": [
+            "blockchain",
+            "used",
+            "chain",
+            "developers",
+            "agave",
+            "staking",
+            "validator",
+            "anza"
+          ],
+          "weight": 3.75,
+          "normalizedWeight": 0.55,
+          "recencyScore": 0.9370496115446185,
+          "crossSourceScore": 1.7777777777777777
+        },
+        {
+          "id": "github_trending_anza-xyz/solana-sdk_1771092983052",
+          "source": "github",
+          "timestamp": 1771053872000,
+          "content": "Trending: anza-xyz/solana-sdk - Rust SDK for the Solana blockchain, used by on-chain program developers and the Agave validator",
+          "metadata": {
+            "url": "https://github.com/anza-xyz/solana-sdk",
+            "author": "anza-xyz",
+            "metrics": {
+              "stars": 208
+            },
+            "tags": []
+          },
+          "keywords": [
+            "blockchain",
+            "used",
+            "chain",
+            "developers",
+            "agave",
+            "staking",
+            "validator",
+            "anza"
+          ],
+          "weight": 3.75,
+          "normalizedWeight": 0.55,
+          "recencyScore": 0.9370496115446185,
+          "crossSourceScore": 1.7777777777777777
+        }
+      ],
+      "keywords": [
+        "network",
+        "epoch",
+        "staking",
+        "validator",
+        "blockchain",
+        "used",
+        "chain",
+        "developers",
+        "agave",
+        "anza"
+      ],
+      "score": 91.52522436915667,
+      "metrics": {
+        "crossSourceCount": 2,
+        "velocity": 2,
+        "recency": 0.976261218457834,
+        "keyVoiceMentions": 0
+      },
+      "timestamp": 1771093195560,
+      "ideas": [
+        {
+          "title": "Developer SDK for Network",
+          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with network-related protocols. Include code examples, CLI tools, and testing utilities.",
+          "reasoning": "With 4 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
+          "targetAudience": "Solana developers building dApps",
+          "difficulty": "Medium",
+          "impact": "High"
+        },
+        {
+          "title": "Infrastructure Momentum Analytics Dashboard",
+          "description": "Real-time dashboard aggregating all infrastructure momentum activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
+          "reasoning": "Cross-source signals (2 sources) indicate fragmented information. Users need a single place to monitor this space.",
+          "targetAudience": "Traders, researchers, and power users",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Specialized RPC Service",
+          "description": "High-performance RPC endpoints optimized for network-related transactions. Features: priority routing, caching, and webhook notifications.",
+          "reasoning": "Onchain activity signals show demand for infrastructure. Specialized RPCs can offer better performance than general-purpose providers.",
+          "targetAudience": "dApp developers and protocols",
+          "difficulty": "Hard",
+          "impact": "High"
+        },
+        {
+          "title": "\"Infrastructure Momentum on Solana\" Interactive Course",
+          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
+          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
+          "targetAudience": "Developers new to this Solana vertical",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Smart Alert & Automation Platform",
+          "description": "Custom alerts and automated actions for network, epoch, staking events. Set conditions, get notified, auto-execute strategies.",
+          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
+          "targetAudience": "Active traders and strategists",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        }
+      ]
+    },
+    {
+      "id": "narrative_1771093195560_482r2g",
+      "title": "DeFi: Jupiter Surge",
+      "description": "Detected 3 signals across 2 different sources (onchain, discord) indicating emerging activity in defi. Key themes include: dex, jupiter, trading, token, trending. This represents new financial primitives and protocols being built on Solana.",
+      "signals": [
+        {
+          "id": "token_trending__1771093054572",
+          "source": "onchain",
+          "timestamp": 1771093054572,
+          "content": "Trending token on Jupiter: Unknown ()",
+          "metadata": {
+            "url": "https://solscan.io/token/",
+            "metrics": {
+              "daily_volume": 0
+            }
+          },
+          "keywords": [
+            "token",
+            "trending",
+            "unknown",
+            "dex",
+            "trading",
+            "jupiter"
+          ],
+          "weight": 1.5,
+          "normalizedWeight": 0.1,
+          "recencyScore": 0.9997669732528347,
+          "crossSourceScore": 2.4
+        },
+        {
+          "id": "token_trending__1771088929028",
+          "source": "onchain",
+          "timestamp": 1771088929028,
+          "content": "Trending token on Jupiter: Unknown ()",
+          "metadata": {
+            "url": "https://solscan.io/token/",
+            "metrics": {
+              "daily_volume": 0
+            }
+          },
+          "keywords": [
+            "token",
+            "trending",
+            "unknown",
+            "dex",
+            "trading",
+            "jupiter"
+          ],
+          "weight": 1.5,
+          "normalizedWeight": 0.1,
+          "recencyScore": 0.9929704339207863,
+          "crossSourceScore": 2.4
+        },
+        {
+          "id": "discord_reddit_solana_1r4fqfx",
+          "source": "discord",
+          "timestamp": 1771058873000,
+          "content": "r/solana: Why are we all just trading SOL instead of actually spending it? - Serious question for this community. Solana is objectively one of the best networks for payments. Sub-second finality, fraction-of-a-cent fees, massive throughput. It’s literally built to be used as m",
+          "metadata": {
+            "url": "https://reddit.com/r/solana/comments/1r4fqfx/why_are_we_all_just_trading_sol_instead_of/",
+            "author": "r/solana",
+            "metrics": {
+              "score": 17,
+              "num_comments": 28
+            }
+          },
+          "keywords": [
+            "sol",
+            "dex",
+            "trading",
+            "instead",
+            "spending"
+          ],
+          "weight": 1.84,
+          "normalizedWeight": 0.168,
+          "recencyScore": 0.9448300552519323,
+          "crossSourceScore": 2
+        }
+      ],
+      "keywords": [
+        "token",
+        "trending",
+        "unknown",
+        "dex",
+        "trading",
+        "jupiter",
+        "sol",
+        "instead",
+        "spending"
+      ],
+      "score": 91.20337839277829,
+      "metrics": {
+        "crossSourceCount": 2,
+        "velocity": 2,
+        "recency": 0.9851689196389142,
+        "keyVoiceMentions": 0
+      },
+      "timestamp": 1771093195560,
+      "ideas": [
+        {
+          "title": "DeFi Analytics Dashboard",
+          "description": "Real-time dashboard aggregating all defi activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
+          "reasoning": "Cross-source signals (2 sources) indicate fragmented information. Users need a single place to monitor this space.",
+          "targetAudience": "Traders, researchers, and power users",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Simplified DeFi Aggregator",
+          "description": "User-friendly mobile app that aggregates best rates across dex protocols. One-tap optimal routing.",
+          "reasoning": "High velocity (2.0x) shows rapid innovation, but complexity is increasing. Users need simplification.",
+          "targetAudience": "Crypto newcomers and mobile-first users",
+          "difficulty": "Medium",
+          "impact": "High"
+        },
+        {
+          "title": "\"DeFi on Solana\" Interactive Course",
+          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
+          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
+          "targetAudience": "Developers new to this Solana vertical",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Smart Alert & Automation Platform",
+          "description": "Custom alerts and automated actions for token, trending, unknown events. Set conditions, get notified, auto-execute strategies.",
+          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
+          "targetAudience": "Active traders and strategists",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Token Integration Layer",
+          "description": "Middleware that connects existing Solana apps to emerging token protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
+          "reasoning": "Multiple protocols detected (3 signals) but no standard integration. First-mover advantage for abstraction layer.",
+          "targetAudience": "Existing Solana protocols and dApps",
+          "difficulty": "Hard",
+          "impact": "High"
+        }
+      ]
+    },
+    {
+      "id": "narrative_1771093195560_d4sieo",
+      "title": "DeFi: Raydium Expansion",
+      "description": "Detected 5 signals across 2 different sources (onchain, github) indicating emerging activity in defi. Key themes include: dex, raydium, onchain-activity, high-volume, jupiter-aggregator. This represents new financial primitives and protocols being built on Solana.",
+      "signals": [
+        {
+          "id": "onchain_activity_675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8_1771093005742",
+          "source": "onchain",
+          "timestamp": 1771093005742,
+          "content": "Very high activity on Raydium (dex): 100 recent transactions",
+          "metadata": {
+            "url": "https://solscan.io/account/675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+            "metrics": {
+              "recent_transactions": 100,
+              "program_activity": 1
+            }
+          },
+          "keywords": [
+            "onchain-activity",
+            "raydium",
+            "dex",
+            "high-volume"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.9996862578913732,
+          "crossSourceScore": 2
+        },
+        {
+          "id": "onchain_activity_JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4_1771092995290",
+          "source": "onchain",
+          "timestamp": 1771092995290,
+          "content": "Very high activity on Jupiter Aggregator (dex): 100 recent transactions",
+          "metadata": {
+            "url": "https://solscan.io/account/JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+            "metrics": {
+              "recent_transactions": 100,
+              "program_activity": 1
+            }
+          },
+          "keywords": [
+            "onchain-activity",
+            "jupiter-aggregator",
+            "dex",
+            "high-volume"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.9996689817166347,
+          "crossSourceScore": 2
+        },
         {
           "id": "onchain_activity_675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8_1771088884156",
           "source": "onchain",
@@ -210,7 +681,7 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 0.9997403875411269,
+          "recencyScore": 0.9928967650774393,
           "crossSourceScore": 2
         },
         {
@@ -233,7 +704,7 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 0.9997292446634892,
+          "recencyScore": 0.9928856984772519,
           "crossSourceScore": 2
         },
         {
@@ -281,7 +752,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.5708038550987207,
+          "recencyScore": 0.5668964764836085,
           "crossSourceScore": 1.3846153846153846
         }
       ],
@@ -300,19 +771,19 @@
         "cryptotraderbot",
         "developer-portal"
       ],
-      "score": 89.04512638694925,
+      "score": 90.9337529821505,
       "metrics": {
         "crossSourceCount": 2,
         "velocity": 2,
-        "recency": 0.8772563193474624,
+        "recency": 0.9216876491075245,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771089041227,
+      "timestamp": 1771093195560,
       "ideas": [
         {
           "title": "Developer SDK for Onchain Activity",
           "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with onchain-activity-related protocols. Include code examples, CLI tools, and testing utilities.",
-          "reasoning": "With 3 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
+          "reasoning": "With 5 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
           "targetAudience": "Solana developers building dApps",
           "difficulty": "Medium",
           "impact": "High"
@@ -352,10 +823,199 @@
       ]
     },
     {
-      "id": "narrative_1771089041227_23gp2d",
-      "title": "Liquid Staking Expansion",
-      "description": "Detected 7 signals across onchain indicating emerging activity in liquid staking. Key themes include: liquid-staking, defi, staking, validator, high-tvl. Growing adoption of liquid staking tokens and validator economics on Solana.",
+      "id": "narrative_1771093195560_fk0p2w",
+      "title": "Developer Tools: Anchor Rise",
+      "description": "Detected 3 signals across 2 different sources (discord, github) indicating emerging activity in developer tools. Key themes include: anchor, vault, while, running, command. New frameworks, SDKs, or tools making Solana development easier.",
       "signals": [
+        {
+          "id": "discord_se_24125",
+          "source": "discord",
+          "timestamp": 1770997732000,
+          "content": "Solana StackExchange: In Solana Project, while running the anchor build command - ",
+          "metadata": {
+            "url": "https://solana.stackexchange.com/questions/24125/in-solana-project-while-running-the-anchor-build-command",
+            "author": "Solana StackExchange",
+            "metrics": {
+              "score": 0,
+              "answer_count": 0,
+              "view_count": 10
+            }
+          },
+          "keywords": [
+            "anchor",
+            "while",
+            "running",
+            "command",
+            "solana-program",
+            "solana-cli"
+          ],
+          "weight": 2,
+          "normalizedWeight": 0.2,
+          "recencyScore": 0.8539837387480889,
+          "crossSourceScore": 1.5
+        },
+        {
+          "id": "github_Christone007/anchor-vault-program_1771088862983",
+          "source": "github",
+          "timestamp": 1770504730000,
+          "content": "Christone007/anchor-vault-program: A Solana vault program built with anchor",
+          "metadata": {
+            "url": "https://github.com/Christone007/anchor-vault-program",
+            "author": "Christone007",
+            "metrics": {
+              "stars": 0,
+              "age_days": 6
+            },
+            "tags": []
+          },
+          "keywords": [
+            "vault",
+            "anchor"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.3779505414969655,
+          "crossSourceScore": 1.6666666666666667
+        },
+        {
+          "id": "github_Christone007/anchor-vault-program_1771092977045",
+          "source": "github",
+          "timestamp": 1770504730000,
+          "content": "Christone007/anchor-vault-program: A Solana vault program built with anchor",
+          "metadata": {
+            "url": "https://github.com/Christone007/anchor-vault-program",
+            "author": "Christone007",
+            "metrics": {
+              "stars": 0,
+              "age_days": 6
+            },
+            "tags": []
+          },
+          "keywords": [
+            "vault",
+            "anchor"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.3779505414969655,
+          "crossSourceScore": 1.6666666666666667
+        }
+      ],
+      "keywords": [
+        "anchor",
+        "while",
+        "running",
+        "command",
+        "solana-program",
+        "solana-cli",
+        "vault"
+      ],
+      "score": 83.74159114686928,
+      "metrics": {
+        "crossSourceCount": 2,
+        "velocity": 2,
+        "recency": 0.6120795573434642,
+        "keyVoiceMentions": 0
+      },
+      "timestamp": 1771093195560,
+      "ideas": [
+        {
+          "title": "Developer SDK for Anchor",
+          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with anchor-related protocols. Include code examples, CLI tools, and testing utilities.",
+          "reasoning": "With 3 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
+          "targetAudience": "Solana developers building dApps",
+          "difficulty": "Medium",
+          "impact": "High"
+        },
+        {
+          "title": "Developer Tools Analytics Dashboard",
+          "description": "Real-time dashboard aggregating all developer tools activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
+          "reasoning": "Cross-source signals (2 sources) indicate fragmented information. Users need a single place to monitor this space.",
+          "targetAudience": "Traders, researchers, and power users",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "\"Developer Tools on Solana\" Interactive Course",
+          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
+          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
+          "targetAudience": "Developers new to this Solana vertical",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Smart Alert & Automation Platform",
+          "description": "Custom alerts and automated actions for anchor, while, running events. Set conditions, get notified, auto-execute strategies.",
+          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
+          "targetAudience": "Active traders and strategists",
+          "difficulty": "Medium",
+          "impact": "Medium"
+        },
+        {
+          "title": "Anchor Integration Layer",
+          "description": "Middleware that connects existing Solana apps to emerging anchor protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
+          "reasoning": "Multiple protocols detected (3 signals) but no standard integration. First-mover advantage for abstraction layer.",
+          "targetAudience": "Existing Solana protocols and dApps",
+          "difficulty": "Hard",
+          "impact": "High"
+        }
+      ]
+    },
+    {
+      "id": "narrative_1771093195560_eo8qc7",
+      "title": "Liquid Staking Expansion",
+      "description": "Detected 14 signals across onchain indicating emerging activity in liquid staking. Key themes include: liquid-staking, defi, staking, validator, high-tvl. Growing adoption of liquid staking tokens and validator economics on Solana.",
+      "signals": [
+        {
+          "id": "onchain_defillama_jupiter-staked-sol_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Jupiter Staked SOL TVL: $914.5M (Liquid Staking). +1.0% 7d change",
+          "metadata": {
+            "url": "https://jup.ag/?ref=f6y1ryr2snn3",
+            "metrics": {
+              "tvl": 914505099,
+              "change_7d": 1.0082646658028125,
+              "change_1d": 5.254072756051855
+            }
+          },
+          "keywords": [
+            "liquid-staking",
+            "staking",
+            "validator",
+            "defi",
+            "jupiter-staked-sol"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.3,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 2.8
+        },
+        {
+          "id": "onchain_defillama_binance-staked-sol_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Binance Staked SOL TVL: $765.1M (Liquid Staking). -5.2% 7d change",
+          "metadata": {
+            "url": "https://www.binance.com/en/solana-staking",
+            "metrics": {
+              "tvl": 765076070,
+              "change_7d": -5.224884366154342,
+              "change_1d": 3.741249332405431
+            }
+          },
+          "keywords": [
+            "liquid-staking",
+            "staking",
+            "validator",
+            "defi",
+            "binance-staked-sol"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.3,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 2.8
+        },
         {
           "id": "onchain_defillama_jupiter-staked-sol_1771088876217",
           "source": "onchain",
@@ -378,7 +1038,7 @@
           ],
           "weight": 2.5,
           "normalizedWeight": 0.3,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 2.8
         },
         {
@@ -403,8 +1063,112 @@
           ],
           "weight": 2.5,
           "normalizedWeight": 0.3,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 2.8
+        },
+        {
+          "id": "onchain_defillama_lido_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Lido TVL: $19.83B (Liquid Staking). +0.9% 7d change",
+          "metadata": {
+            "url": "https://lido.fi/",
+            "metrics": {
+              "tvl": 19831576008,
+              "change_7d": 0.9060735938907243,
+              "change_1d": 0.5799925282187246
+            }
+          },
+          "keywords": [
+            "liquid-staking",
+            "staking",
+            "validator",
+            "defi",
+            "lido",
+            "high-tvl"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 2.5
+        },
+        {
+          "id": "onchain_defillama_jito-liquid-staking_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Jito Liquid Staking TVL: $1.18B (Liquid Staking). -0.4% 7d change",
+          "metadata": {
+            "url": "https://jito.network",
+            "metrics": {
+              "tvl": 1181995847,
+              "change_7d": -0.3604834438167188,
+              "change_1d": 5.79292259445441
+            }
+          },
+          "keywords": [
+            "liquid-staking",
+            "staking",
+            "validator",
+            "defi",
+            "jito-liquid-staking",
+            "high-tvl"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 2.5
+        },
+        {
+          "id": "onchain_defillama_doublezero-staked-sol_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "DoubleZero Staked SOL TVL: $1.17B (Liquid Staking). +1.2% 7d change",
+          "metadata": {
+            "url": "https://doublezero.xyz/",
+            "metrics": {
+              "tvl": 1170743047,
+              "change_7d": 1.2328971281132795,
+              "change_1d": 4.41607658700687
+            }
+          },
+          "keywords": [
+            "liquid-staking",
+            "staking",
+            "validator",
+            "defi",
+            "doublezero-staked-sol",
+            "high-tvl"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 2.5
+        },
+        {
+          "id": "onchain_defillama_sanctum-validator-lsts_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Sanctum Validator LSTs TVL: $1.03B (Liquid Staking). -0.4% 7d change",
+          "metadata": {
+            "url": "https://www.sanctum.so",
+            "metrics": {
+              "tvl": 1033988745,
+              "change_7d": -0.4100309849077206,
+              "change_1d": 6.10821945879168
+            }
+          },
+          "keywords": [
+            "liquid-staking",
+            "staking",
+            "validator",
+            "defi",
+            "sanctum-validator-lsts",
+            "high-tvl"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 2.5
         },
         {
           "id": "onchain_defillama_lido_1771088876217",
@@ -429,7 +1193,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 2.5
         },
         {
@@ -455,7 +1219,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 2.5
         },
         {
@@ -481,7 +1245,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 2.5
         },
         {
@@ -507,8 +1271,34 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 2.5
+        },
+        {
+          "id": "onchain_category_liquid-staking_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Solana Liquid Staking sector: 36 protocols, $26.33B total TVL. Top: Lido, Jito Liquid Staking, DoubleZero Staked SOL, Sanctum Validator LSTs, Jupiter Staked SOL",
+          "metadata": {
+            "url": "https://defillama.com/chain/Solana",
+            "metrics": {
+              "total_tvl": 26333068065,
+              "protocol_count": 36
+            }
+          },
+          "keywords": [
+            "liquid-staking",
+            "defi",
+            "lido",
+            "jito-liquid-staking",
+            "doublezero-staked-sol",
+            "sanctum-validator-lsts",
+            "jupiter-staked-sol"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1.5
         },
         {
           "id": "onchain_category_liquid-staking_1771088876217",
@@ -533,7 +1323,7 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837317512454,
           "crossSourceScore": 1.5
         }
       ],
@@ -550,14 +1340,14 @@
         "doublezero-staked-sol",
         "sanctum-validator-lsts"
       ],
-      "score": 29.398472275519584,
+      "score": 30.779070361141663,
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 0.999809034439948,
+        "recency": 0.9973837951427079,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771089041227,
+      "timestamp": 1771093195560,
       "ideas": [
         {
           "title": "Liquid Staking Expansion Analytics Dashboard",
@@ -602,10 +1392,36 @@
       ]
     },
     {
-      "id": "narrative_1771089041228_yzk0p8",
+      "id": "narrative_1771093195560_51xwbf",
       "title": "RWA: Real World Assets Expansion",
-      "description": "Detected 5 signals across onchain indicating emerging activity in rwa. Key themes include: rwa, real-world-assets, tokenization, defi, blackrock-buidl. Real-world asset tokenization and on-chain representation.",
+      "description": "Detected 10 signals across onchain indicating emerging activity in rwa. Key themes include: rwa, real-world-assets, tokenization, defi, blackrock-buidl. Real-world asset tokenization and on-chain representation.",
       "signals": [
+        {
+          "id": "onchain_category_rwa_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Solana RWA sector: 21 protocols, $6.95B total TVL. Top: BlackRock BUIDL, Ondo Yield Assets, Superstate USTB, Ondo Global Markets, Hastra",
+          "metadata": {
+            "url": "https://defillama.com/chain/Solana",
+            "metrics": {
+              "total_tvl": 6954332135,
+              "protocol_count": 21
+            }
+          },
+          "keywords": [
+            "rwa",
+            "defi",
+            "blackrock-buidl",
+            "ondo-yield-assets",
+            "superstate-ustb",
+            "ondo-global-markets",
+            "hastra"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1.625
+        },
         {
           "id": "onchain_category_rwa_1771088876217",
           "source": "onchain",
@@ -629,8 +1445,32 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837317512454,
           "crossSourceScore": 1.625
+        },
+        {
+          "id": "onchain_defillama_ondo-global-markets_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Ondo Global Markets TVL: $613.3M (RWA). -0.5% 7d change",
+          "metadata": {
+            "url": "https://ondo.finance",
+            "metrics": {
+              "tvl": 613277010,
+              "change_7d": -0.5078570326162719,
+              "change_1d": -0.24914720870907558
+            }
+          },
+          "keywords": [
+            "rwa",
+            "real-world-assets",
+            "tokenization",
+            "ondo-global-markets"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.3,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1.25
         },
         {
           "id": "onchain_defillama_ondo-global-markets_1771088876217",
@@ -653,8 +1493,33 @@
           ],
           "weight": 2.5,
           "normalizedWeight": 0.3,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 1.25
+        },
+        {
+          "id": "onchain_defillama_blackrock-buidl_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "BlackRock BUIDL TVL: $2.36B (RWA). +12.7% 7d change",
+          "metadata": {
+            "url": "https://securitize.io/",
+            "metrics": {
+              "tvl": 2362639044,
+              "change_7d": 12.734516680749877,
+              "change_1d": -0.0041477319808791435
+            }
+          },
+          "keywords": [
+            "rwa",
+            "real-world-assets",
+            "tokenization",
+            "blackrock-buidl",
+            "high-tvl"
+          ],
+          "weight": 3.5,
+          "normalizedWeight": 0.5,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1
         },
         {
           "id": "onchain_defillama_blackrock-buidl_1771088876217",
@@ -678,7 +1543,56 @@
           ],
           "weight": 3.5,
           "normalizedWeight": 0.5,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
+          "crossSourceScore": 1
+        },
+        {
+          "id": "onchain_defillama_ondo-yield-assets_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Ondo Yield Assets TVL: $2.01B (RWA). +2.2% 7d change",
+          "metadata": {
+            "url": "https://ondo.finance",
+            "metrics": {
+              "tvl": 2009337646,
+              "change_7d": 2.1785733198629487,
+              "change_1d": -0.01440621930625241
+            }
+          },
+          "keywords": [
+            "rwa",
+            "real-world-assets",
+            "tokenization",
+            "ondo-yield-assets",
+            "high-tvl"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1
+        },
+        {
+          "id": "onchain_defillama_superstate-ustb_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Superstate USTB TVL: $760.5M (RWA). +14.9% 7d change",
+          "metadata": {
+            "url": "https://superstate.com/",
+            "metrics": {
+              "tvl": 760487160,
+              "change_7d": 14.942192079577296,
+              "change_1d": 0.5660165210143759
+            }
+          },
+          "keywords": [
+            "rwa",
+            "real-world-assets",
+            "tokenization",
+            "superstate-ustb"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.9996572247661497,
           "crossSourceScore": 1
         },
         {
@@ -703,7 +1617,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 1
         },
         {
@@ -727,7 +1641,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 1
         }
       ],
@@ -743,14 +1657,14 @@
         "tokenization",
         "high-tvl"
       ],
-      "score": 28.998472266262095,
+      "score": 29.979070361141666,
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 0.9998090332827616,
+        "recency": 0.9973837951427079,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771089041228,
+      "timestamp": 1771093195560,
       "ideas": [
         {
           "title": "RWA Analytics Dashboard",
@@ -787,7 +1701,7 @@
         {
           "title": "Rwa Integration Layer",
           "description": "Middleware that connects existing Solana apps to emerging rwa protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
-          "reasoning": "Multiple protocols detected (5 signals) but no standard integration. First-mover advantage for abstraction layer.",
+          "reasoning": "Multiple protocols detected (10 signals) but no standard integration. First-mover advantage for abstraction layer.",
           "targetAudience": "Existing Solana protocols and dApps",
           "difficulty": "Hard",
           "impact": "High"
@@ -795,10 +1709,37 @@
       ]
     },
     {
-      "id": "narrative_1771089041228_vk9y4x",
+      "id": "narrative_1771093195560_gp5hub",
       "title": "Cross-Chain Momentum",
-      "description": "Detected 5 signals across onchain indicating emerging activity in cross-chain. Key themes include: cross-chain, bridge, interoperability, defi, portal. Bridges and interoperability solutions connecting Solana to other chains.",
+      "description": "Detected 10 signals across onchain indicating emerging activity in cross-chain. Key themes include: cross-chain, bridge, interoperability, defi, portal. Bridges and interoperability solutions connecting Solana to other chains.",
       "signals": [
+        {
+          "id": "onchain_category_bridge_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Solana Bridge sector: 15 protocols, $3.36B total TVL. Top: Portal, SolvBTC, Aster Bridge, Unit, SoDEX Bridge",
+          "metadata": {
+            "url": "https://defillama.com/chain/Solana",
+            "metrics": {
+              "total_tvl": 3362022938,
+              "protocol_count": 15
+            }
+          },
+          "keywords": [
+            "cross-chain",
+            "bridge",
+            "defi",
+            "portal",
+            "solvbtc",
+            "aster-bridge",
+            "unit",
+            "sodex-bridge"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.6,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1.5
+        },
         {
           "id": "onchain_category_bridge_1771088876217",
           "source": "onchain",
@@ -823,8 +1764,33 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837317512454,
           "crossSourceScore": 1.5
+        },
+        {
+          "id": "onchain_defillama_portal_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Portal TVL: $1.35B (Bridge). +4.7% 7d change",
+          "metadata": {
+            "url": "https://portalbridge.com",
+            "metrics": {
+              "tvl": 1349182246,
+              "change_7d": 4.662324052549735,
+              "change_1d": 4.688923222927841
+            }
+          },
+          "keywords": [
+            "cross-chain",
+            "bridge",
+            "interoperability",
+            "portal",
+            "high-tvl"
+          ],
+          "weight": 3,
+          "normalizedWeight": 0.4,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1
         },
         {
           "id": "onchain_defillama_portal_1771088876217",
@@ -848,7 +1814,79 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
+          "crossSourceScore": 1
+        },
+        {
+          "id": "onchain_defillama_solvbtc_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "SolvBTC TVL: $712.3M (Bridge). -2.6% 7d change",
+          "metadata": {
+            "url": "https://app.solv.finance/solvbtc",
+            "metrics": {
+              "tvl": 712296014,
+              "change_7d": -2.610960903840038,
+              "change_1d": 0.7337969839176424
+            }
+          },
+          "keywords": [
+            "cross-chain",
+            "bridge",
+            "interoperability",
+            "solvbtc"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.3,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1
+        },
+        {
+          "id": "onchain_defillama_aster-bridge_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Aster Bridge TVL: $680.6M (Bridge). +3.3% 7d change",
+          "metadata": {
+            "url": "https://www.asterdex.com/en/referral/c6eF10",
+            "metrics": {
+              "tvl": 680581065,
+              "change_7d": 3.25804089706574,
+              "change_1d": 0.10361386052635169
+            }
+          },
+          "keywords": [
+            "cross-chain",
+            "bridge",
+            "interoperability",
+            "aster-bridge"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.3,
+          "recencyScore": 0.9996572247661497,
+          "crossSourceScore": 1
+        },
+        {
+          "id": "onchain_defillama_unit_1771092988177",
+          "source": "onchain",
+          "timestamp": 1771092988177,
+          "content": "Unit TVL: $484.8M (Bridge). -6.7% 7d change",
+          "metadata": {
+            "url": "https://hyperunit.xyz/deposit",
+            "metrics": {
+              "tvl": 484818513,
+              "change_7d": -6.746643238211931,
+              "change_1d": 1.6445438823634788
+            }
+          },
+          "keywords": [
+            "cross-chain",
+            "bridge",
+            "interoperability",
+            "unit"
+          ],
+          "weight": 2.5,
+          "normalizedWeight": 0.3,
+          "recencyScore": 0.9996572247661497,
           "crossSourceScore": 1
         },
         {
@@ -872,7 +1910,7 @@
           ],
           "weight": 2.5,
           "normalizedWeight": 0.3,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 1
         },
         {
@@ -896,7 +1934,7 @@
           ],
           "weight": 2.5,
           "normalizedWeight": 0.3,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837333929182,
           "crossSourceScore": 1
         },
         {
@@ -920,7 +1958,7 @@
           ],
           "weight": 2.5,
           "normalizedWeight": 0.3,
-          "recencyScore": 0.9997272643816623,
+          "recencyScore": 0.9928837317512454,
           "crossSourceScore": 1
         }
       ],
@@ -936,14 +1974,14 @@
         "interoperability",
         "high-tvl"
       ],
-      "score": 28.998472266262095,
+      "score": 29.979070361141666,
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 0.9998090332827616,
+        "recency": 0.9973837951427079,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771089041228,
+      "timestamp": 1771093195560,
       "ideas": [
         {
           "title": "Cross-Chain Momentum Analytics Dashboard",
@@ -980,7 +2018,7 @@
         {
           "title": "Cross Chain Integration Layer",
           "description": "Middleware that connects existing Solana apps to emerging cross-chain protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
-          "reasoning": "Multiple protocols detected (5 signals) but no standard integration. First-mover advantage for abstraction layer.",
+          "reasoning": "Multiple protocols detected (10 signals) but no standard integration. First-mover advantage for abstraction layer.",
           "targetAudience": "Existing Solana protocols and dApps",
           "difficulty": "Hard",
           "impact": "High"
@@ -988,167 +2026,7 @@
       ]
     },
     {
-      "id": "narrative_1771089041228_d3x7u",
-      "title": "DeFi: Basis Trading Growth",
-      "description": "Detected 4 signals across onchain indicating emerging activity in defi. Key themes include: growth, trending, basis-trading, dexs, defituna-amm. This represents new financial primitives and protocols being built on Solana.",
-      "signals": [
-        {
-          "id": "onchain_growth_defituna-amm_1771088876217",
-          "source": "onchain",
-          "timestamp": 1771088876217,
-          "content": "Rapid growth detected: DefiTuna AMM (Dexs) TVL grew 319.9% in 7 days",
-          "metadata": {
-            "url": "https://defillama.com/protocol/defituna-amm",
-            "metrics": {
-              "tvl": 9908510,
-              "growth_7d_pct": 319.93644924839737
-            }
-          },
-          "keywords": [
-            "dexs",
-            "defituna-amm",
-            "growth",
-            "trending"
-          ],
-          "weight": 5,
-          "normalizedWeight": 0.8,
-          "recencyScore": 0.9997272643816623,
-          "crossSourceScore": 1
-        },
-        {
-          "id": "onchain_growth_jupusd_1771088876217",
-          "source": "onchain",
-          "timestamp": 1771088876217,
-          "content": "Rapid growth detected: JupUSD (Basis Trading) TVL grew 254.2% in 7 days",
-          "metadata": {
-            "url": "https://defillama.com/protocol/jupusd",
-            "metrics": {
-              "tvl": 9411260,
-              "growth_7d_pct": 254.16938475600762
-            }
-          },
-          "keywords": [
-            "basis-trading",
-            "jupusd",
-            "growth",
-            "trending"
-          ],
-          "weight": 5,
-          "normalizedWeight": 0.8,
-          "recencyScore": 0.9997272643816623,
-          "crossSourceScore": 1
-        },
-        {
-          "id": "onchain_growth_adrastea-restaking-operator_1771088876217",
-          "source": "onchain",
-          "timestamp": 1771088876217,
-          "content": "Rapid growth detected: Adrastea Restaking Operator (Staking Pool) TVL grew 844.1% in 7 days",
-          "metadata": {
-            "url": "https://defillama.com/protocol/adrastea-restaking-operator",
-            "metrics": {
-              "tvl": 1229864,
-              "growth_7d_pct": 844.1336747540059
-            }
-          },
-          "keywords": [
-            "staking-pool",
-            "adrastea-restaking-operator",
-            "growth",
-            "trending"
-          ],
-          "weight": 5,
-          "normalizedWeight": 0.8,
-          "recencyScore": 0.9997272643816623,
-          "crossSourceScore": 1
-        },
-        {
-          "id": "onchain_growth_solv-basis-trading_1771088876217",
-          "source": "onchain",
-          "timestamp": 1771088876217,
-          "content": "Rapid growth detected: Solv Basis Trading (Basis Trading) TVL grew 27.6% in 7 days",
-          "metadata": {
-            "url": "https://defillama.com/protocol/solv-basis-trading",
-            "metrics": {
-              "tvl": 186255521,
-              "growth_7d_pct": 27.643187636908294
-            }
-          },
-          "keywords": [
-            "basis-trading",
-            "solv-basis-trading",
-            "growth",
-            "trending"
-          ],
-          "weight": 3.552863752738166,
-          "normalizedWeight": 0.5105727505476332,
-          "recencyScore": 0.9997272643816623,
-          "crossSourceScore": 1
-        }
-      ],
-      "keywords": [
-        "dexs",
-        "defituna-amm",
-        "growth",
-        "trending",
-        "basis-trading",
-        "jupusd",
-        "staking-pool",
-        "adrastea-restaking-operator",
-        "solv-basis-trading"
-      ],
-      "score": 28.798472266262095,
-      "metrics": {
-        "crossSourceCount": 1,
-        "velocity": 2,
-        "recency": 0.9998090332827616,
-        "keyVoiceMentions": 0
-      },
-      "timestamp": 1771089041228,
-      "ideas": [
-        {
-          "title": "DeFi Analytics Dashboard",
-          "description": "Real-time dashboard aggregating all defi activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
-          "reasoning": "Cross-source signals (1 sources) indicate fragmented information. Users need a single place to monitor this space.",
-          "targetAudience": "Traders, researchers, and power users",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "\"DeFi on Solana\" Interactive Course",
-          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
-          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
-          "targetAudience": "Developers new to this Solana vertical",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Smart Alert & Automation Platform",
-          "description": "Custom alerts and automated actions for dexs, defituna-amm, growth events. Set conditions, get notified, auto-execute strategies.",
-          "reasoning": "High velocity (2.0x growth) means things move fast. Users need automation to keep up and capitalize on opportunities.",
-          "targetAudience": "Active traders and strategists",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Dexs Integration Layer",
-          "description": "Middleware that connects existing Solana apps to emerging dexs protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
-          "reasoning": "Multiple protocols detected (4 signals) but no standard integration. First-mover advantage for abstraction layer.",
-          "targetAudience": "Existing Solana protocols and dApps",
-          "difficulty": "Hard",
-          "impact": "High"
-        },
-        {
-          "title": "DeFi Data Indexer",
-          "description": "Fast, queryable index of all defi-related onchain data. GraphQL API, historical data, and real-time subscriptions.",
-          "reasoning": "Onchain signals detected but data is scattered. Protocols need indexed data for UIs, analytics, and integrations.",
-          "targetAudience": "dApp developers and data analysts",
-          "difficulty": "Hard",
-          "impact": "High"
-        }
-      ]
-    },
-    {
-      "id": "narrative_1771089041228_qu4p9t",
+      "id": "narrative_1771093195560_sxxzdt",
       "title": "Payments Surge",
       "description": "Detected 3 signals across github indicating emerging activity in payments. Key themes include: ethereum, payment, qntx, openai, drop. Development in payment rails, stablecoin integration, or merchant adoption.",
       "signals": [
@@ -1188,7 +2066,7 @@
           ],
           "weight": 3.5,
           "normalizedWeight": 0.5,
-          "recencyScore": 0.5933154388890277,
+          "recencyScore": 0.5892539595608444,
           "crossSourceScore": 1.1818181818181819
         },
         {
@@ -1224,7 +2102,7 @@
           ],
           "weight": 3.5,
           "normalizedWeight": 0.5,
-          "recencyScore": 0.5990029595389175,
+          "recencyScore": 0.5949025468777479,
           "crossSourceScore": 1.1111111111111112
         },
         {
@@ -1256,7 +2134,7 @@
           ],
           "weight": 3.5,
           "normalizedWeight": 0.5,
-          "recencyScore": 0.46076077147891586,
+          "recencyScore": 0.4576066806279838,
           "crossSourceScore": 1
         }
       ],
@@ -1273,14 +2151,14 @@
         "x402-facilitator",
         "protocol"
       ],
-      "score": 25.844865163878627,
+      "score": 25.81970704845494,
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 0.6556081454848279,
+        "recency": 0.6524633810568677,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771089041228,
+      "timestamp": 1771093195560,
       "ideas": [
         {
           "title": "Developer SDK for Agent",
@@ -1325,9 +2203,9 @@
       ]
     },
     {
-      "id": "narrative_1771089041228_nsfuz",
+      "id": "narrative_1771093195560_plux7f",
       "title": "Infrastructure: Firedancer Expansion",
-      "description": "Detected 3 signals across github indicating emerging activity in infrastructure. Key themes include: staking, validator, client, firedancer, mev. Improvements to Solana's core infrastructure and validator ecosystem.",
+      "description": "Detected 6 signals across github indicating emerging activity in infrastructure. Key themes include: staking, validator, client, firedancer, mev. Improvements to Solana's core infrastructure and validator ecosystem.",
       "signals": [
         {
           "id": "github_trending_Syndica/sig_1771088868515",
@@ -1351,7 +2229,32 @@
           ],
           "weight": 3.75,
           "normalizedWeight": 0.55,
-          "recencyScore": 0.8883320233646277,
+          "recencyScore": 0.8822510371328982,
+          "crossSourceScore": 1.5
+        },
+        {
+          "id": "github_trending_Syndica/sig_1771092983052",
+          "source": "github",
+          "timestamp": 1771017427000,
+          "content": "Trending: Syndica/sig - a Solana validator client implementation written in Zig",
+          "metadata": {
+            "url": "https://github.com/Syndica/sig",
+            "author": "Syndica",
+            "metrics": {
+              "stars": 370
+            },
+            "tags": []
+          },
+          "keywords": [
+            "staking",
+            "validator",
+            "client",
+            "written",
+            "syndica"
+          ],
+          "weight": 3.75,
+          "normalizedWeight": 0.55,
+          "recencyScore": 0.8822510371328982,
           "crossSourceScore": 1.5
         },
         {
@@ -1380,7 +2283,36 @@
           ],
           "weight": 6,
           "normalizedWeight": 1,
-          "recencyScore": 5.008869464457677e-80,
+          "recencyScore": 4.9745817595807854e-80,
+          "crossSourceScore": 1.6666666666666667
+        },
+        {
+          "id": "github_firedancer-io/firedancer_1771092981206",
+          "source": "github",
+          "timestamp": 1660655224000,
+          "content": "firedancer-io/firedancer: Firedancer is Jump Crypto's Solana validator software.",
+          "metadata": {
+            "url": "https://github.com/firedancer-io/firedancer",
+            "author": "firedancer-io",
+            "metrics": {
+              "stars": 1400,
+              "age_days": 1278
+            },
+            "tags": [
+              "c",
+              "solana"
+            ]
+          },
+          "keywords": [
+            "firedancer",
+            "crypto",
+            "staking",
+            "validator",
+            "software"
+          ],
+          "weight": 6,
+          "normalizedWeight": 1,
+          "recencyScore": 4.9745817595807854e-80,
           "crossSourceScore": 1.6666666666666667
         },
         {
@@ -1411,7 +2343,38 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 1.7552508110996872e-90,
+          "recencyScore": 1.7432354207560244e-90,
+          "crossSourceScore": 2
+        },
+        {
+          "id": "github_jito-foundation/jito-solana_1771092981206",
+          "source": "github",
+          "timestamp": 1646094997000,
+          "content": "jito-foundation/jito-solana: Jito Foundation MEV Solana Client",
+          "metadata": {
+            "url": "https://github.com/jito-foundation/jito-solana",
+            "author": "jito-foundation",
+            "metrics": {
+              "stars": 684,
+              "age_days": 1446
+            },
+            "tags": [
+              "mev",
+              "solana",
+              "validator"
+            ]
+          },
+          "keywords": [
+            "mev",
+            "staking",
+            "validator",
+            "jito",
+            "foundation",
+            "client"
+          ],
+          "weight": 4,
+          "normalizedWeight": 0.6,
+          "recencyScore": 1.7432354207560244e-90,
           "crossSourceScore": 2
         }
       ],
@@ -1428,19 +2391,19 @@
         "jito",
         "foundation"
       ],
-      "score": 20.6,
+      "score": 21.200000000000003,
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 3.4803209644173447e-40,
+        "recency": 3.4636268619383305e-40,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771089041228,
+      "timestamp": 1771093195560,
       "ideas": [
         {
           "title": "Developer SDK for Staking",
           "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with staking-related protocols. Include code examples, CLI tools, and testing utilities.",
-          "reasoning": "With 3 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
+          "reasoning": "With 6 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
           "targetAudience": "Solana developers building dApps",
           "difficulty": "Medium",
           "impact": "High"
@@ -1478,211 +2441,15 @@
           "impact": "Medium"
         }
       ]
-    },
-    {
-      "id": "narrative_1771089041228_wgfvz",
-      "title": "Developer Tools: Anchor Rise",
-      "description": "Detected 5 signals across github indicating emerging activity in developer tools. Key themes include: anchor, framework, escrow, raad05, foundation. New frameworks, SDKs, or tools making Solana development easier.",
-      "signals": [
-        {
-          "id": "github_TheGh0xt/turbin3-escrow_1771088862983",
-          "source": "github",
-          "timestamp": 1771048752000,
-          "content": "TheGh0xt/turbin3-escrow: This is a solana anchor program for turbin3 assessment ",
-          "metadata": {
-            "url": "https://github.com/TheGh0xt/turbin3-escrow",
-            "author": "TheGh0xt",
-            "metrics": {
-              "stars": 0,
-              "age_days": 0
-            },
-            "tags": []
-          },
-          "keywords": [
-            "anchor",
-            "assessment",
-            "thegh0xt",
-            "turbin3",
-            "escrow"
-          ],
-          "weight": 3.5,
-          "normalizedWeight": 0.5,
-          "recencyScore": 0.9355546432729831,
-          "crossSourceScore": 1.6
-        },
-        {
-          "id": "github_Raad05/anchor-escrow_1771088862983",
-          "source": "github",
-          "timestamp": 1770931045000,
-          "content": "Raad05/anchor-escrow: An escrow program with Solana Anchor framework",
-          "metadata": {
-            "url": "https://github.com/Raad05/anchor-escrow",
-            "author": "Raad05",
-            "metrics": {
-              "stars": 0,
-              "age_days": 1
-            },
-            "tags": []
-          },
-          "keywords": [
-            "escrow",
-            "anchor",
-            "framework",
-            "raad05"
-          ],
-          "weight": 3.5,
-          "normalizedWeight": 0.5,
-          "recencyScore": 0.7700983179468918,
-          "crossSourceScore": 1.75
-        },
-        {
-          "id": "github_solana-foundation/anchor_1771088866722",
-          "source": "github",
-          "timestamp": 1609459390000,
-          "content": "solana-foundation/anchor: ⚓ Solana Program Framework",
-          "metadata": {
-            "url": "https://github.com/solana-foundation/anchor",
-            "author": "solana-foundation",
-            "metrics": {
-              "stars": 4952,
-              "age_days": 1870
-            },
-            "tags": [
-              "blockchain",
-              "coral",
-              "rust",
-              "smart-contracts",
-              "solana"
-            ]
-          },
-          "keywords": [
-            "blockchain",
-            "coral",
-            "smart-contracts",
-            "framework",
-            "foundation",
-            "anchor"
-          ],
-          "weight": 6,
-          "normalizedWeight": 1,
-          "recencyScore": 8.650890347936176e-117,
-          "crossSourceScore": 1.6666666666666667
-        },
-        {
-          "id": "github_James09777/Solana-Program-Framework-Anchor_1771088862983",
-          "source": "github",
-          "timestamp": 1769965530000,
-          "content": "James09777/Solana-Program-Framework-Anchor: https://github.com/solana-foundation/anchor",
-          "metadata": {
-            "url": "https://github.com/James09777/Solana-Program-Framework-Anchor",
-            "author": "James09777",
-            "metrics": {
-              "stars": 0,
-              "age_days": 13
-            },
-            "tags": []
-          },
-          "keywords": [
-            "foundation",
-            "anchor",
-            "framework"
-          ],
-          "weight": 2,
-          "normalizedWeight": 0.2,
-          "recencyScore": 0.15603773797795842,
-          "crossSourceScore": 1.75
-        },
-        {
-          "id": "github_Raad05/anchor-vault_1771088862983",
-          "source": "github",
-          "timestamp": 1770322683000,
-          "content": "Raad05/anchor-vault: A Solana vault program using the Anchor framework",
-          "metadata": {
-            "url": "https://github.com/Raad05/anchor-vault",
-            "author": "Raad05",
-            "metrics": {
-              "stars": 0,
-              "age_days": 8
-            },
-            "tags": []
-          },
-          "keywords": [
-            "vault",
-            "anchor",
-            "framework",
-            "raad05"
-          ],
-          "weight": 2,
-          "normalizedWeight": 0.2,
-          "recencyScore": 0.2816397134107292,
-          "crossSourceScore": 1.5
-        }
-      ],
-      "keywords": [
-        "anchor",
-        "assessment",
-        "thegh0xt",
-        "turbin3",
-        "escrow",
-        "framework",
-        "raad05",
-        "blockchain",
-        "coral",
-        "smart-contracts",
-        "foundation",
-        "vault"
-      ],
-      "score": 15,
-      "metrics": {
-        "crossSourceCount": 1,
-        "velocity": 1,
-        "recency": 3.4774743566552854e-17,
-        "keyVoiceMentions": 0
-      },
-      "timestamp": 1771089041228,
-      "ideas": [
-        {
-          "title": "Developer SDK for Anchor",
-          "description": "Build a comprehensive TypeScript/Rust SDK that simplifies integration with anchor-related protocols. Include code examples, CLI tools, and testing utilities.",
-          "reasoning": "With 5 signals showing development activity, there's clear demand for tooling. Developers need easier ways to build on this narrative.",
-          "targetAudience": "Solana developers building dApps",
-          "difficulty": "Medium",
-          "impact": "High"
-        },
-        {
-          "title": "Developer Tools Analytics Dashboard",
-          "description": "Real-time dashboard aggregating all developer tools activity on Solana. Track metrics, compare protocols, and identify trends before they go mainstream.",
-          "reasoning": "Cross-source signals (1 sources) indicate fragmented information. Users need a single place to monitor this space.",
-          "targetAudience": "Traders, researchers, and power users",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "\"Developer Tools on Solana\" Interactive Course",
-          "description": "Comprehensive video course + interactive coding challenges teaching developers how to build in this space. Include real-world examples from detected protocols.",
-          "reasoning": "Emerging narrative with 0 key voice mentions. Early educational content can capture attention as ecosystem grows.",
-          "targetAudience": "Developers new to this Solana vertical",
-          "difficulty": "Medium",
-          "impact": "Medium"
-        },
-        {
-          "title": "Anchor Integration Layer",
-          "description": "Middleware that connects existing Solana apps to emerging anchor protocols. Plug-and-play integration for wallets, dApps, and marketplaces.",
-          "reasoning": "Multiple protocols detected (5 signals) but no standard integration. First-mover advantage for abstraction layer.",
-          "targetAudience": "Existing Solana protocols and dApps",
-          "difficulty": "Hard",
-          "impact": "High"
-        }
-      ]
     }
   ],
-  "analyzedAt": 1771089041229,
+  "analyzedAt": 1771093195562,
   "dataWindow": {
     "start": 1331908353000,
-    "end": 1771088939892
+    "end": 1771093174000
   },
   "stats": {
-    "totalSignals": 228,
+    "totalSignals": 365,
     "sourcesUsed": [
       "github",
       "onchain",
@@ -1690,6 +2457,6 @@
       "reports",
       "discord"
     ],
-    "narrativesDetected": 9
+    "narrativesDetected": 10
   }
 }
