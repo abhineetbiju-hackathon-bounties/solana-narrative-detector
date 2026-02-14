@@ -90,10 +90,16 @@ export default async function handler(
       allSignals.push(...r.signals);
     }
 
+    // Collect errors for debugging
+    const errors = Object.entries(results)
+      .filter(([_, r]) => r.errors?.length)
+      .map(([k, r]) => `${k}: ${r.errors!.join(', ')}`);
+
     if (allSignals.length === 0) {
       return res.status(200).json({
-        success: true,
-        message: 'No signals collected',
+        success: false,
+        message: 'No signals collected — all collectors failed',
+        errors,
         timestamp: new Date().toISOString(),
       });
     }
