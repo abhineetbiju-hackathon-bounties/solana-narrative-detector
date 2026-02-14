@@ -1,9 +1,15 @@
 # 🔮 Solana Narrative Detector
 
-> Detect emerging narratives and opportunities in the Solana ecosystem through multi-source signal analysis
+> An automated AI agent that detects emerging narratives in the Solana ecosystem and generates actionable product ideas — powered by multi-source signal analysis across 5 data channels.
 
-**Live Demo:** [solana-narrative-detector-theta.vercel.app](https://solana-narrative-detector-theta.vercel.app/dashboard.html)
-**Repository:** [GitHub](https://github.com/abhineetbiju-hackathon-bounties/solana-narrative-detector)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://solana-narrative-detector-theta.vercel.app/dashboard.html)
+[![Tests](https://img.shields.io/badge/Tests-18%20passing-brightgreen?style=for-the-badge)]()
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=for-the-badge&logo=typescript)]()
+[![Sources](https://img.shields.io/badge/Data_Sources-5-purple?style=for-the-badge)]()
+
+| 📊 Signals Collected | 🔍 Narratives Detected | 📡 Data Sources | 💡 Ideas Generated |
+|:---:|:---:|:---:|:---:|
+| **529** | **10** | **5** | **50** |
 
 ## 🎯 Overview
 
@@ -15,7 +21,7 @@ This tool automatically detects emerging narratives in the Solana ecosystem by c
 - **Market reports**: Helius, Messari, Electric Capital, Solana Foundation blogs
 - **Discord/Forums**: Solana StackExchange, Solana Forum, Reddit r/solana & r/solanadev
 
-The tool can be refreshed on demand (`npm run refresh`) and generates 3-5 actionable product ideas for each detected narrative.
+The tool runs autonomously via `npm run refresh` (or Vercel cron), producing 3-5 actionable product ideas for each detected narrative with supporting evidence links.
 
 ## 🧠 Methodology
 
@@ -408,15 +414,15 @@ Returns the latest detected narratives.
 ```json
 {
   "narratives": [...],
-  "analyzedAt": 1707715200000,
+  "analyzedAt": 1739577600000,
   "dataWindow": {
-    "start": 1706505600000,
-    "end": 1707715200000
+    "start": 1738972800000,
+    "end": 1739577600000
   },
   "stats": {
-    "totalSignals": 127,
+    "totalSignals": 529,
     "sourcesUsed": ["github", "onchain", "twitter", "report", "discord"],
-    "narrativesDetected": 9
+    "narrativesDetected": 10
   }
 }
 ```
@@ -449,11 +455,11 @@ MIT License - feel free to use, modify, and distribute this tool.
 - Messari and Electric Capital for research reports
 - Solana community for feedback and ideas
 
-## 📧 Contact
+## 📧 About
 
-Built for Solana Bounty #2 - Narrative Detection Tool
+Built for the [Superteam Bounty: Narrative Detection & Idea Generation Tool](https://superteam.fun/earn/listing/develop-a-narrative-detection-and-idea-generation-tool/).
 
-Questions? Open an issue or submit a PR!
+Questions or feedback? [Open an issue](https://github.com/abhineetbiju-hackathon-bounties/solana-narrative-detector/issues) or submit a PR!
 
 ---
 
