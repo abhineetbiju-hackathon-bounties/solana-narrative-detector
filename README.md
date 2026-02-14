@@ -171,54 +171,54 @@ Open [http://localhost:3000](http://localhost:3000) to view the dashboard.
 
 ## 📊 Current Detected Narratives
 
-Based on the latest analysis run (148 signals, 5 sources):
+Based on the latest analysis run (235 real signals, 5 sources):
 
-1. **DePIN: Physical Infrastructure Surge**
-   - Score: 131.2 | 5 signals | 5 sources (onchain, twitter, github, discord, report)
-   - Render Network GPU compute up 280%, Helium IoT expansion, real hardware revenue
-   - **Top Idea**: Developer SDK for DePIN protocol integration
+1. **DeFi Surge**
+   - Score: 91.6 | 4 signals | 2 sources (onchain, github)
+   - Derivatives and DEX activity accelerating, perps growth across protocols
+   - **Top Idea**: Developer SDK for Derivatives integration
 
-2. **NFTs: State Compression Rise**
-   - Score: 102.4 | 5 signals | 5 sources (github, twitter, onchain, discord, report)
-   - 50M+ compressed NFTs minted, 1000x cost reduction, Merkle tree scaling
-   - **Top Idea**: Developer SDK for compressed NFTs with minting and management tools
+2. **DeFi: Raydium Expansion**
+   - Score: 89.1 | 3 signals | 2 sources (onchain, github)
+   - Raydium DEX activity surge with significant onchain volume growth
+   - **Top Idea**: Developer SDK for Onchain Activity monitoring
 
-3. **Token Extensions: Transfer Hooks Growth**
-   - Score: 102.4 | 5 signals | 5 sources (onchain, discord, github, twitter, report)
-   - Token-2022 mints up 340%, transfer hooks for RWA compliance, confidential transfers
-   - **Top Idea**: Developer SDK for Token-2022 with transfer hooks and compliance tooling
+3. **Liquid Staking Expansion**
+   - Score: 29.4 | 7 signals | 1 source (onchain)
+   - Liquid staking protocols growing with high TVL across Marinade, Jito, Sanctum
+   - **Top Idea**: Liquid Staking Analytics Dashboard
 
-4. **AI: Agents Rise**
-   - Score: 92.9 | 4 signals | 4 sources (discord, twitter, github, report)
-   - AI agent frameworks with Solana wallet integration, autonomous trading
-   - **Top Idea**: Developer SDK for AI agent-to-Solana integration
+4. **RWA: Real World Assets Expansion**
+   - Score: 29.0 | 5 signals | 1 source (onchain)
+   - Real-world asset tokenization gaining traction, BlackRock BUIDL on Solana
+   - **Top Idea**: RWA Analytics Dashboard
 
-5. **DeFi: TVL Growth**
-   - Score: 80.3 | 3 signals | 3 sources (twitter, report, onchain)
-   - Solana DeFi TVL hit $12B (5x YoY), Kamino lending crossed $2B
-   - **Top Idea**: Simplified DeFi aggregator with one-tap optimal routing
+5. **Cross-Chain Momentum**
+   - Score: 29.0 | 5 signals | 1 source (onchain)
+   - Bridge and interoperability protocols seeing increased activity (Portal, Wormhole)
+   - **Top Idea**: Cross-Chain Integration Layer
 
-6. **DeFi: Jupiter Surge**
-   - Score: 78.2 | 3 signals | 3 sources (onchain, discord, github)
-   - Jupiter $4.2B 7-day volume (+67% WoW), perps v2, limit orders + DCA at $500M/week
-   - **Top Idea**: Developer SDK for DeFi protocol integration
+6. **DeFi: Basis Trading Growth**
+   - Score: 28.8 | 4 signals | 1 source (onchain)
+   - Basis trading strategies and new AMM protocols emerging (DeFiTuna)
+   - **Top Idea**: DeFi Analytics Dashboard
 
-7. **DeFi: Bitcoin Growth**
-   - Score: 42.0 | 4 signals | 1 source (github)
-   - Multi-chain wallet development, cross-chain DeFi infrastructure
-   - **Top Idea**: Developer SDK for cross-chain Bitcoin-Solana integration
+7. **Payments Surge**
+   - Score: 25.8 | 3 signals | 1 source (github)
+   - Payment infrastructure and stablecoin integration development
+   - **Top Idea**: Payments Analytics Dashboard
 
-8. **Developer Tools: Anchor Rise**
-   - Score: 26.5 | 3 signals | 1 source (github)
-   - Anchor framework adoption, escrow program patterns
-   - **Top Idea**: Developer SDK for Anchor escrow and program patterns
+8. **Infrastructure: Firedancer Expansion**
+   - Score: 20.6 | 3 signals | 1 source (github)
+   - Firedancer validator client development, MEV infrastructure improvements
+   - **Top Idea**: Developer SDK for Staking infrastructure
 
-9. **DePIN: Sol Rise**
-   - Score: 15.6 | 3 signals | 1 source (report)
-   - Solana network upgrades, WisdomTree tokenization expansion, delegation program
-   - **Top Idea**: DePIN Analytics Dashboard for Solana Foundation ecosystem
+9. **Developer Tools: Anchor Rise**
+   - Score: 15.0 | 5 signals | 1 source (github)
+   - Anchor framework adoption accelerating, new escrow and program patterns
+   - **Top Idea**: Developer SDK for Anchor program development
 
-*Narratives refreshed: February 14, 2026*
+*Narratives refreshed: February 15, 2026*
 
 ## 🏗️ Architecture
 

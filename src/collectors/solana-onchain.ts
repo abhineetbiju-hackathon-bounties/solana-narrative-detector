@@ -90,9 +90,16 @@ export class SolanaOnchainCollector {
       const response = await axios.get('https://api.llama.fi/protocols', { timeout: 15000 });
       const protocols: DeFiLlamaProtocol[] = response.data;
 
-      // Filter for Solana protocols
+      // Filter for Solana-native protocols (exclude CEXes and non-native multi-chain protocols)
+      const excludedCategories = new Set(['CEX', 'Chain', 'Reserve Currency']);
+      const excludedSlugs = new Set([
+        'binance-cex', 'bitstamp', 'bitmex', 'okx', 'bybit', 'coinbase',
+        'kraken', 'bitfinex', 'htx', 'gate-io', 'kucoin', 'crypto-com',
+      ]);
       const solanaProtocols = protocols.filter((p: any) =>
-        p.chains && (p.chains.includes('Solana') || p.chain === 'Solana')
+        p.chains && (p.chains.includes('Solana') || p.chain === 'Solana') &&
+        !excludedCategories.has(p.category) &&
+        !excludedSlugs.has(p.slug)
       );
 
       // Sort by TVL descending

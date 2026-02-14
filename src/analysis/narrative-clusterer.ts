@@ -91,10 +91,11 @@ export class NarrativeClusterer {
     // Build keyword clusters using similarity
     const clusters = this.buildClusters(normalizedSignals);
 
-    // Convert clusters to narratives
+    // Convert clusters to narratives, filtering out unrecognized themes
     let narratives = clusters
       .filter(cluster => cluster.signals.length >= this.minClusterSize)
       .map(cluster => this.clusterToNarrative(cluster))
+      .filter(n => !n.title.startsWith('Emerging Technology'))
       .sort((a, b) => b.score - a.score);
 
     // Deduplicate narratives with similar titles
