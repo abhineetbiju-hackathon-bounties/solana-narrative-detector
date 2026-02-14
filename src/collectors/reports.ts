@@ -308,7 +308,7 @@ export class ReportsCollector {
     });
 
     // Extract capitalized terms (proper nouns)
-    const capitalizedWords = (title + ' ' + content).match(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b/g) || [];
+    const capitalizedWords: string[] = (title + ' ' + content).match(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b/g) || [];
     capitalizedWords.forEach(word => {
       if (word.length > 3 && !['The', 'And', 'This', 'That', 'With', 'From', 'What', 'How', 'Why'].includes(word)) {
         keywords.add(word.toLowerCase().replace(/\s+/g, '-'));
@@ -316,7 +316,7 @@ export class ReportsCollector {
     });
 
     // Extract phrases in quotes
-    const quotedPhrases = text.match(/"([^"]+)"/g) || [];
+    const quotedPhrases: string[] = text.match(/"([^"]+)"/g) || [];
     quotedPhrases.forEach(phrase => {
       const cleaned = phrase.replace(/"/g, '').trim().toLowerCase();
       if (cleaned.length > 3 && cleaned.length < 40) {
