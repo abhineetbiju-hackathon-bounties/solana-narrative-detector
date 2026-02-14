@@ -17,6 +17,11 @@ export class SignalDetector {
     'the', 'and', 'for', 'with', 'this', 'that', 'from', 'are', 'was',
     'into', 'about', 'based', 'also', 'just', 'only', 'more', 'some',
     'implementation', 'tool', 'tools', 'app', 'application',
+    'web', 'web3', 'data', 'like', 'make', 'need',
+    'first', 'one', 'two', 'way', 'get', 'got', 'has', 'had', 'its',
+    'can', 'not', 'but', 'been', 'have', 'how', 'what', 'when',
+    'who', 'which', 'their', 'there', 'then', 'than', 'other', 'over',
+    'most', 'very', 'any', 'each', 'your', 'our', 'his', 'her',
   ]);
 
   private cleanKeywords(signals: Signal[]): Signal[] {

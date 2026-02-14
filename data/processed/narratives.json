@@ -1,7 +1,7 @@
 {
   "narratives": [
     {
-      "id": "narrative_1771088590780_xg680m",
+      "id": "narrative_1771088654233_3y82og",
       "title": "DeFi: Jupiter Surge",
       "description": "Detected 3 signals across 2 different sources (onchain, discord) indicating emerging activity in defi. Key themes include: dex, jupiter, trading, token, trending. This represents new financial primitives and protocols being built on Solana.",
       "signals": [
@@ -26,7 +26,7 @@
           ],
           "weight": 1.5,
           "normalizedWeight": 0.1,
-          "recencyScore": 0.99977667341993,
+          "recencyScore": 0.9996717866780136,
           "crossSourceScore": 2.4
         },
         {
@@ -50,7 +50,7 @@
           ],
           "weight": 1.5,
           "normalizedWeight": 0.1,
-          "recencyScore": 0.9997766717668601,
+          "recencyScore": 0.9996717850251171,
           "crossSourceScore": 2.4
         },
         {
@@ -75,7 +75,7 @@
           ],
           "weight": 1.84,
           "normalizedWeight": 0.168,
-          "recencyScore": 0.9520511819009544,
+          "recencyScore": 0.9519513020485212,
           "crossSourceScore": 2
         }
       ],
@@ -90,14 +90,14 @@
         "instead",
         "spending"
       ],
-      "score": 91.2699443548093,
+      "score": 91.26849248418915,
       "metrics": {
         "crossSourceCount": 2,
         "velocity": 2,
-        "recency": 0.9884972177404651,
+        "recency": 0.9884246242094576,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771088590780,
+      "timestamp": 1771088654233,
       "ideas": [
         {
           "title": "DeFi Analytics Dashboard",
@@ -142,7 +142,7 @@
       ]
     },
     {
-      "id": "narrative_1771088590780_ye6i88",
+      "id": "narrative_1771088654233_ilng1g",
       "title": "DeFi: Raydium Expansion",
       "description": "Detected 3 signals across 2 different sources (onchain, github) indicating emerging activity in defi. Key themes include: dex, raydium, onchain-activity, high-volume, jupiter-aggregator. This represents new financial primitives and protocols being built on Solana.",
       "signals": [
@@ -166,7 +166,7 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 0.9997116288885315,
+          "recencyScore": 0.9996067489704479,
           "crossSourceScore": 2
         },
         {
@@ -189,7 +189,7 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 0.999702641772634,
+          "recencyScore": 0.9995977627973903,
           "crossSourceScore": 2
         },
         {
@@ -237,7 +237,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.5712291386867716,
+          "recencyScore": 0.5711692118844618,
           "crossSourceScore": 1.3846153846153846
         }
       ],
@@ -256,14 +256,14 @@
         "cryptotraderbot",
         "developer-portal"
       ],
-      "score": 89.04794898988166,
+      "score": 89.04666029876928,
       "metrics": {
         "crossSourceCount": 2,
         "velocity": 2,
-        "recency": 0.877397449494083,
+        "recency": 0.8773330149384642,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771088590780,
+      "timestamp": 1771088654233,
       "ideas": [
         {
           "title": "Developer SDK for Onchain Activity",
@@ -308,7 +308,7 @@
       ]
     },
     {
-      "id": "narrative_1771088590780_hjhbkc",
+      "id": "narrative_1771088654234_f8wlst",
       "title": "Emerging Technology: Risk Curators Expansion",
       "description": "Detected 5 signals across onchain indicating emerging activity in emerging technology. Key themes include: high-tvl, risk-curators, sentora, bitkub, gauntlet. This represents an emerging trend in the Solana ecosystem.",
       "signals": [
@@ -332,7 +332,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016103339326,
+          "recencyScore": 0.9995967314668972,
           "crossSourceScore": 1
         },
         {
@@ -354,7 +354,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016103339326,
+          "recencyScore": 0.9995967314668972,
           "crossSourceScore": 1
         },
         {
@@ -375,7 +375,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016086809868,
+          "recencyScore": 0.9995967298141248,
           "crossSourceScore": 1
         },
         {
@@ -396,7 +396,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016086809868,
+          "recencyScore": 0.9995967298141248,
           "crossSourceScore": 1
         },
         {
@@ -419,7 +419,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016086809868,
+          "recencyScore": 0.9995967298141248,
           "crossSourceScore": 1
         }
       ],
@@ -430,14 +430,14 @@
         "bitkub",
         "gauntlet"
       ],
-      "score": 28.998328613508107,
+      "score": 28.997741220791205,
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 0.9997910766885134,
+        "recency": 0.9997176525989004,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771088590780,
+      "timestamp": 1771088654234,
       "ideas": [
         {
           "title": "Emerging Technology Analytics Dashboard",
@@ -482,7 +482,7 @@
       ]
     },
     {
-      "id": "narrative_1771088590780_u3vqar",
+      "id": "narrative_1771088654233_gszbo",
       "title": "Liquid Staking: Liquid Staking Expansion",
       "description": "Detected 4 signals across onchain indicating emerging activity in liquid staking. Key themes include: liquid-staking, defi, staking, validator, high-tvl. Growing adoption of liquid staking tokens and validator economics on Solana.",
       "signals": [
@@ -509,7 +509,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016103339326,
+          "recencyScore": 0.9995967314668972,
           "crossSourceScore": 2.5
         },
         {
@@ -535,7 +535,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016103339326,
+          "recencyScore": 0.9995967314668972,
           "crossSourceScore": 2.5
         },
         {
@@ -561,7 +561,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016086809868,
+          "recencyScore": 0.9995967298141248,
           "crossSourceScore": 2.5
         },
         {
@@ -587,7 +587,7 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 0.9997016152927699,
+          "recencyScore": 0.9995967364252144,
           "crossSourceScore": 1.5
         }
       ],
@@ -603,14 +603,14 @@
         "sanctum-validator-lsts",
         "jupiter-staked-sol"
       ],
-      "score": 28.79832862369207,
+      "score": 28.797741240231062,
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 0.9997910779615086,
+        "recency": 0.9997176550288827,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771088590780,
+      "timestamp": 1771088654233,
       "ideas": [
         {
           "title": "Liquid Staking Analytics Dashboard",
@@ -655,7 +655,7 @@
       ]
     },
     {
-      "id": "narrative_1771088590780_dw6mz",
+      "id": "narrative_1771088654234_jxeiv8",
       "title": "Emerging Technology: Binance Cex Growth",
       "description": "Detected 3 signals across onchain indicating emerging activity in emerging technology. Key themes include: high-tvl, bitstamp, bitmex, binance-cex. This represents an emerging trend in the Solana ecosystem.",
       "signals": [
@@ -678,7 +678,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016103339326,
+          "recencyScore": 0.9995967314668972,
           "crossSourceScore": 1
         },
         {
@@ -700,7 +700,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016103339326,
+          "recencyScore": 0.9995967314668972,
           "crossSourceScore": 1
         },
         {
@@ -722,7 +722,7 @@
           ],
           "weight": 3,
           "normalizedWeight": 0.4,
-          "recencyScore": 0.9997016086809868,
+          "recencyScore": 0.9995967298141248,
           "crossSourceScore": 1
         }
       ],
@@ -732,14 +732,14 @@
         "bitmex",
         "binance-cex"
       ],
-      "score": 28.59832861597839,
+      "score": 28.597741223261302,
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 0.9997910769972981,
+        "recency": 0.9997176529076625,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771088590780,
+      "timestamp": 1771088654234,
       "ideas": [
         {
           "title": "Emerging Technology Analytics Dashboard",
@@ -784,7 +784,7 @@
       ]
     },
     {
-      "id": "narrative_1771088590780_d3n9s6",
+      "id": "narrative_1771088654234_49t6hq",
       "title": "Payments: Ethereum Wave",
       "description": "Detected 3 signals across github indicating emerging activity in payments. Key themes include: ethereum, payment, qntx, openai, drop. Development in payment rails, stablecoin integration, or merchant adoption.",
       "signals": [
@@ -824,7 +824,7 @@
           ],
           "weight": 3.5,
           "normalizedWeight": 0.5,
-          "recencyScore": 0.5937574949761456,
+          "recencyScore": 0.5936952047573671,
           "crossSourceScore": 1.1818181818181819
         },
         {
@@ -860,7 +860,7 @@
           ],
           "weight": 3.5,
           "normalizedWeight": 0.5,
-          "recencyScore": 0.5994492531748317,
+          "recencyScore": 0.5993863658421364,
           "crossSourceScore": 1.1111111111111112
         },
         {
@@ -892,7 +892,7 @@
           ],
           "weight": 3.5,
           "normalizedWeight": 0.5,
-          "recencyScore": 0.4611040662769052,
+          "recencyScore": 0.46105569177039585,
           "crossSourceScore": 1
         }
       ],
@@ -909,14 +909,14 @@
         "x402-facilitator",
         "protocol"
       ],
-      "score": 25.847600296965926,
+      "score": 25.847214916176434,
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 0.6559500371207403,
+        "recency": 0.6559018645220542,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771088590780,
+      "timestamp": 1771088654234,
       "ideas": [
         {
           "title": "Developer SDK for Agent",
@@ -961,7 +961,7 @@
       ]
     },
     {
-      "id": "narrative_1771088590780_7hutgm",
+      "id": "narrative_1771088654234_ezr88d",
       "title": "Infrastructure: Firedancer Expansion",
       "description": "Detected 3 signals across github indicating emerging activity in infrastructure. Key themes include: staking, validator, client, firedancer, mev. Improvements to Solana's core infrastructure and validator ecosystem.",
       "signals": [
@@ -987,7 +987,7 @@
           ],
           "weight": 3.75,
           "normalizedWeight": 0.55,
-          "recencyScore": 0.8889938847499397,
+          "recencyScore": 0.8889006202493426,
           "crossSourceScore": 1.5
         },
         {
@@ -1016,7 +1016,7 @@
           ],
           "weight": 6,
           "normalizedWeight": 1,
-          "recencyScore": 5.0126013768456725e-80,
+          "recencyScore": 5.012075503977366e-80,
           "crossSourceScore": 1.6666666666666667
         },
         {
@@ -1047,7 +1047,7 @@
           ],
           "weight": 4,
           "normalizedWeight": 0.6,
-          "recencyScore": 1.7565585797074464e-90,
+          "recencyScore": 1.7563742988462303e-90,
           "crossSourceScore": 2
         }
       ],
@@ -1068,10 +1068,10 @@
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 2,
-        "recency": 3.4821359092684773e-40,
+        "recency": 3.4818801831822786e-40,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771088590780,
+      "timestamp": 1771088654234,
       "ideas": [
         {
           "title": "Developer SDK for Staking",
@@ -1116,7 +1116,7 @@
       ]
     },
     {
-      "id": "narrative_1771088590780_tq489",
+      "id": "narrative_1771088654234_qk1hlk",
       "title": "Developer Tools: Anchor Rise",
       "description": "Detected 5 signals across github indicating emerging activity in developer tools. Key themes include: anchor, framework, escrow, raad05, foundation. New frameworks, SDKs, or tools making Solana development easier.",
       "signals": [
@@ -1143,7 +1143,7 @@
           ],
           "weight": 3.5,
           "normalizedWeight": 0.5,
-          "recencyScore": 0.9362516883821828,
+          "recencyScore": 0.9361534660573186,
           "crossSourceScore": 1.6
         },
         {
@@ -1168,7 +1168,7 @@
           ],
           "weight": 3.5,
           "normalizedWeight": 0.5,
-          "recencyScore": 0.7706720880307533,
+          "recencyScore": 0.7705912366901003,
           "crossSourceScore": 1.75
         },
         {
@@ -1201,7 +1201,7 @@
           ],
           "weight": 6,
           "normalizedWeight": 1,
-          "recencyScore": 8.657335787388525e-117,
+          "recencyScore": 8.6564275448092e-117,
           "crossSourceScore": 1.6666666666666667
         },
         {
@@ -1225,7 +1225,7 @@
           ],
           "weight": 2,
           "normalizedWeight": 0.2,
-          "recencyScore": 0.15615399558288845,
+          "recencyScore": 0.1561376136986507,
           "crossSourceScore": 1.75
         },
         {
@@ -1250,7 +1250,7 @@
           ],
           "weight": 2,
           "normalizedWeight": 0.2,
-          "recencyScore": 0.2818495521264054,
+          "recencyScore": 0.2818199832416543,
           "crossSourceScore": 1.5
         }
       ],
@@ -1272,10 +1272,10 @@
       "metrics": {
         "crossSourceCount": 1,
         "velocity": 1,
-        "recency": 3.4792878170352815e-17,
+        "recency": 3.479032300111386e-17,
         "keyVoiceMentions": 0
       },
-      "timestamp": 1771088590780,
+      "timestamp": 1771088654234,
       "ideas": [
         {
           "title": "Developer SDK for Anchor",
@@ -1312,7 +1312,7 @@
       ]
     }
   ],
-  "analyzedAt": 1771088590781,
+  "analyzedAt": 1771088654235,
   "dataWindow": {
     "start": 1331908353000,
     "end": 1771088466329

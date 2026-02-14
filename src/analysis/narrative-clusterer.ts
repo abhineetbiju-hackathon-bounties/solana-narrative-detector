@@ -401,9 +401,19 @@ export class NarrativeClusterer {
       if (themeWords.some(tw => lower.includes(tw) || tw.includes(lower))) return false;
       if (this.isNoisyKeyword(lower)) return false;
       // Must be a recognizable ecosystem term or protocol name
-      return ECOSYSTEM_TERMS.has(lower) || lower.includes('-') && lower.length > 5;
-    }) || keywords.find(kw => ECOSYSTEM_TERMS.has(kw.toLowerCase()))
-      || keywords[0] || 'Ecosystem';
+      return ECOSYSTEM_TERMS.has(lower) || (lower.includes('-') && lower.length > 5);
+    }) || keywords.find(kw => {
+      const lower = kw.toLowerCase();
+      return ECOSYSTEM_TERMS.has(lower) && !genericWords.has(lower) &&
+        !themeWords.some(tw => lower.includes(tw) || tw.includes(lower));
+    });
+
+    // If no distinct keyword found, use a descriptive suffix based on the theme
+    if (!distinctKeyword) {
+      const suffixes = ['Growth', 'Momentum', 'Surge', 'Wave', 'Expansion', 'Rise'];
+      const suffixIndex = Math.abs(theme.charCodeAt(0)) % suffixes.length;
+      return `${theme} ${suffixes[suffixIndex]}`;
+    }
 
     const formatted = distinctKeyword.split('-').map(word =>
       word.charAt(0).toUpperCase() + word.slice(1)
