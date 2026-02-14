@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
 import * as fs from 'fs';
 import * as path from 'path';
 import { GitHubCollector } from '../src/collectors/github';
